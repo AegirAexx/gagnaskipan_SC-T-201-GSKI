@@ -1,42 +1,39 @@
 #include "characterarray.h"
 
-CharacterArray::CharacterArray()
-{
+CharacterArray::CharacterArray(){
     ///TODO: Implement
 }
 
-CharacterArray::CharacterArray(char* str, int length)
-{
+CharacterArray::CharacterArray(char* str, int length){
     ///TODO: Implement
 }
 
-CharacterArray::~CharacterArray()
-{
+CharacterArray::~CharacterArray(){
     ///TODO: Implement
 }
 
-void CharacterArray::append(char c) {
-
-    ///TODO: Implement
-}
-
-void CharacterArray::insert(char c, int index) {
+void CharacterArray::append(char c){
 
     ///TODO: Implement
 }
 
-void CharacterArray::setAt(char c, int index) {
+void CharacterArray::insert(char c, int index){
 
     ///TODO: Implement
 }
 
-char CharacterArray::getAt(int index) {
+void CharacterArray::setAt(char c, int index){
+
+    ///TODO: Implement
+}
+
+char CharacterArray::getAt(int index){
 
     ///TODO: Implement
     return '\0'; //change or remove this line
 }
 
-char CharacterArray::pop_back() {
+char CharacterArray::pop_back(){
 
     //Example of throwing an exception
     if(isEmpty()) {
@@ -47,36 +44,36 @@ char CharacterArray::pop_back() {
     return '\0'; //change or remove this line
 }
 
-char CharacterArray::removeAt(int index) {
+char CharacterArray::removeAt(int index){
 
     ///TODO: Implement
     return '\0'; //change or remove this line
 }
 
-void CharacterArray::clear() {
+void CharacterArray::clear(){
 
     ///TODO: Implement
 }
 
-int CharacterArray::length() {
+int CharacterArray::length(){
 
     ///TODO: Implement
     return -1; //change or remove this line
 }
 
-bool CharacterArray::isEmpty() {
+bool CharacterArray::isEmpty(){
 
     ///TODO: Implement
     return true; //change or remove this line
 }
 
-char* CharacterArray::substring(int startIndex, int length) {
+char* CharacterArray::substring(int startIndex, int length){
 
     ///TODO: Implement
     return NULL; //change or remove this line
 }
 
-ostream& operator <<(ostream& out, const CharacterArray& ca) {
+ostream& operator <<(ostream& out, const CharacterArray& ca){
 
     ///TODO: Implement
     return out; //change or remove this line

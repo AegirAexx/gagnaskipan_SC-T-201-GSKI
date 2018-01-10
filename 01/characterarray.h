@@ -10,8 +10,7 @@ class EmptyException{};
 
 #define INITIAL_CAPACITY 4
 
-class CharacterArray
-{
+class CharacterArray{
     public:
         CharacterArray();
         CharacterArray(char* str, int length);
