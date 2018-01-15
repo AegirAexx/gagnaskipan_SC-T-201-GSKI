@@ -8,9 +8,11 @@ using namespace std;
 class IndexOutOfBoundsException{};
 class EmptyException{};
 
-#define INITIAL_CAPACITY 4
+const int INITIAL_CAPACITY = 4;
+//#define INITIAL_CAPACITY 4
 
-class CharacterArray{
+class CharacterArray
+{
     public:
         CharacterArray();
         CharacterArray(char* str, int length);
@@ -37,7 +39,9 @@ class CharacterArray{
     protected:
 
     private:
-    
+        int capacity;
+        int item_count;
+        char *str;
 };
 
 #endif // INSERTSORTEDARRAY_H

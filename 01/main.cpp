@@ -1,9 +1,10 @@
 #include <iostream>
+
 #include "characterarray.h"
 
 using namespace std;
 
-void printArray(CharacterArray &ca){
+void printArray(CharacterArray &ca) {
 
     cout << "printing array" << endl;
     cout << "CharacterArray: \"" << ca << "\"" << endl;
@@ -11,7 +12,7 @@ void printArray(CharacterArray &ca){
     cout << endl;
 }
 
-void append(CharacterArray &ca, char c){
+void append(CharacterArray &ca, char c) {
 
     cout << "append: '" << c << "'" << endl;
     ca.append(c);
@@ -20,7 +21,7 @@ void append(CharacterArray &ca, char c){
     cout << endl;
 }
 
-void insertIntoArray(CharacterArray &ca, char c, int index){
+void insertIntoArray(CharacterArray &ca, char c, int index) {
 
     try {
         cout << "insert: '" << c << "' at index: " << index << endl;
@@ -34,7 +35,7 @@ void insertIntoArray(CharacterArray &ca, char c, int index){
     cout << endl;
 }
 
-void setAt(CharacterArray &ca, char c, int index){
+void setAt(CharacterArray &ca, char c, int index) {
 
     try {
         cout << "set: '" << c << "' at index: " << index << endl;
@@ -48,7 +49,7 @@ void setAt(CharacterArray &ca, char c, int index){
     cout << endl;
 }
 
-void getAt(CharacterArray &ca, int index){
+void getAt(CharacterArray &ca, int index) {
 
     try {
         cout << "get character at index: " << index << endl;
@@ -61,7 +62,7 @@ void getAt(CharacterArray &ca, int index){
     cout << endl;
 }
 
-void popFromArray(CharacterArray &ca){
+void popFromArray(CharacterArray &ca) {
 
     try {
         cout << "popping character from back" << endl;
@@ -76,7 +77,7 @@ void popFromArray(CharacterArray &ca){
     cout << endl;
 }
 
-void removeAt(CharacterArray &ca, int index){
+void removeAt(CharacterArray &ca, int index) {
 
     try {
         cout << "remove character at index: " << index << endl;
@@ -91,7 +92,7 @@ void removeAt(CharacterArray &ca, int index){
     cout << endl;
 }
 
-void substring(CharacterArray &ca, int s, int l){
+void substring(CharacterArray &ca, int s, int l) {
 
     try {
         cout << "substring from " << s << " of length " << l << endl;
@@ -110,7 +111,7 @@ void substring(CharacterArray &ca, int s, int l){
     cout << endl;
 }
 
-void clearArray(CharacterArray &ca){
+void clearArray(CharacterArray &ca) {
 
     if(ca.isEmpty()) {
         cout << "array is empty" << endl;
@@ -124,7 +125,7 @@ void clearArray(CharacterArray &ca){
     cout << endl;
 }
 
-int main(){
+int main() {
 
     CharacterArray ca1;
 
