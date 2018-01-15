@@ -37,8 +37,7 @@ class CharacterArray{
     protected:
 
     private:
-    char *str;
-    int itemCount;
+    
 };
 
 #endif // INSERTSORTEDARRAY_H
