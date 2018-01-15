@@ -74,7 +74,10 @@ char* CharacterArray::substring(int startIndex, int length){
 }
 
 ostream& operator <<(ostream& out, const CharacterArray& ca){
+    
+    // for(int i = 0; i != ca.itemCount; ++i){
+    //     out << ca.str[i] << " ";
+    // }
 
-    ///TODO: Implement
-    return out; //change or remove this line
+    return out;
 }
