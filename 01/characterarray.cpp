@@ -149,7 +149,7 @@ char* CharacterArray::substring(int startIndex, int length){
     char* sub = new char[length + 1];
 
     for(int i = startIndex; i < startIndex + length; ++i){
-        sub[i] = str[i];
+        sub[i - startIndex] = str[i];
     }
 
     sub[length + 1] = 48;
@@ -160,13 +160,6 @@ char* CharacterArray::substring(int startIndex, int length){
 
 ostream& operator <<(ostream& out, const CharacterArray& ca) {
 
-    // for(int i = 0; i < ca.length() + 5; ++i){
-    //     if(ca.str[i] != 48){
-    //         out << ca.str[i] << " ";
-    //     }else if(ca.str[i] == 48){
-    //         break;
-    //     }
-    // }
     int i = 0;
     while(true){
         if(ca.str[i] != 48){

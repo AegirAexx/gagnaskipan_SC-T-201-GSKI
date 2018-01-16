@@ -135,9 +135,9 @@ int main(){
 
     // cout << endl << endl;
 
-    // CharacterArray ca2((char*)"parameter constructor", 21);
+    CharacterArray ca2((char*)"parameter constructor", 21);
     // printArray(ca2);
-    // substring(ca2, 4, 11);
+    substring(ca2, 4, 11);
 
     return 0;
 }
