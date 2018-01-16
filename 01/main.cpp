@@ -1,10 +1,9 @@
 #include <iostream>
-
 #include "characterarray.h"
 
 using namespace std;
 
-void printArray(CharacterArray &ca) {
+void printArray(CharacterArray &ca){
 
     cout << "printing array" << endl;
     cout << "CharacterArray: \"" << ca << "\"" << endl;
@@ -12,7 +11,7 @@ void printArray(CharacterArray &ca) {
     cout << endl;
 }
 
-void append(CharacterArray &ca, char c) {
+void append(CharacterArray &ca, char c){
 
     cout << "append: '" << c << "'" << endl;
     ca.append(c);
@@ -21,102 +20,94 @@ void append(CharacterArray &ca, char c) {
     cout << endl;
 }
 
-void insertIntoArray(CharacterArray &ca, char c, int index) {
+void insertIntoArray(CharacterArray &ca, char c, int index){
 
-    try {
+    try{
         cout << "insert: '" << c << "' at index: " << index << endl;
         ca.insert(c, index);
         cout << "CharacterArray: \"" << ca << "\"" << endl;
-    }
-    catch (IndexOutOfBoundsException e) {
+    }catch(IndexOutOfBoundsException e){
         cout << "index out of bounds" << endl;
     }
     cout << "string length: " << ca.length() << endl;
     cout << endl;
 }
 
-void setAt(CharacterArray &ca, char c, int index) {
+void setAt(CharacterArray &ca, char c, int index){
 
-    try {
+    try{
         cout << "set: '" << c << "' at index: " << index << endl;
         ca.setAt(c, index);
         cout << "CharacterArray: \"" << ca << "\"" << endl;
-    }
-    catch (IndexOutOfBoundsException e) {
+    }catch(IndexOutOfBoundsException e){
         cout << "index out of bounds" << endl;
     }
     cout << "string length: " << ca.length() << endl;
     cout << endl;
 }
 
-void getAt(CharacterArray &ca, int index) {
+void getAt(CharacterArray &ca, int index){
 
-    try {
+    try{
         cout << "get character at index: " << index << endl;
         char c = ca.getAt(index);
         cout << "Returned value: '" << c << "'" << endl;
-    }
-    catch (IndexOutOfBoundsException e) {
+    }catch(IndexOutOfBoundsException e){
         cout << "index out of bounds" << endl;
     }
     cout << endl;
 }
 
-void popFromArray(CharacterArray &ca) {
+void popFromArray(CharacterArray &ca){
 
-    try {
+    try{
         cout << "popping character from back" << endl;
-        char c = ca.pop_back();
+        char c = ca.popBack();
         cout << "Returned value: '" << c << "'" << endl;
         cout << "CharacterArray: \"" << ca << "\"" << endl;
-    }
-    catch (EmptyException e) {
+    }catch(EmptyException e){
         cout << "array is empty" << endl;
     }
     cout << "string length: " << ca.length() << endl;
     cout << endl;
 }
 
-void removeAt(CharacterArray &ca, int index) {
+void removeAt(CharacterArray &ca, int index){
 
-    try {
+    try{
         cout << "remove character at index: " << index << endl;
         char c = ca.removeAt(index);
         cout << "Returned value: '" << c << "'" << endl;
         cout << "CharacterArray: \"" << ca << "\"" << endl;
-    }
-    catch (IndexOutOfBoundsException e) {
+    }catch(IndexOutOfBoundsException e){
         cout << "index out of bounds" << endl;
     }
     cout << "string length: " << ca.length() << endl;
     cout << endl;
 }
 
-void substring(CharacterArray &ca, int s, int l) {
+void substring(CharacterArray &ca, int s, int l){
 
-    try {
+    try{
         cout << "substring from " << s << " of length " << l << endl;
         char* tmp = ca.substring(s, l);
-        if(tmp != NULL) {
+        if(tmp != NULL){
             cout << "Returned array: \"" << tmp << "\"" << endl;
             delete[] tmp;
-        }
-        else {
+        }else{
             cout << "Returned array: NULL" << endl;
         }
-    }
-    catch (IndexOutOfBoundsException e) {
+    }catch(IndexOutOfBoundsException e){
         cout << "index out of bounds" << endl;
     }
     cout << endl;
 }
 
-void clearArray(CharacterArray &ca) {
+void clearArray(CharacterArray &ca){
 
-    if(ca.isEmpty()) {
+    if(ca.isEmpty()){
         cout << "array is empty" << endl;
-    }
-    else {
+    }else{
         cout << "clearing array" << endl;
         ca.clear();
         cout << "CharacterArray: \"" << ca << "\"" << endl;
@@ -125,28 +116,28 @@ void clearArray(CharacterArray &ca) {
     cout << endl;
 }
 
-int main() {
+int main(){
 
-    CharacterArray ca1;
+    // CharacterArray ca1;
 
-    printArray(ca1);
+    // printArray(ca1);
 
-    append(ca1, 'k');
-    insertIntoArray(ca1, 'a', 0);
-    setAt(ca1, 'j', 1);
-    getAt(ca1, 1);
-    insertIntoArray(ca1, 'r', 1);
-    popFromArray(ca1);
-    removeAt(ca1, 0);
+    // append(ca1, 'k');
+    // insertIntoArray(ca1, 'a', 0);
+    // setAt(ca1, 'j', 1);
+    // getAt(ca1, 1);
+    // insertIntoArray(ca1, 'r', 1);
+    // popFromArray(ca1);
+    // removeAt(ca1, 0);
 
-    clearArray(ca1);
-    clearArray(ca1);
+    // clearArray(ca1);
+    // clearArray(ca1);
 
-    cout << endl << endl;
+    // cout << endl << endl;
 
-    CharacterArray ca2((char*)"parameter constructor", 21);
-    printArray(ca2);
-    substring(ca2, 4, 11);
+    // CharacterArray ca2((char*)"parameter constructor", 21);
+    // printArray(ca2);
+    // substring(ca2, 4, 11);
 
     return 0;
 }

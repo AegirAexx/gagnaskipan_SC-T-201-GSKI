@@ -8,11 +8,9 @@ using namespace std;
 class IndexOutOfBoundsException{};
 class EmptyException{};
 
-const int INITIAL_CAPACITY = 4;
-//#define INITIAL_CAPACITY 4
+constexpr int INITIAL_CAPACITY = 4;
 
-class CharacterArray
-{
+class CharacterArray{
     public:
         CharacterArray();
         CharacterArray(char* str, int length);
@@ -22,9 +20,9 @@ class CharacterArray
         void insert(char c, int index);
         void setAt(char c, int index);
 
-        char getAt(int index);
+        char getAt(int index) const;
 
-        char pop_back();
+        char popBack();
         char removeAt(int index);
         void clear();
 
@@ -34,14 +32,12 @@ class CharacterArray
 
         char* substring(int startIndex, int length);
 
-        friend ostream& operator <<(ostream& out, const CharacterArray& ca);
-
-    protected:
+        friend ostream& operator << (ostream& out, const CharacterArray& ca);
 
     private:
         int capacity;
-        int item_count;
-        char *str;
+        int itemCount;
+        char* str;
 };
 
 #endif // INSERTSORTEDARRAY_H

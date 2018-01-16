@@ -1,65 +1,66 @@
 #include "characterarray.h"
 
-CharacterArray::CharacterArray()
-{
+CharacterArray::CharacterArray(){
+    
     capacity = INITIAL_CAPACITY;
-
-    item_count = 0;
-    str = new char[capacity];
-    str[capacity - 1] = '/0';
-}
-
-CharacterArray::CharacterArray(char* str, int length)
-{
-    capacity = length + 1;
-    item_count = length;
+    itemCount = 0;
     this->str = new char[capacity];
     str[capacity - 1] = '/0';
 
 }
 
+CharacterArray::CharacterArray(char* str, int length){
+    
+    capacity = length + 1;
+    itemCount = length;
+    this->str = new char[capacity];
+    str[capacity - 1] = '/0';
 
-
-CharacterArray::~CharacterArray()
-{
-    delete [] str;
 }
 
-void CharacterArray::append(char c) {
+CharacterArray::~CharacterArray(){
 
-    if(item_count - 1 >= capacity){
+    delete [] str;
+
+}
+
+void CharacterArray::append(char c){
+
+    if((itemCount - 1) >= capacity){
         //resize fall
-            //kópera í nýja
-            //eyða gamla
+            //kï¿½pera ï¿½ nï¿½ja
+            //eyï¿½a gamla
     }
 
     if(isEmpty()){
-        str[item_count] = c;
-        str[item_count + 1] = '/0';
+        str[itemCount] = c;
+        str[itemCount + 1] = '/0';
+    }else{
+        str[itemCount + 1] = c;
+        str[itemCount + 2] = '/0';
     }
-    else{
-        str[item_count + 1] = c;
-        str[item_count + 2] = '/0';
-    }
-    item_count++;
+
+    itemCount++;
+
 }
 
-void CharacterArray::insert(char c, int index) {
+void CharacterArray::insert(char c, int index){
 
-     if(item_count - 1 >= capacity){ //Bua til bool fall til að tekka hvort capacity se fullt
+     if(itemCount - 1 >= capacity){ //Bua til bool fall til aï¿½ tekka hvort capacity se fullt
         //resize fall
-            //kópera í nýja
-            //eyða gamla
+            //kï¿½pera ï¿½ nï¿½ja
+            //eyï¿½a gamla
     }
 
-    for(int i = item_count + 1; i >= index; i--){
+    for(int i = itemCount + 1; i >= index; i--){
         str[i + 1] = str[i];
     }
-    item_count++;
+
+    itemCount++;
 
 }
 
-void CharacterArray::setAt(char c, int index) {
+void CharacterArray::setAt(char c, int index){
 
     //Capacity check
 
@@ -67,63 +68,68 @@ void CharacterArray::setAt(char c, int index) {
 
 }
 
-char CharacterArray::getAt(int index) {
+char CharacterArray::getAt(int index){
 
     //index out of bounds exception
 
     return str[index]; //change or remove this line
+
 }
 
-char CharacterArray::pop_back() {
+char CharacterArray::popBack(){
 
     //Example of throwing an exception
-    if(isEmpty()) {
+    if(isEmpty()){
         throw EmptyException();
     }
 
-    char last = str[item_count];
+    char last = str[itemCount];
 
-    str[item_count] = '/0';
-    item_count--;
+    str[itemCount] = '/0';
+    itemCount--;
 
     return last; //change or remove this line
+
 }
 
-char CharacterArray::removeAt(int index) {
+char CharacterArray::removeAt(int index){
 
     char returnChar = str[index];
 
-    for(int i = index; i <= item_count + 1; i++){
+    for(int i = index; i <= itemCount + 1; i++){
         str[i] = i + 1;
     }
-    item_count--;
+
+    itemCount--;
 
     return returnChar; //change or remove this line
+
 }
 
-void CharacterArray::clear() {
+void CharacterArray::clear(){
 
     str[0] = '/0';
-    item_count = 0;
+    itemCount = 0;
+
 }
 
-int CharacterArray::length() {
+int CharacterArray::length(){
 
-    return item_count; //change or remove this line
+    return itemCount; //change or remove this line
+
 }
 
-bool CharacterArray::isEmpty() {
+bool CharacterArray::isEmpty(){
 
     if(str[0] == '/0'){
         return true;
-    }
-    else{
+    }else{
         return false;
     }
+
 }
 
-char* CharacterArray::substring(int startIndex, int length) {
-
+char* CharacterArray::substring(int startIndex, int length){
 
     char* sub = new char[length + 1];
 
@@ -133,8 +139,8 @@ char* CharacterArray::substring(int startIndex, int length) {
 
     sub[length + 1] = '/0';
 
-
     return sub;
+
 }
 
 ostream& operator <<(ostream& out, const CharacterArray& ca) {
@@ -147,4 +153,5 @@ ostream& operator <<(ostream& out, const CharacterArray& ca) {
     }
 
     return out; //change or remove this line
+
 }
