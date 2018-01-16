@@ -8,12 +8,12 @@ using namespace std;
 class IndexOutOfBoundsException{};
 class EmptyException{};
 
-constexpr int INITIAL_CAPACITY = 4;
+constexpr int INITIAL_CAPACITY {4};
 
 class CharacterArray{
     public:
         CharacterArray();
-        CharacterArray(char* str, int length);
+        CharacterArray(char* inStr, int length);
         virtual ~CharacterArray();
 
         void append(char c);
@@ -26,7 +26,7 @@ class CharacterArray{
         char removeAt(int index);
         void clear();
 
-        int length();
+        int length() const;
 
         bool isEmpty();
 
@@ -38,6 +38,8 @@ class CharacterArray{
         int capacity;
         int itemCount;
         char* str;
+
+        void resizeArray();
 };
 
 #endif // INSERTSORTEDARRAY_H
