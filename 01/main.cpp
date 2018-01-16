@@ -124,8 +124,8 @@ int main(){
 
     append(ca1, 'k');
     insertIntoArray(ca1, 'a', 0);
-    // setAt(ca1, 'j', 1);
-    // getAt(ca1, 1);
+    setAt(ca1, 'j', 1);
+    getAt(ca1, 1);
     // insertIntoArray(ca1, 'r', 1);
     // popFromArray(ca1);
     // removeAt(ca1, 0);

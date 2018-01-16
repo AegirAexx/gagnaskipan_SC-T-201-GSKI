@@ -79,17 +79,17 @@ void CharacterArray::insert(char c, int index){
 
 void CharacterArray::setAt(char c, int index){
 
-    //Capacity check
-
-    str[index] = c;
+    if(index < capacity){
+        str[index] = c;
+    }
 
 }
 
 char CharacterArray::getAt(int index) const{
 
-    //index out of bounds exception
-
-    return str[index]; 
+    if(index < capacity){
+        return str[index];
+    }
 
 }
 
