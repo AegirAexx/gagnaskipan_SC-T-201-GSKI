@@ -118,6 +118,7 @@ void clearArray(CharacterArray &ca){
 
 int main(){
 
+/*
     CharacterArray ca1;
 
     printArray(ca1);
@@ -138,6 +139,73 @@ int main(){
     CharacterArray ca2((char*)"parameter constructor", 21);
     printArray(ca2);
     substring(ca2, 4, 11);
+*/
+
+//Example output from the Kari
+
+    CharacterArray ca;
+
+    printArray(ca);
+
+    insertIntoArray(ca, 'a', 1);
+    insertIntoArray(ca, 'a', 0);
+    insertIntoArray(ca, 'b', 1);
+    insertIntoArray(ca, 'c', 0);
+    insertIntoArray(ca, 'd', 4);
+    insertIntoArray(ca, ' ', 3);
+    insertIntoArray(ca, 'd', 4);
+    insertIntoArray(ca, 'l', 2);
+    insertIntoArray(ca, 'e', 3);
+    insertIntoArray(ca, 'a', 7);
+    insertIntoArray(ca, 'k', 8);
+    insertIntoArray(ca, 'r', 7);
+    insertIntoArray(ca, 's', -1);
+
+    append(ca, ' ');
+    append(ca, 'm');
+    append(ca, 'o');
+    append(ca, 'r');
+    append(ca, 'e');
+    append(ca, ' ');
+    append(ca, 's');
+    append(ca, 't');
+    append(ca, 'u');
+    append(ca, 'f');
+    append(ca, 'f');
+
+    setAt(ca, 'g', 12);
+
+    getAt(ca, 3);
+    getAt(ca, 12);
+    getAt(ca, 17);
+    getAt(ca, 16);
+    getAt(ca, 9);
+    getAt(ca, 22);
+    getAt(ca, 0);
+
+    append(ca, ' ');
+    append(ca, 'p');
+    append(ca, 'o');
+    append(ca, 'p');
+
+    popFromArray(ca);
+    popFromArray(ca);
+    popFromArray(ca);
+    popFromArray(ca);
+
+    removeAt(ca, 16);
+    removeAt(ca, 5);
+    removeAt(ca, 10);
+
+    substring(ca, 2, 6);
+    substring(ca, 6, 5);
+    substring(ca, 0, 5);
+    substring(ca, 19, 7);
+    substring(ca, -2, 4);
+    substring(ca, 4, 0);
+
+    clearArray(ca);
+    clearArray(ca);
 
     return 0;
 }
