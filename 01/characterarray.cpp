@@ -63,13 +63,15 @@ void CharacterArray::append(char c){
 
 void CharacterArray::insert(char c, int index){
 
-     if(itemCount - 1 >= capacity){ //Bua til bool fall til a� tekka hvort capacity se fullt
+    if(itemCount - 1 >= capacity){ 
         resizeArray();
     }
 
     for(int i = itemCount + 1; i >= index; --i){
         str[i + 1] = str[i];
     }
+
+    str[index] = c;
 
     itemCount++;
 
