@@ -68,7 +68,7 @@ void CharacterArray::setAt(char c, int index){
 
 }
 
-char CharacterArray::getAt(int index){
+char CharacterArray::getAt(int index) const{
 
     //index out of bounds exception
 
