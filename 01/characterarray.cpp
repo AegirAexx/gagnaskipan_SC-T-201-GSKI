@@ -17,6 +17,7 @@ CharacterArray::CharacterArray(char* inStr, int length){
 
     for(int i = 0; i < length; ++i){
         str[i] = inStr[i];
+        itemCount++;
     }
 
     str[capacity] = '\0';
@@ -100,10 +101,9 @@ char CharacterArray::popBack(){
         throw EmptyException();
     }
 
-    char last = str[itemCount];
-
-    str[itemCount] = '\0';
+    char last = str[itemCount - 1];
     itemCount--;
+    str[itemCount] = '\0';
 
     return last; 
 
@@ -114,7 +114,7 @@ char CharacterArray::removeAt(int index){
     char returnChar = str[index];
 
     for(int i = index; i <= itemCount + 1; ++i){
-        str[i] = i + 1;
+        str[i] = str[i + 1];
     }
 
     itemCount--;

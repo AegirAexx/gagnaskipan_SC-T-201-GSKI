@@ -126,18 +126,18 @@ int main(){
     insertIntoArray(ca1, 'a', 0);
     setAt(ca1, 'j', 1);
     getAt(ca1, 1);
-    // insertIntoArray(ca1, 'r', 1);
-    // popFromArray(ca1);
-    // removeAt(ca1, 0);
+    insertIntoArray(ca1, 'r', 1);
+    popFromArray(ca1);
+    removeAt(ca1, 0);
 
-    // clearArray(ca1);
-    // clearArray(ca1);
+    clearArray(ca1);
+    clearArray(ca1);
 
-    // cout << endl << endl;
+    cout << endl << endl;
 
-    // CharacterArray ca2((char*)"parameter constructor", 21);
-    // printArray(ca2);
-    // substring(ca2, 4, 11);
+    CharacterArray ca2((char*)"parameter constructor", 21);
+    printArray(ca2);
+    substring(ca2, 4, 11);
 
     return 0;
 }
