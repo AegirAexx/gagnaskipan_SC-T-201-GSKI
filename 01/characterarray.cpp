@@ -5,7 +5,7 @@ CharacterArray::CharacterArray(){
     capacity = INITIAL_CAPACITY;
     itemCount = 0;
     str = new char[capacity];
-    str[capacity - 1] = 48;
+    str[capacity - 1] = '\0';
 
 }
 
@@ -19,7 +19,7 @@ CharacterArray::CharacterArray(char* inStr, int length){
         str[i] = inStr[i];
     }
 
-    str[capacity] = 48;
+    str[capacity] = '\0';
 
 }
 
@@ -51,10 +51,10 @@ void CharacterArray::append(char c){
 
     if(isEmpty()){
         str[itemCount] = c;
-        str[itemCount + 1] = 48;
+        str[itemCount + 1] = '\0';
     }else{
         str[itemCount + 1] = c;
-        str[itemCount + 2] = 48;
+        str[itemCount + 2] = '\0';
     }
 
     itemCount++;
@@ -100,7 +100,7 @@ char CharacterArray::popBack(){
 
     char last = str[itemCount];
 
-    str[itemCount] = 48;
+    str[itemCount] = '\0';
     itemCount--;
 
     return last; 
@@ -123,7 +123,7 @@ char CharacterArray::removeAt(int index){
 
 void CharacterArray::clear(){
 
-    str[0] = 48;
+    str[0] = '\0';
     itemCount = 0;
 
 }
@@ -136,7 +136,7 @@ int CharacterArray::length() const{
 
 bool CharacterArray::isEmpty(){
 
-    if(str[0] == 48){
+    if(str[0] == '\0'){
         return true;
     }else{
         return false;
@@ -152,7 +152,7 @@ char* CharacterArray::substring(int startIndex, int length){
         sub[i - startIndex] = str[i];
     }
 
-    sub[length + 1] = 48;
+    sub[length + 1] = '\0';
 
     return sub;
 
@@ -162,9 +162,9 @@ ostream& operator <<(ostream& out, const CharacterArray& ca) {
 
     int i = 0;
     while(true){
-        if(ca.str[i] != 48){
+        if(ca.str[i] != '\0'){
             out << ca.str[i];
-        }else if(ca.str[i] == 48){
+        }else if(ca.str[i] == '\0'){
             break;
         }
         i++;
