@@ -156,6 +156,7 @@ int main(){
     insertIntoArray(ca, 'd', 4);
     insertIntoArray(ca, 'l', 2);
     insertIntoArray(ca, 'e', 3);
+    insertIntoArray(ca, 'e', 7);
     insertIntoArray(ca, 'a', 7);
     insertIntoArray(ca, 'k', 8);
     insertIntoArray(ca, 'r', 7);

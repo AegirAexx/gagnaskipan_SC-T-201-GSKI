@@ -1,17 +1,17 @@
 #include "characterarray.h"
 
 CharacterArray::CharacterArray(){
-    
+
     capacity = INITIAL_CAPACITY;
     itemCount = 0;
     str = new char[capacity];
-    str[capacity - 1] = '\0';
+    str[0] = '\0';  //Breytti tessu ur str[capacity - 1]
 
 }
 
 CharacterArray::CharacterArray(char* inStr, int length){
-    
-    capacity = length;
+
+    capacity = length + 1;  //Breytti her i length + 1, er tad ekki rett??
     itemCount = 0;
     str = new char[capacity];
 
@@ -20,7 +20,7 @@ CharacterArray::CharacterArray(char* inStr, int length){
         itemCount++;
     }
 
-    str[capacity] = '\0';
+    str[capacity - 1] = '\0';  //Breytti her i capacity - 1
 
 }
 
@@ -46,16 +46,17 @@ void CharacterArray::resizeArray(){
 
 void CharacterArray::append(char c){
 
-    if((itemCount - 1) >= capacity){
-        resizeArray();
-    }
 
     if(isEmpty()){
         str[itemCount] = c;
         str[itemCount + 1] = '\0';
     }else{
-        str[itemCount + 1] = c;
-        str[itemCount + 2] = '\0';
+
+        if((itemCount + 1) >= capacity){  //Er forsendan fyrir tvi ad nota resize fallid ekki eitthvad vitlaus hja okkur? //breytti ur itemCount - 1 yfir i itemCount + 1... er tad ekki rett hugsad??
+        resizeArray();
+        }
+        str[itemCount] = c;
+        str[itemCount + 1] = '\0';    //breytti her (var + 1 og + 2)
     }
 
     itemCount++;
@@ -64,7 +65,11 @@ void CharacterArray::append(char c){
 
 void CharacterArray::insert(char c, int index){
 
-    if(itemCount - 1 >= capacity){ 
+    if(index < 0 || index > itemCount){                  //Baetti tessu inn
+        throw IndexOutOfBoundsException();
+    }
+
+    if(itemCount + 1 >= capacity){  //breytti ur itemCount - 1 yfir i itemCount + 1... er tad ekki rett hugsad??
         resizeArray();
     }
 
@@ -88,6 +93,10 @@ void CharacterArray::setAt(char c, int index){
 
 char CharacterArray::getAt(int index) const{
 
+    if(index < 0 || index > itemCount){                  //Baetti tessu inn
+        throw IndexOutOfBoundsException();
+    }
+
     if(index < capacity){
         return str[index];
     }
@@ -105,7 +114,7 @@ char CharacterArray::popBack(){
     itemCount--;
     str[itemCount] = '\0';
 
-    return last; 
+    return last;
 
 }
 
@@ -119,7 +128,7 @@ char CharacterArray::removeAt(int index){
 
     itemCount--;
 
-    return returnChar; 
+    return returnChar;
 
 }
 
@@ -132,7 +141,7 @@ void CharacterArray::clear(){
 
 int CharacterArray::length() const{
 
-    return itemCount; 
+    return itemCount;
 
 }
 
@@ -147,6 +156,14 @@ bool CharacterArray::isEmpty(){
 }
 
 char* CharacterArray::substring(int startIndex, int length){
+
+    if(startIndex < 0 || startIndex > itemCount){                  //Baetti tessu inn
+        throw IndexOutOfBoundsException();
+    }
+
+    if(length < 0 || startIndex + length > itemCount){                  //Baetti tessu inn   Kannski maetti taka adeins til i tessu spaghetti
+        throw IndexOutOfBoundsException();
+    }
 
     char* sub = new char[length + 1];
 
