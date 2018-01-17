@@ -183,11 +183,6 @@ ostream& operator <<(ostream& out, const CharacterArray& ca) {
     for(int i = 0; i < ca.length(); ++i){
         out << ca.str[i];
     }
-    // int i = 0;
-    // while(ca.str[i] != '\0'){
-    //     out << ca.str[i];
-    //     i++;
-    // }
 
     return out;
 
