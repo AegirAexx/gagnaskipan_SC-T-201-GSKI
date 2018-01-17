@@ -158,7 +158,7 @@ bool CharacterArray::isEmpty(){
 
 char* CharacterArray::substring(int startIndex, int length){
 
-    if(startIndex < 0 || startIndex >= itemCount){
+    if(startIndex < 0 || startIndex > itemCount){
         throw IndexOutOfBoundsException();
     }
 

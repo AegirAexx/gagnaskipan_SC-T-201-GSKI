@@ -134,98 +134,103 @@ int main(){
     clearArray(ca1);
 
     cout << endl << endl;
-
-    CharacterArray ca2((char*)"parameter constructor", 21);
-    printArray(ca2);
-    substring(ca2, 4, 11);
 */
+    CharacterArray ca2((char*)"qre", 3);
+    printArray(ca2);
+    substring(ca2, 3, 0);
+    substring(ca2, 0, 3);
+    substring(ca2, 0, 1);
+    substring(ca2, 1, 2);
+    substring(ca2, 4, 0);
+    substring(ca2, 3, 1);
+    substring(ca2, 3, 3);
 
 //Example output from the Kari
 
-    CharacterArray ca;
+    // CharacterArray ca;
 
-    printArray(ca);
+    // printArray(ca);
 
-    insertIntoArray(ca, 'a', 1);
-    insertIntoArray(ca, 'a', 0);
-    insertIntoArray(ca, 'b', 1);
-    insertIntoArray(ca, 'c', 0);
-    insertIntoArray(ca, 'd', 4);
-    insertIntoArray(ca, ' ', 3);
-    insertIntoArray(ca, 'd', 4);
-    insertIntoArray(ca, 'l', 2);
-    insertIntoArray(ca, 'e', 3);
-    insertIntoArray(ca, 'e', 7);
-    insertIntoArray(ca, 'a', 7);
-    insertIntoArray(ca, 'k', 8);
-    insertIntoArray(ca, 'r', 7);
-    insertIntoArray(ca, 's', -1);
+    // insertIntoArray(ca, 'a', 1);
+    // insertIntoArray(ca, 'a', 0);
+    // insertIntoArray(ca, 'b', 1);
+    // insertIntoArray(ca, 'c', 0);
+    // insertIntoArray(ca, 'd', 4);
+    // insertIntoArray(ca, ' ', 3);
+    // insertIntoArray(ca, 'd', 4);
+    // insertIntoArray(ca, 'l', 2);
+    // insertIntoArray(ca, 'e', 3);
+    // insertIntoArray(ca, 'e', 7);
+    // insertIntoArray(ca, 'a', 7);
+    // insertIntoArray(ca, 'k', 8);
+    // insertIntoArray(ca, 'r', 7);
+    // insertIntoArray(ca, 's', -1);
 
-    clearArray(ca);
+    // clearArray(ca);
 
-    append(ca, ' ');
-    append(ca, 'm');
-    append(ca, 'o');
-    append(ca, 'r');
-    append(ca, 'e');
-    append(ca, ' ');
-    append(ca, 's');
-    append(ca, 't');
-    append(ca, 'u');
-    append(ca, 'f');
-    append(ca, 'f');
+    // append(ca, ' ');
+    // append(ca, 'm');
+    // append(ca, 'o');
+    // append(ca, 'r');
+    // append(ca, 'e');
+    // append(ca, ' ');
+    // append(ca, 's');
+    // append(ca, 't');
+    // append(ca, 'u');
+    // append(ca, 'f');
+    // append(ca, 'f');
 
-    setAt(ca, 'g', 12);
-    setAt(ca, 'g', -1);
-    setAt(ca, 'g', 98);
-    setAt(ca, 'g', ca.length());
+    // setAt(ca, 'g', 12);
+    // setAt(ca, 'g', -1);
+    // setAt(ca, 'g', 98);
+    // setAt(ca, 'g', ca.length());
 
-    getAt(ca, 3);
-    getAt(ca, 12);
-    getAt(ca, 17);
-    getAt(ca, 16);
-    getAt(ca, 9);
-    getAt(ca, 22);
-    getAt(ca, 0);
-    getAt(ca, -9);
-    getAt(ca, 74);
-    getAt(ca, ca.length());
+    // getAt(ca, 3);
+    // getAt(ca, 12);
+    // getAt(ca, 17);
+    // getAt(ca, 16);
+    // getAt(ca, 9);
+    // getAt(ca, 22);
+    // getAt(ca, 0);
+    // getAt(ca, -9);
+    // getAt(ca, 74);
+    // getAt(ca, ca.length());
 
-    append(ca, ' ');
-    append(ca, 'p');
-    append(ca, 'o');
-    append(ca, 'p');
+    // append(ca, ' ');
+    // append(ca, 'p');
+    // append(ca, 'o');
+    // append(ca, 'p');
 
-    popFromArray(ca);
-    popFromArray(ca);
-    popFromArray(ca);
+    // popFromArray(ca);
+    // popFromArray(ca);
+    // popFromArray(ca);
 
-    clearArray(ca);
-    popFromArray(ca);
+    // clearArray(ca);
+    // popFromArray(ca);
 
-    CharacterArray ca2((char*)"dagurdagur", 10);
+    // CharacterArray ca2((char*)"dagurdagur", 10);
 
-    printArray(ca2);
+    // printArray(ca2);
 
-    removeAt(ca2, 16);
-    removeAt(ca2, 5);
-    removeAt(ca2, 10);
-    removeAt(ca2, -5);
-    removeAt(ca2, 45);
-    removeAt(ca2, ca.length());
+    // removeAt(ca2, 16);
+    // removeAt(ca2, 5);
+    // removeAt(ca2, 10);
+    // removeAt(ca2, -5);
+    // removeAt(ca2, 45);
+    // removeAt(ca2, ca.length());
 
-    substring(ca2, 2, 6);
-    substring(ca2, 6, 5);
-    substring(ca2, 0, 5);
-    substring(ca2, 19, 7);
-    substring(ca2, -2, 4);
-    substring(ca2, 4, 0);
-    substring(ca2, (ca.length() - 4), (ca.length() + 2));
-    substring(ca2, (ca.length() - 4), (ca.length() - 1));
-    substring(ca2, (ca.length() - 4), ca.length());
+    // substring(ca2, 2, 6);
+    // substring(ca2, 6, 5);
+    // substring(ca2, 0, 5);
+    // substring(ca2, 19, 7);
+    // substring(ca2, -2, 4);
+    // substring(ca2, 4, 0);
+    // substring(ca2, (ca.length() - 4), (ca.length() + 2));
+    // substring(ca2, (ca.length() - 4), (ca.length() - 1));
+    // substring(ca2, (ca.length() - 4), ca.length());
 
-    clearArray(ca2);
-    clearArray(ca2);
+    // clearArray(ca2);
+    // clearArray(ca2);
 
     return 0;
 }
