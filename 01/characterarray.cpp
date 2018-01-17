@@ -101,7 +101,7 @@ char CharacterArray::getAt(int index) const{
 
 }
 
-char CharacterArray::popBack(){
+char CharacterArray::pop_back(){
 
     if(isEmpty()){
         throw EmptyException();

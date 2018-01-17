@@ -62,7 +62,7 @@ void popFromArray(CharacterArray &ca){
 
     try{
         cout << "popping character from back" << endl;
-        char c = ca.popBack();
+        char c = ca.pop_back();
         cout << "Returned value: '" << c << "'" << endl;
         cout << "CharacterArray: \"" << ca << "\"" << endl;
     }catch(EmptyException e){
@@ -117,8 +117,8 @@ void clearArray(CharacterArray &ca){
 }
 
 int main(){
-
-   /* CharacterArray ca1;
+/*
+    CharacterArray ca1;
 
     printArray(ca1);
 
@@ -137,8 +137,8 @@ int main(){
 
     CharacterArray ca2((char*)"parameter constructor", 21);
     printArray(ca2);
-    substring(ca2, 4, 11); */
-
+    substring(ca2, 4, 11);
+*/
 
 //Example output from the Kari
 

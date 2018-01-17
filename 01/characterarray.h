@@ -22,7 +22,7 @@ class CharacterArray{
 
         char getAt(int index) const;
 
-        char popBack();
+        char pop_back();
         char removeAt(int index);
         void clear();
 
