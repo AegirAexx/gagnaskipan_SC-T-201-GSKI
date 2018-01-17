@@ -7,3 +7,5 @@ else
     echo "Could not find binary file. Have you built the project?"
 fi
 read
+###
+# valgrind --leak-check=full --track-origins=yes ./char 
