@@ -180,11 +180,14 @@ char* CharacterArray::substring(int startIndex, int length){
 
 ostream& operator <<(ostream& out, const CharacterArray& ca) {
 
-    int i = 0;
-    while(ca.str[i] != '\0'){
+    for(int i = 0; i < ca.length(); ++i){
         out << ca.str[i];
-        i++;
     }
+    // int i = 0;
+    // while(ca.str[i] != '\0'){
+    //     out << ca.str[i];
+    //     i++;
+    // }
 
     return out;
 
