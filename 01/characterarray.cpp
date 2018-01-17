@@ -46,12 +46,10 @@ void CharacterArray::resizeArray(){
 
 void CharacterArray::append(char c){
 
-
     if(isEmpty()){
         str[itemCount] = c;
         str[itemCount + 1] = '\0';
     }else{
-        // Tok ut "=" merkid ((itemCount + 1) >= capacity)
         if((itemCount + 1) > capacity){
             resizeArray();
         }
@@ -64,7 +62,7 @@ void CharacterArray::append(char c){
 }
 
 void CharacterArray::insert(char c, int index){
-    // setti inn "=" (index >= itemCount)
+
     if(index < 0 || index > itemCount){
         throw IndexOutOfBoundsException();
     }
@@ -84,30 +82,22 @@ void CharacterArray::insert(char c, int index){
 }
 
 void CharacterArray::setAt(char c, int index){
-    // Setti inn IndexOutOfBoundsException()
+
     if(index < 0 || index >= itemCount){
         throw IndexOutOfBoundsException();
     }
 
     str[index] = c;
 
-    // if(index < capacity){
-    //     str[index] = c;
-    // }
-
 }
 
 char CharacterArray::getAt(int index) const{
-    // setti inn "=" (index >= itemCount)
+
     if(index < 0 || index >= itemCount){
         throw IndexOutOfBoundsException();
     }
 
     return str[index];
-
-    // if(index < capacity){
-    //     return str[index];
-    // }
 
 }
 
@@ -126,7 +116,7 @@ char CharacterArray::popBack(){
 }
 
 char CharacterArray::removeAt(int index){
-    // Setti inn IndexOutOfBoundsException()
+
     if(index < 0 || index >= itemCount){
         throw IndexOutOfBoundsException();
     }
@@ -167,12 +157,12 @@ bool CharacterArray::isEmpty(){
 }
 
 char* CharacterArray::substring(int startIndex, int length){
-    // setti inn "=" (index >= itemCount)
-    if(startIndex < 0 || startIndex >= itemCount){                  //Baetti tessu inn
+
+    if(startIndex < 0 || startIndex >= itemCount){
         throw IndexOutOfBoundsException();
     }
 
-    if(length < 0 || startIndex + length > itemCount){                  //Baetti tessu inn   Kannski maetti taka adeins til i tessu spaghetti
+    if(length < 0 || startIndex + length > itemCount){
         throw IndexOutOfBoundsException();
     }
 
