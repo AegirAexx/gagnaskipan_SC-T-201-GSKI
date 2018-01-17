@@ -4,7 +4,7 @@ CharacterArray::CharacterArray(){
 
     capacity = INITIAL_CAPACITY;
     itemCount = 0;
-    str = new char[capacity];
+    str = new char[capacity + 1];
     str[0] = '\0';
 
 }
@@ -33,7 +33,7 @@ CharacterArray::~CharacterArray(){
 void CharacterArray::resizeArray(){
 
     capacity *= 2;
-    char* tempArray = new char[capacity];
+    char* tempArray = new char[capacity + 1];
 
     for(int i = 0; i < itemCount; ++i){
         tempArray[i] = str[i];
@@ -71,7 +71,7 @@ void CharacterArray::insert(char c, int index){
         resizeArray();
     }
 
-    for(int i = itemCount + 1; i >= index; --i){
+    for(int i = itemCount; i >= index; --i){
         str[i + 1] = str[i];
     }
 
@@ -123,7 +123,7 @@ char CharacterArray::removeAt(int index){
 
     char returnChar = str[index];
 
-    for(int i = index; i <= itemCount + 1; ++i){
+    for(int i = index; i < itemCount; ++i){
         str[i] = str[i + 1];
     }
 
@@ -166,7 +166,7 @@ char* CharacterArray::substring(int startIndex, int length){
         throw IndexOutOfBoundsException();
     }
 
-    char* sub = new char[length];
+    char* sub = new char[length + 1];
 
     for(int i = startIndex; i < startIndex + length; ++i){
         sub[i - startIndex] = str[i];
@@ -181,12 +181,8 @@ char* CharacterArray::substring(int startIndex, int length){
 ostream& operator <<(ostream& out, const CharacterArray& ca) {
 
     int i = 0;
-    while(true){
-        if(ca.str[i] != '\0'){
-            out << ca.str[i];
-        }else if(ca.str[i] == '\0'){
-            break;
-        }
+    while(ca.str[i] != '\0'){
+        out << ca.str[i];
         i++;
     }
 
