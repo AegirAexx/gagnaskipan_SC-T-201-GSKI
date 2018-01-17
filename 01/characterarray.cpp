@@ -11,16 +11,16 @@ CharacterArray::CharacterArray(){
 
 CharacterArray::CharacterArray(char* inStr, int length){
 
-    capacity = length + 1;  //Breytti her i length + 1, er tad ekki rett??
+    capacity = length;
     itemCount = 0;
-    str = new char[capacity];
+    str = new char[capacity + 1];
 
     for(int i = 0; i < length; ++i){
         str[i] = inStr[i];
         itemCount++;
     }
 
-    str[capacity - 1] = '\0';  //Breytti her i capacity - 1
+    str[capacity] = '\0';
 
 }
 
@@ -51,12 +51,12 @@ void CharacterArray::append(char c){
         str[itemCount] = c;
         str[itemCount + 1] = '\0';
     }else{
-
-        if((itemCount + 1) >= capacity){  //Er forsendan fyrir tvi ad nota resize fallid ekki eitthvad vitlaus hja okkur? //breytti ur itemCount - 1 yfir i itemCount + 1... er tad ekki rett hugsad??
-        resizeArray();
+        // Tok ut "=" merkid ((itemCount + 1) >= capacity)
+        if((itemCount + 1) > capacity){
+            resizeArray();
         }
         str[itemCount] = c;
-        str[itemCount + 1] = '\0';    //breytti her (var + 1 og + 2)
+        str[itemCount + 1] = '\0';
     }
 
     itemCount++;
@@ -64,12 +64,12 @@ void CharacterArray::append(char c){
 }
 
 void CharacterArray::insert(char c, int index){
-
-    if(index < 0 || index > itemCount){                  //Baetti tessu inn
+    // setti inn "=" (index >= itemCount)
+    if(index < 0 || index >= itemCount){
         throw IndexOutOfBoundsException();
     }
 
-    if(itemCount + 1 >= capacity){  //breytti ur itemCount - 1 yfir i itemCount + 1... er tad ekki rett hugsad??
+    if(itemCount + 1 >= capacity){
         resizeArray();
     }
 
@@ -84,28 +84,35 @@ void CharacterArray::insert(char c, int index){
 }
 
 void CharacterArray::setAt(char c, int index){
-
-    if(index < capacity){
-        str[index] = c;
+    // Setti inn IndexOutOfBoundsException()
+    if(index < 0 || index >= itemCount){
+        throw IndexOutOfBoundsException();
     }
+    
+    str[index] = c;
+
+    // if(index < capacity){
+    //     str[index] = c;
+    // }
 
 }
 
 char CharacterArray::getAt(int index) const{
-
-    if(index < 0 || index > itemCount){                  //Baetti tessu inn
+    // setti inn "=" (index >= itemCount)
+    if(index < 0 || index >= itemCount){
         throw IndexOutOfBoundsException();
     }
 
-    if(index < capacity){
-        return str[index];
-    }
+    return str[index];
+
+    // if(index < capacity){
+    //     return str[index];
+    // }
 
 }
 
 char CharacterArray::popBack(){
 
-    //Example of throwing an exception
     if(isEmpty()){
         throw EmptyException();
     }
@@ -119,6 +126,10 @@ char CharacterArray::popBack(){
 }
 
 char CharacterArray::removeAt(int index){
+    // Setti inn IndexOutOfBoundsException()
+    if(index < 0 || index >= itemCount){
+        throw IndexOutOfBoundsException();
+    }
 
     char returnChar = str[index];
 
@@ -149,15 +160,15 @@ bool CharacterArray::isEmpty(){
 
     if(str[0] == '\0'){
         return true;
-    }else{
-        return false;
     }
+    
+    return false;
 
 }
 
 char* CharacterArray::substring(int startIndex, int length){
-
-    if(startIndex < 0 || startIndex > itemCount){                  //Baetti tessu inn
+    // setti inn "=" (index >= itemCount)
+    if(startIndex < 0 || startIndex >= itemCount){                  //Baetti tessu inn
         throw IndexOutOfBoundsException();
     }
 
@@ -165,13 +176,13 @@ char* CharacterArray::substring(int startIndex, int length){
         throw IndexOutOfBoundsException();
     }
 
-    char* sub = new char[length + 1];
+    char* sub = new char[length];
 
     for(int i = startIndex; i < startIndex + length; ++i){
         sub[i - startIndex] = str[i];
     }
 
-    sub[length + 1] = '\0';
+    sub[length] = '\0';
 
     return sub;
 
