@@ -65,11 +65,11 @@ void CharacterArray::append(char c){
 
 void CharacterArray::insert(char c, int index){
     // setti inn "=" (index >= itemCount)
-    if(index < 0 || index >= itemCount){
+    if(index < 0 || index > itemCount){
         throw IndexOutOfBoundsException();
     }
 
-    if(itemCount + 1 >= capacity){
+    if(itemCount + 1 > capacity){
         resizeArray();
     }
 
@@ -88,7 +88,7 @@ void CharacterArray::setAt(char c, int index){
     if(index < 0 || index >= itemCount){
         throw IndexOutOfBoundsException();
     }
-    
+
     str[index] = c;
 
     // if(index < capacity){
@@ -161,7 +161,7 @@ bool CharacterArray::isEmpty(){
     if(str[0] == '\0'){
         return true;
     }
-    
+
     return false;
 
 }
