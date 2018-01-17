@@ -5,7 +5,7 @@ CharacterArray::CharacterArray(){
     capacity = INITIAL_CAPACITY;
     itemCount = 0;
     str = new char[capacity];
-    str[0] = '\0';  //Breytti tessu ur str[capacity - 1]
+    str[0] = '\0';
 
 }
 

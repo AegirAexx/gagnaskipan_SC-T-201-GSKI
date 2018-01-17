@@ -8,7 +8,7 @@ using namespace std;
 class IndexOutOfBoundsException{};
 class EmptyException{};
 
-const int INITIAL_CAPACITY = 4;
+constexpr int INITIAL_CAPACITY = 4;
 
 class CharacterArray{
     public:
