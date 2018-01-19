@@ -1,0 +1,322 @@
+printing array
+CharacterArray: ""
+string length: 0
+
+append: 'k'
+CharacterArray: "k"
+string length: 1
+
+insert: 'a' at index: 0
+CharacterArray: "ak"
+string length: 2
+
+set: 'j' at index: 1
+CharacterArray: "aj"
+string length: 2
+
+get character at index: 1
+Returned value: 'j'
+
+insert: 'r' at index: 1
+CharacterArray: "arj"
+string length: 3
+
+popping character from back
+Returned value: 'j'
+CharacterArray: "ar"
+string length: 2
+
+remove character at index: 0
+Returned value: 'a'
+CharacterArray: "r"
+string length: 1
+
+clearing array
+CharacterArray: ""
+string length: 0
+
+array is empty
+
+
+
+printing array
+CharacterArray: "qre"
+string length: 3
+
+substring from 3 of length 0
+Returned array: ""
+
+substring from 0 of length 3
+Returned array: "qre"
+
+substring from 0 of length 1
+Returned array: "q"
+
+substring from 1 of length 2
+Returned array: "re"
+
+substring from 4 of length 0
+index out of bounds
+
+substring from 3 of length 1
+index out of bounds
+
+substring from 3 of length 3
+index out of bounds
+
+printing array
+CharacterArray: ""
+string length: 0
+
+insert: 'a' at index: 1
+index out of bounds
+string length: 0
+
+insert: 'a' at index: 0
+CharacterArray: "a"
+string length: 1
+
+insert: 'b' at index: 1
+CharacterArray: "ab"
+string length: 2
+
+insert: 'c' at index: 0
+CharacterArray: "cab"
+string length: 3
+
+insert: 'd' at index: 4
+index out of bounds
+string length: 3
+
+insert: ' ' at index: 3
+CharacterArray: "cab "
+string length: 4
+
+insert: 'd' at index: 4
+CharacterArray: "cab d"
+string length: 5
+
+insert: 'l' at index: 2
+CharacterArray: "calb d"
+string length: 6
+
+insert: 'e' at index: 3
+CharacterArray: "caleb d"
+string length: 7
+
+insert: 'e' at index: 7
+CharacterArray: "caleb de"
+string length: 8
+
+insert: 'a' at index: 7
+CharacterArray: "caleb dae"
+string length: 9
+
+insert: 'k' at index: 8
+CharacterArray: "caleb dake"
+string length: 10
+
+insert: 'r' at index: 7
+CharacterArray: "caleb drake"
+string length: 11
+
+insert: 's' at index: -1
+index out of bounds
+string length: 11
+
+clearing array
+CharacterArray: ""
+string length: 0
+
+append: ' '
+CharacterArray: " "
+string length: 1
+
+append: 'm'
+CharacterArray: " m"
+string length: 2
+
+append: 'o'
+CharacterArray: " mo"
+string length: 3
+
+append: 'r'
+CharacterArray: " mor"
+string length: 4
+
+append: 'e'
+CharacterArray: " more"
+string length: 5
+
+append: ' '
+CharacterArray: " more "
+string length: 6
+
+append: 's'
+CharacterArray: " more s"
+string length: 7
+
+append: 't'
+CharacterArray: " more st"
+string length: 8
+
+append: 'u'
+CharacterArray: " more stu"
+string length: 9
+
+append: 'f'
+CharacterArray: " more stuf"
+string length: 10
+
+append: 'f'
+CharacterArray: " more stuff"
+string length: 11
+
+set: 'g' at index: 12
+index out of bounds
+string length: 11
+
+set: 'g' at index: -1
+index out of bounds
+string length: 11
+
+set: 'g' at index: 98
+index out of bounds
+string length: 11
+
+set: 'g' at index: 11
+index out of bounds
+string length: 11
+
+get character at index: 3
+Returned value: 'r'
+
+get character at index: 12
+index out of bounds
+
+get character at index: 17
+index out of bounds
+
+get character at index: 16
+index out of bounds
+
+get character at index: 9
+Returned value: 'f'
+
+get character at index: 22
+index out of bounds
+
+get character at index: 0
+Returned value: ' '
+
+get character at index: -9
+index out of bounds
+
+get character at index: 74
+index out of bounds
+
+get character at index: 11
+index out of bounds
+
+append: ' '
+CharacterArray: " more stuff "
+string length: 12
+
+append: 'p'
+CharacterArray: " more stuff p"
+string length: 13
+
+append: 'o'
+CharacterArray: " more stuff po"
+string length: 14
+
+append: 'p'
+CharacterArray: " more stuff pop"
+string length: 15
+
+popping character from back
+Returned value: 'p'
+CharacterArray: " more stuff po"
+string length: 14
+
+popping character from back
+Returned value: 'o'
+CharacterArray: " more stuff p"
+string length: 13
+
+popping character from back
+Returned value: 'p'
+CharacterArray: " more stuff "
+string length: 12
+
+clearing array
+CharacterArray: ""
+string length: 0
+
+popping character from back
+array is empty
+string length: 0
+
+printing array
+CharacterArray: "dagurdagur"
+string length: 10
+
+remove character at index: 16
+index out of bounds
+string length: 10
+
+remove character at index: 5
+Returned value: 'd'
+CharacterArray: "daguragur"
+string length: 9
+
+remove character at index: 10
+index out of bounds
+string length: 9
+
+remove character at index: -5
+index out of bounds
+string length: 9
+
+remove character at index: 45
+index out of bounds
+string length: 9
+
+remove character at index: 0
+Returned value: 'd'
+CharacterArray: "aguragur"
+string length: 8
+
+substring from 2 of length 6
+Returned array: "uragur"
+
+substring from 6 of length 5
+index out of bounds
+
+substring from 0 of length 5
+Returned array: "agura"
+
+substring from 19 of length 7
+index out of bounds
+
+substring from -2 of length 4
+index out of bounds
+
+substring from 4 of length 0
+Returned array: ""
+
+substring from -4 of length 2
+index out of bounds
+
+substring from -4 of length -1
+index out of bounds
+
+substring from -4 of length 0
+index out of bounds
+
+clearing array
+CharacterArray: ""
+string length: 0
+
+array is empty
+
