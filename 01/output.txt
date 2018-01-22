@@ -1,3 +1,5 @@
+// Output from the unit test <CharacterArray>
+
 printing array
 CharacterArray: ""
 string length: 0
