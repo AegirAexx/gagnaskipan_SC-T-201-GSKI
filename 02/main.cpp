@@ -130,6 +130,5 @@ int main() {
 
     clearQueue(q2);
 
-
     return 0;
 }
