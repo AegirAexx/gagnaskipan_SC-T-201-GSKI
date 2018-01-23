@@ -2,31 +2,21 @@
 #define NODE_H
 
 #include "measurement.h"
-#include <string>
-#include <iostream>
 
 class EmptyException{};
 
-class Node {
-  public:
-    Node();
-    Node(Measurement data);
-    Node(Measurement data, Node *node);
+class Node{
+    public:
+        Node();
+        Node(Measurement data);
+        Node(Measurement data, Node *node);
 
-    virtual ~Node();
+        virtual ~Node();
 
-    Node *next;
-    Measurement data;
+        friend std::ostream& operator << (std::ostream& out, const Node& node);
 
-    friend ostream& operator << (ostream& out, const Node& node);
-
-  private:
-
-
-
+        Node *next;
+        Measurement data;
 };
-
-
-
 
 #endif // NODE_H

@@ -1,11 +1,10 @@
 #include <iostream>
-
 #include "stack.h"
 #include "queue.h"
 
 using namespace std;
 
-void pushOntoStack(Stack &s, string name, double value) {
+void pushOntoStack(Stack &s, string name, double value){
 
     cout << "pushing measurement onto stack: name: " << name << ", value: " << value << endl;
     s.push(Measurement(name, value));
@@ -14,14 +13,14 @@ void pushOntoStack(Stack &s, string name, double value) {
     cout << endl;
 }
 
-void popOffStack(Stack &s) {
+void popOffStack(Stack &s){
 
     cout << "popping measurement off stack" << endl;
-    try {
+    try{
         Measurement m = s.pop();
         cout << "value returned: " << m << endl;
     }
-    catch(EmptyException) {
+    catch(EmptyException){
         cout << "caught EmptyException" << endl;
     }
     cout << "current stack: " << s << endl;
@@ -29,10 +28,10 @@ void popOffStack(Stack &s) {
     cout << endl;
 }
 
-void clearStack(Stack &s) {
+void clearStack(Stack &s){
 
     cout << "popping every element off of stack" << endl;
-    while(!s.isEmpty()) {
+    while(!s.isEmpty()){
         s.pop();
     }
     cout << "current stack: " << s << endl;
@@ -40,7 +39,7 @@ void clearStack(Stack &s) {
     cout << endl;
 }
 
-void addToQueue(Queue &q, string name, double value) {
+void addToQueue(Queue &q, string name, double value){
 
     cout << "adding measurement to queue: name: " << name << ", value: " << value << endl;
     q.add(Measurement(name, value));
@@ -49,14 +48,14 @@ void addToQueue(Queue &q, string name, double value) {
     cout << endl;
 }
 
-void removeFromQueue(Queue &q) {
+void removeFromQueue(Queue &q){
 
-    try {
+    try{
         cout << "removing measurement from queue" << endl;
         Measurement m = q.remove();
         cout << "value returned: " << m << endl;
     }
-    catch(EmptyException) {
+    catch(EmptyException){
         cout << "caught EmptyException" << endl;
     }
     cout << "current queue: " << q << endl;
@@ -64,10 +63,10 @@ void removeFromQueue(Queue &q) {
     cout << endl;
 }
 
-void clearQueue(Queue &q) {
+void clearQueue(Queue &q){
 
     cout << "removing every element from queue" << endl;
-    while(!q.isEmpty()) {
+    while(!q.isEmpty()){
         q.remove();
     }
     cout << "current queue: " << q << endl;
@@ -75,7 +74,7 @@ void clearQueue(Queue &q) {
     cout << endl;
 }
 
-int main() {
+int main(){
 
     cout << endl << "STACK" << endl << endl;
 

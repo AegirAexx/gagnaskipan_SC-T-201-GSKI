@@ -1,34 +1,25 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include "measurement.h"
 #include "node.h"
-#include <ostream>
 
+class Stack{
+    public:
+        Stack();
+        virtual ~Stack();
 
-class Stack {
-  public:
-    Stack();
-    virtual ~Stack();
+        void push(Measurement data);
+        Measurement pop();
 
-    void push(Measurement data);
-    Measurement pop();
+        int size() const;
+        bool isEmpty() const;
 
-    int size() const;
+        friend std::ostream& operator << (std::ostream& out, const Stack& s);
 
-    bool isEmpty() const;
-
-    friend ostream& operator << (ostream& out, const Stack& s);
-
-  private:
-    Node *head;
-    Node *tail;
-    int counter;
-
-
+    private:
+        Node *head;
+        Node *tail;
+        int counter;
 };
-
-
-
 
 #endif // STACK_H

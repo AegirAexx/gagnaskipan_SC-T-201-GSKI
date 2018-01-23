@@ -4,23 +4,18 @@
 #include <ostream>
 #include <string>
 
-using namespace std;
-
-class Measurement
-{
+class Measurement{
     public:
-        Measurement(string name, double value) : name(name), value(value){};
+        Measurement(std::string name, double value) : name(name), value(value){};
         virtual ~Measurement(){};
 
-        friend ostream& operator <<(ostream &out, const Measurement m){
+        friend std::ostream& operator <<(std::ostream &out, const Measurement m){
             out << "[" << m.name << ": " << m.value << "]";
             return out;
         };
 
-    protected:
-
     private:
-        string name;
+        std::string name;
         double value;
 };
 
