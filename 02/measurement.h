@@ -6,8 +6,8 @@
 
 class Measurement{
     public:
-        Measurement(std::string name, double value) : name(name), value(value){};
-        virtual ~Measurement(){};
+        Measurement(std::string name, double value) : name(name), value(value) {};
+        virtual ~Measurement() {};
 
         friend std::ostream& operator <<(std::ostream &out, const Measurement m){
             out << "[" << m.name << ": " << m.value << "]";
