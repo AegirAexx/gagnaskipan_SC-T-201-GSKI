@@ -9,3 +9,4 @@ fi
 read
 ###
 # valgrind --leak-check=full --track-origins=yes ./char 
+# valgrind --leak-check=full --track-origins=yes ./sq 2> output_valgrind.txt  
