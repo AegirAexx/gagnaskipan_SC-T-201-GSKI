@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1516834480 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\main.cpp
+1516834769 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\main.cpp
 	<iostream>
 	"stack.h"
 	"queue.h"

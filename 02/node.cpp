@@ -10,7 +10,7 @@ Node::Node(Measurement data, Node *next): next(next), data(data) {}
 
 Node::~Node() {};
 
-std::ostream& operator << (std::ostream& out, const Node& node){
+/*std::ostream& operator << (std::ostream& out, const Node& node){
     out << node.data;
     return out;
-}
+}*/
