@@ -32,7 +32,7 @@ void Queue::add(Measurement data){
         tail = tail->next;
         counter++;
     }*/
-    Node *tmpNode = new Node(data, head);
+    Node *tmpNode = new Node(data);
 
     if(head == nullptr){
         head = tmpNode;
