@@ -1,3 +1,5 @@
+//aegir15@ru.is & dagur17@ru.is
+
 #include "stack.h"
 
 Stack::Stack(): head(nullptr), tail(nullptr), counter(0) {}

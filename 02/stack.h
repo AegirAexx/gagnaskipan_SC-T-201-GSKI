@@ -1,3 +1,5 @@
+//aegir15@ru.is & dagur17@ru.is
+
 #ifndef STACK_H
 #define STACK_H
 

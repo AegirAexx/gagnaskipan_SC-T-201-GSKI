@@ -1,34 +1,28 @@
 # depslib dependency file v1.0
-1516660740 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\main.cpp
+1516826880 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\main.cpp
 	<iostream>
 	"stack.h"
 	"queue.h"
 
-1516660614 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\stack.h
-	"measurement.h"
+1516827908 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\stack.h
 	"node.h"
-	<ostream>
 
-1516660689 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\queue.h
-	"measurement.h"
+1516827908 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\queue.h
 	"node.h"
-	<ostream>
 
-1516662759 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\queue.cpp
+1516827908 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\queue.cpp
 	"queue.h"
 
-1516660997 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\stack.cpp
+1516827908 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\stack.cpp
 	"stack.h"
 
-1516653224 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\measurement.h
+1516827908 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\measurement.h
 	<ostream>
 	<string>
 
-1516660614 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\node.h
+1516827908 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\node.h
 	"measurement.h"
-	<string>
-	<iostream>
 
-1516658348 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\node.cpp
+1516827908 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\02\node.cpp
 	"node.h"
 

@@ -1,3 +1,5 @@
+//aegir15@ru.is & dagur17@ru.is
+
 #ifndef NODE_H
 #define NODE_H
 

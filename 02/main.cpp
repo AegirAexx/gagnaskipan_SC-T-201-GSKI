@@ -1,3 +1,5 @@
+//aegir15@ru.is & dagur17@ru.is
+
 #include <iostream>
 #include "stack.h"
 #include "queue.h"
@@ -74,8 +76,18 @@ void clearQueue(Queue &q){
     cout << endl;
 }
 
-int main(){
+void unitTestEmpty(const Queue &q){
 
+    if(q.isEmpty()){
+        cout << "Empty: true" << endl;
+    }
+    else{
+        cout << "Empty: false" << endl;
+    }
+}
+
+int main(){
+/*
     cout << endl << "STACK" << endl << endl;
 
     Stack s1;
@@ -128,6 +140,35 @@ int main(){
     addToQueue(q2, "eee", 55.5);
 
     clearQueue(q2);
+*/
+
+//Unit test Mooshak:
+
+    Queue q;
+
+    removeFromQueue(q);
+
+    cout << q << endl;
+
+    addToQueue(q, "George Hazzard", 201.27);
+    cout << q << endl;
+
+    removeFromQueue(q);
+    cout << q << endl;
+
+    unitTestEmpty(q);
+
+    cout << "size: " << q.size() << endl;
+
+    addToQueue(q, "John Stunkard", 142.15);
+    cout << q << endl;
+
+    cout << "size: " << q.size() << endl;
+
+    unitTestEmpty(q);
+
+
+
 
     return 0;
 }

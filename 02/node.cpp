@@ -1,3 +1,5 @@
+//aegir15@ru.is & dagur17@ru.is
+
 #include "node.h"
 
 Node::Node(): next(nullptr), data("", 0.0) {}
