@@ -1,14 +1,380 @@
-==6464== Memcheck, a memory error detector
-==6464== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6464== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==6464== Command: ./sq
-==6464== 
-==6464== 
-==6464== HEAP SUMMARY:
-==6464==     in use at exit: 0 bytes in 0 blocks
-==6464==   total heap usage: 24 allocs, 24 frees, 75,266 bytes allocated
-==6464== 
-==6464== All heap blocks were freed -- no leaks are possible
-==6464== 
-==6464== For counts of detected and suppressed errors, rerun with: -v
-==6464== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==6517== Memcheck, a memory error detector
+==6517== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==6517== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==6517== Command: ./sq
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BAB0: _Alloc_hider (basic_string.h:149)
+==6517==    by 0x10BAB0: basic_string (basic_string.h:439)
+==6517==    by 0x10BAB0: Measurement (measurement.h:9)
+==6517==    by 0x10BAB0: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec1a8 is 24 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BAB4: basic_string (basic_string.h:440)
+==6517==    by 0x10BAB4: Measurement (measurement.h:9)
+==6517==    by 0x10BAB4: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec1b0 is 32 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x4C33BB0: memmove (vg_replace_strmem.c:1258)
+==6517==    by 0x10B766: copy (char_traits.h:350)
+==6517==    by 0x10B766: _S_copy (basic_string.h:340)
+==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
+==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
+==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
+==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
+==6517==    by 0x10BACC: basic_string (basic_string.h:440)
+==6517==    by 0x10BACC: Measurement (measurement.h:9)
+==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec1b8 is 40 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 2
+==6517==    at 0x4C33B20: memmove (vg_replace_strmem.c:1258)
+==6517==    by 0x10B766: copy (char_traits.h:350)
+==6517==    by 0x10B766: _S_copy (basic_string.h:340)
+==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
+==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
+==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
+==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
+==6517==    by 0x10BACC: basic_string (basic_string.h:440)
+==6517==    by 0x10BACC: Measurement (measurement.h:9)
+==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec1c0 is 48 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 2
+==6517==    at 0x4C33B2F: memmove (vg_replace_strmem.c:1258)
+==6517==    by 0x10B766: copy (char_traits.h:350)
+==6517==    by 0x10B766: _S_copy (basic_string.h:340)
+==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
+==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
+==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
+==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
+==6517==    by 0x10BACC: basic_string (basic_string.h:440)
+==6517==    by 0x10BACC: Measurement (measurement.h:9)
+==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec1c4 is 52 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BACD: Measurement (measurement.h:9)
+==6517==    by 0x10BACD: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec1c8 is 56 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BB5E: operator<<(std::ostream&, Queue const&) (queue.cpp:58)
+==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
+==6517==    by 0x109303: main (main.cpp:157)
+==6517==  Address 0x5aec198 is 8 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BAB0: _Alloc_hider (basic_string.h:149)
+==6517==    by 0x10BAB0: basic_string (basic_string.h:439)
+==6517==    by 0x10BAB0: Measurement (measurement.h:9)
+==6517==    by 0x10BAB0: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec1a8 is 24 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BAB4: basic_string (basic_string.h:440)
+==6517==    by 0x10BAB4: Measurement (measurement.h:9)
+==6517==    by 0x10BAB4: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec1b0 is 32 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x4C33BB0: memmove (vg_replace_strmem.c:1258)
+==6517==    by 0x10B766: copy (char_traits.h:350)
+==6517==    by 0x10B766: _S_copy (basic_string.h:340)
+==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
+==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
+==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
+==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
+==6517==    by 0x10BACC: basic_string (basic_string.h:440)
+==6517==    by 0x10BACC: Measurement (measurement.h:9)
+==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec1b8 is 40 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 2
+==6517==    at 0x4C33B20: memmove (vg_replace_strmem.c:1258)
+==6517==    by 0x10B766: copy (char_traits.h:350)
+==6517==    by 0x10B766: _S_copy (basic_string.h:340)
+==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
+==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
+==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
+==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
+==6517==    by 0x10BACC: basic_string (basic_string.h:440)
+==6517==    by 0x10BACC: Measurement (measurement.h:9)
+==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec1c0 is 48 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 2
+==6517==    at 0x4C33B2F: memmove (vg_replace_strmem.c:1258)
+==6517==    by 0x10B766: copy (char_traits.h:350)
+==6517==    by 0x10B766: _S_copy (basic_string.h:340)
+==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
+==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
+==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
+==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
+==6517==    by 0x10BACC: basic_string (basic_string.h:440)
+==6517==    by 0x10BACC: Measurement (measurement.h:9)
+==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec1c4 is 52 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BACD: Measurement (measurement.h:9)
+==6517==    by 0x10BACD: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec1c8 is 56 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10BB5E: operator<<(std::ostream&, Queue const&) (queue.cpp:58)
+==6517==    by 0x109325: main (main.cpp:158)
+==6517==  Address 0x5aec198 is 8 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
+==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
+==6517==    by 0x10928C: main (main.cpp:153)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x10925A: main (main.cpp:151)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10B65A: Queue::~Queue() (queue.cpp:9)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Address 0x5aed5b8 is 8 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x1095F9: main (main.cpp:184)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10B650: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Address 0x5aed5b0 is 0 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x1095F9: main (main.cpp:184)
+==6517== 
+==6517== Invalid write of size 8
+==6517==    at 0x10B27B: ~Node (node.cpp:11)
+==6517==    by 0x10B27B: Node::~Node() (node.cpp:11)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Address 0x5aed5b0 is 0 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x1095F9: main (main.cpp:184)
+==6517== 
+==6517== Invalid write of size 8
+==6517==    at 0x10B285: ~Measurement (measurement.h:12)
+==6517==    by 0x10B285: ~Node (node.cpp:11)
+==6517==    by 0x10B285: Node::~Node() (node.cpp:11)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Address 0x5aed5c0 is 16 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x1095F9: main (main.cpp:184)
+==6517== 
+==6517== Invalid read of size 8
+==6517==    at 0x10B289: ~Measurement (measurement.h:12)
+==6517==    by 0x10B289: ~Node (node.cpp:11)
+==6517==    by 0x10B289: Node::~Node() (node.cpp:11)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Address 0x5aed5c8 is 24 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x1095F9: main (main.cpp:184)
+==6517== 
+==6517== Invalid free() / delete / delete[] / realloc()
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Address 0x5aed5b0 is 0 bytes inside a block of size 64 free'd
+==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
+==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  Block was alloc'd at
+==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
+==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
+==6517==    by 0x1095F9: main (main.cpp:184)
+==6517== 
+==6517== 
+==6517== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==6517==  Access not within mapped region at address 0x8
+==6517==    at 0x10B65A: Queue::~Queue() (queue.cpp:9)
+==6517==    by 0x109883: main (main.cpp:147)
+==6517==  If you believe this happened as a result of a stack
+==6517==  overflow in your program's main thread (unlikely but
+==6517==  possible), you can try to increase the size of the
+==6517==  main thread stack using the --main-stacksize= flag.
+==6517==  The main thread stack size used in this run was 8388608.
+==6517== 
+==6517== HEAP SUMMARY:
+==6517==     in use at exit: 0 bytes in 0 blocks
+==6517==   total heap usage: 122 allocs, 123 frees, 76,533 bytes allocated
+==6517== 
+==6517== All heap blocks were freed -- no leaks are possible
+==6517== 
+==6517== For counts of detected and suppressed errors, rerun with: -v
+==6517== ERROR SUMMARY: 23 errors from 20 contexts (suppressed: 0 from 0)

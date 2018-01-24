@@ -147,28 +147,64 @@ int main(){
     Queue q;
 
     removeFromQueue(q);
-
     cout << q << endl;
-
     addToQueue(q, "George Hazzard", 201.27);
     cout << q << endl;
-
     removeFromQueue(q);
     cout << q << endl;
-
     unitTestEmpty(q);
-
     cout << "size: " << q.size() << endl;
-
     addToQueue(q, "John Stunkard", 142.15);
     cout << q << endl;
-
     cout << "size: " << q.size() << endl;
-
     unitTestEmpty(q);
-
-
-
+    unitTestEmpty(q);
+    addToQueue(q, "John Pierro", 199.0);
+    cout << q << endl;
+    unitTestEmpty(q);
+    addToQueue(q, "Johnnthan Geisler", 160.11);
+    cout << q << endl;
+    addToQueue(q, "Jay Blaze", 184.95);
+    cout << q << endl;
+    unitTestEmpty(q);
+    unitTestEmpty(q);
+    addToQueue(q, "Maria MacCorrmic", 137.1);
+    cout << q << endl;
+    addToQueue(q, "Marrianne Jones", 156.44);
+    cout << q << endl;
+    cout << "size: " << q.size() << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    addToQueue(q, "Gerorgia Wilkensen", 206.65);
+    cout << q << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    unitTestEmpty(q);
+    unitTestEmpty(q);
+    addToQueue(q, "Mary Stuart", 139.25);
+    cout << q << endl;
+    unitTestEmpty(q);
+    cout << "size: " << q.size() << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    addToQueue(q, "Fredrik Heythens", 159.09);
+    cout << q << endl;
+    addToQueue(q, "James Bonnilla", 127.65);
+    unitTestEmpty(q);
+    unitTestEmpty(q);
+    cout << "size: " << q.size() << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    addToQueue(q, "Kaloline Templton", 148.62);
+    cout << q << endl;
+    cout << "size: " << q.size() << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    removeFromQueue(q);
+    cout << q << endl;
+    cout << "size: " << q.size() << endl;
 
     return 0;
 }
