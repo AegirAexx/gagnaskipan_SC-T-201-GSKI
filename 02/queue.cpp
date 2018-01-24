@@ -5,16 +5,24 @@
 Queue::Queue(): head(nullptr), tail(nullptr), counter(0) {}
 
 Queue::~Queue(){
-
+/*
     for(Node *tmpNode = head; tmpNode != nullptr; head = head->next){
         delete tmpNode;
         tmpNode = head;
+    }*/
+
+    Node *node = head;
+    while(node != nullptr){
+
+        head = head->next;
+        delete node;
+        node = head;
     }
 }
 
 void Queue::add(Measurement data){
 
-    if(head == nullptr){
+    /*if(head == nullptr){
         Node *tmpNode = new Node(data, tail);
         head = tmpNode;
         tail = tmpNode;
@@ -23,7 +31,14 @@ void Queue::add(Measurement data){
         tail->next = new Node(data);
         tail = tail->next;
         counter++;
+    }*/
+    Node *tmpNode = new Node(data, head);
+
+    if(head == nullptr){
+        head = tmpNode;
     }
+    tail = tmpNode;
+    counter++;
 }
 
 Measurement Queue::remove(){
@@ -46,7 +61,7 @@ int Queue::size() const{
 
 bool Queue::isEmpty() const{
 
-    if(counter == 0){
+    if(head == nullptr){
         return true;
     }else{
         return false;
@@ -55,8 +70,23 @@ bool Queue::isEmpty() const{
 
 std::ostream& operator << (std::ostream& out, const Queue& q){
 
+
      for(Node *node = q.head; node != nullptr; node = node->next){
         out << node->data << " ";
     }
+/*
+    Node *node = q.head;
+
+    while(node != nullptr){
+
+        out << q << " ";
+        node = node->next;
+    }
+*/
+    /*for(int i = 0; i < q.size(); i++){
+        out << q.head->node->data;
+    }*/
+
+
     return out;
 }

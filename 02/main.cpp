@@ -87,7 +87,7 @@ void unitTestEmpty(const Queue &q){
 }
 
 int main(){
-/*
+
     cout << endl << "STACK" << endl << endl;
 
     Stack s1;
@@ -132,6 +132,10 @@ int main(){
 
     clearStack(s2);
 
+    pushOntoStack(s2, "eee", 55.5);
+    pushOntoStack(s2, "ddd", 44.4);
+    pushOntoStack(s2, "eee", 55.5);
+
     Queue q2;
     addToQueue(q2, "aaa", 11.1);
     addToQueue(q2, "bbb", 22.2);
@@ -140,7 +144,9 @@ int main(){
     addToQueue(q2, "eee", 55.5);
 
     clearQueue(q2);
-*/
+
+    addToQueue(q2, "ddd", 44.4);
+    addToQueue(q2, "eee", 55.5);
 
 //Unit test Mooshak:
 
@@ -149,11 +155,15 @@ int main(){
     removeFromQueue(q);
     cout << q << endl;
     addToQueue(q, "George Hazzard", 201.27);
+    addToQueue(q, "John Stunkard", 142.15);
     cout << q << endl;
     removeFromQueue(q);
     cout << q << endl;
     unitTestEmpty(q);
     cout << "size: " << q.size() << endl;
+    cout << "Queue: " << q << endl;
+
+
     addToQueue(q, "John Stunkard", 142.15);
     cout << q << endl;
     cout << "size: " << q.size() << endl;

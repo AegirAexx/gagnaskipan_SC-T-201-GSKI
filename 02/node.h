@@ -15,7 +15,7 @@ class Node{
 
         virtual ~Node();
 
-        friend std::ostream& operator << (std::ostream& out, const Node& node);
+        //friend std::ostream& operator << (std::ostream& out, const Node& node);
 
         Node *next;
         Measurement data;

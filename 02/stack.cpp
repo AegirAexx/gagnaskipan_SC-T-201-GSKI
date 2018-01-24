@@ -5,10 +5,18 @@
 Stack::Stack(): head(nullptr), tail(nullptr), counter(0) {}
 
 Stack::~Stack(){
-
+/*
     for(Node *tmpNode = head; tmpNode != nullptr; head = head->next){
         delete tmpNode;
         tmpNode = head;
+    }*/
+
+    Node *node = head;
+    while(node != nullptr){
+
+        head = head->next;
+        delete node;
+        node = head;
     }
 }
 
@@ -42,7 +50,7 @@ int Stack::size() const{
 
 bool Stack::isEmpty() const{
 
-    if(counter == 0){
+    if(head == nullptr){
         return true;
     }else{
         return false;
