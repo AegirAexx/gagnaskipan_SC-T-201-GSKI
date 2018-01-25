@@ -1,0 +1,43 @@
+void unitAddress(Queue &q){
+
+    cout << endl << "-----------------" << endl << endl;
+    cout << "Head next: " << q.headPointer()->next << endl;
+    cout << "Tail next: " << q.tailPointer()->next << endl;
+    cout << endl << "-----------------" << endl << endl;
+    cout << "Head location: " << q.headPointer() << endl;
+    cout << "Tail location: " << q.tailPointer() << endl;
+    cout << endl << "----------------------------------" << endl << endl;
+
+}
+    cout << endl << endl << "Unit test Pointer-Debug" << endl;
+    cout << endl << "-----------------" << endl << endl;
+    cout << endl << "QUEUE" << endl << endl;
+
+    Queue q4;
+
+    addToQueue(q4, "George Hazzard", 201.17);
+    unitAddress(q4);
+
+    addToQueue(q4, "Jon Jonsson", 202.27);
+    unitAddress(q4);
+
+    addToQueue(q4, "Gunna Gunnarsdottir", 203.37);
+    unitAddress(q4);
+
+    addToQueue(q4, "Blamann Svertingsson", 204.47);
+    unitAddress(q4);
+
+    addToQueue(q4, "Horst Lindenlauf", 205.57);
+    unitAddress(q4);
+
+// Unit test accessors
+Node& Queue::headPointer() const{
+    
+    return head;
+}
+
+Node& Queue::tailPointer() const{
+
+    return tail;
+}
+

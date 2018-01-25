@@ -1,380 +1,324 @@
-==6517== Memcheck, a memory error detector
-==6517== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6517== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==6517== Command: ./sq
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BAB0: _Alloc_hider (basic_string.h:149)
-==6517==    by 0x10BAB0: basic_string (basic_string.h:439)
-==6517==    by 0x10BAB0: Measurement (measurement.h:9)
-==6517==    by 0x10BAB0: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec1a8 is 24 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BAB4: basic_string (basic_string.h:440)
-==6517==    by 0x10BAB4: Measurement (measurement.h:9)
-==6517==    by 0x10BAB4: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec1b0 is 32 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x4C33BB0: memmove (vg_replace_strmem.c:1258)
-==6517==    by 0x10B766: copy (char_traits.h:350)
-==6517==    by 0x10B766: _S_copy (basic_string.h:340)
-==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
-==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
-==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
-==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
-==6517==    by 0x10BACC: basic_string (basic_string.h:440)
-==6517==    by 0x10BACC: Measurement (measurement.h:9)
-==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec1b8 is 40 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 2
-==6517==    at 0x4C33B20: memmove (vg_replace_strmem.c:1258)
-==6517==    by 0x10B766: copy (char_traits.h:350)
-==6517==    by 0x10B766: _S_copy (basic_string.h:340)
-==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
-==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
-==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
-==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
-==6517==    by 0x10BACC: basic_string (basic_string.h:440)
-==6517==    by 0x10BACC: Measurement (measurement.h:9)
-==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec1c0 is 48 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 2
-==6517==    at 0x4C33B2F: memmove (vg_replace_strmem.c:1258)
-==6517==    by 0x10B766: copy (char_traits.h:350)
-==6517==    by 0x10B766: _S_copy (basic_string.h:340)
-==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
-==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
-==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
-==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
-==6517==    by 0x10BACC: basic_string (basic_string.h:440)
-==6517==    by 0x10BACC: Measurement (measurement.h:9)
-==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec1c4 is 52 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BACD: Measurement (measurement.h:9)
-==6517==    by 0x10BACD: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec1c8 is 56 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BB5E: operator<<(std::ostream&, Queue const&) (queue.cpp:58)
-==6517==    by 0x10A777: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:48)
-==6517==    by 0x109303: main (main.cpp:157)
-==6517==  Address 0x5aec198 is 8 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BAB0: _Alloc_hider (basic_string.h:149)
-==6517==    by 0x10BAB0: basic_string (basic_string.h:439)
-==6517==    by 0x10BAB0: Measurement (measurement.h:9)
-==6517==    by 0x10BAB0: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec1a8 is 24 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BAB4: basic_string (basic_string.h:440)
-==6517==    by 0x10BAB4: Measurement (measurement.h:9)
-==6517==    by 0x10BAB4: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec1b0 is 32 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x4C33BB0: memmove (vg_replace_strmem.c:1258)
-==6517==    by 0x10B766: copy (char_traits.h:350)
-==6517==    by 0x10B766: _S_copy (basic_string.h:340)
-==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
-==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
-==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
-==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
-==6517==    by 0x10BACC: basic_string (basic_string.h:440)
-==6517==    by 0x10BACC: Measurement (measurement.h:9)
-==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec1b8 is 40 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 2
-==6517==    at 0x4C33B20: memmove (vg_replace_strmem.c:1258)
-==6517==    by 0x10B766: copy (char_traits.h:350)
-==6517==    by 0x10B766: _S_copy (basic_string.h:340)
-==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
-==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
-==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
-==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
-==6517==    by 0x10BACC: basic_string (basic_string.h:440)
-==6517==    by 0x10BACC: Measurement (measurement.h:9)
-==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec1c0 is 48 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 2
-==6517==    at 0x4C33B2F: memmove (vg_replace_strmem.c:1258)
-==6517==    by 0x10B766: copy (char_traits.h:350)
-==6517==    by 0x10B766: _S_copy (basic_string.h:340)
-==6517==    by 0x10B766: _S_copy_chars (basic_string.h:382)
-==6517==    by 0x10B766: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [clone .isra.19] (basic_string.tcc:225)
-==6517==    by 0x10BACC: _M_construct_aux<char*> (basic_string.h:236)
-==6517==    by 0x10BACC: _M_construct<char*> (basic_string.h:255)
-==6517==    by 0x10BACC: basic_string (basic_string.h:440)
-==6517==    by 0x10BACC: Measurement (measurement.h:9)
-==6517==    by 0x10BACC: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec1c4 is 52 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BACD: Measurement (measurement.h:9)
-==6517==    by 0x10BACD: operator<<(std::ostream&, Queue const&) (queue.cpp:59)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec1c8 is 56 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10BB5E: operator<<(std::ostream&, Queue const&) (queue.cpp:58)
-==6517==    by 0x109325: main (main.cpp:158)
-==6517==  Address 0x5aec198 is 8 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B99A: Queue::remove() (queue.cpp:37)
-==6517==    by 0x10AA2B: removeFromQueue(Queue&) (main.cpp:57)
-==6517==    by 0x10928C: main (main.cpp:153)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B8A3: Queue::add(Measurement) (queue.cpp:18)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x10925A: main (main.cpp:151)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10B65A: Queue::~Queue() (queue.cpp:9)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Address 0x5aed5b8 is 8 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x1095F9: main (main.cpp:184)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10B650: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Address 0x5aed5b0 is 0 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x1095F9: main (main.cpp:184)
-==6517== 
-==6517== Invalid write of size 8
-==6517==    at 0x10B27B: ~Node (node.cpp:11)
-==6517==    by 0x10B27B: Node::~Node() (node.cpp:11)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Address 0x5aed5b0 is 0 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x1095F9: main (main.cpp:184)
-==6517== 
-==6517== Invalid write of size 8
-==6517==    at 0x10B285: ~Measurement (measurement.h:12)
-==6517==    by 0x10B285: ~Node (node.cpp:11)
-==6517==    by 0x10B285: Node::~Node() (node.cpp:11)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Address 0x5aed5c0 is 16 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x1095F9: main (main.cpp:184)
-==6517== 
-==6517== Invalid read of size 8
-==6517==    at 0x10B289: ~Measurement (measurement.h:12)
-==6517==    by 0x10B289: ~Node (node.cpp:11)
-==6517==    by 0x10B289: Node::~Node() (node.cpp:11)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Address 0x5aed5c8 is 24 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x1095F9: main (main.cpp:184)
-==6517== 
-==6517== Invalid free() / delete / delete[] / realloc()
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Address 0x5aed5b0 is 0 bytes inside a block of size 64 free'd
-==6517==    at 0x4C2E60B: operator delete(void*) (vg_replace_malloc.c:576)
-==6517==    by 0x10B655: Queue::~Queue() (queue.cpp:10)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  Block was alloc'd at
-==6517==    at 0x4C2D54F: operator new(unsigned long) (vg_replace_malloc.c:334)
-==6517==    by 0x10B829: Queue::add(Measurement) (queue.cpp:23)
-==6517==    by 0x10A725: addToQueue(Queue&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double) (main.cpp:47)
-==6517==    by 0x1095F9: main (main.cpp:184)
-==6517== 
-==6517== 
-==6517== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==6517==  Access not within mapped region at address 0x8
-==6517==    at 0x10B65A: Queue::~Queue() (queue.cpp:9)
-==6517==    by 0x109883: main (main.cpp:147)
-==6517==  If you believe this happened as a result of a stack
-==6517==  overflow in your program's main thread (unlikely but
-==6517==  possible), you can try to increase the size of the
-==6517==  main thread stack using the --main-stacksize= flag.
-==6517==  The main thread stack size used in this run was 8388608.
-==6517== 
-==6517== HEAP SUMMARY:
-==6517==     in use at exit: 0 bytes in 0 blocks
-==6517==   total heap usage: 122 allocs, 123 frees, 76,533 bytes allocated
-==6517== 
-==6517== All heap blocks were freed -- no leaks are possible
-==6517== 
-==6517== For counts of detected and suppressed errors, rerun with: -v
-==6517== ERROR SUMMARY: 23 errors from 20 contexts (suppressed: 0 from 0)
+
+ Default Unit Test
+
+
+------------------
+
+
+STACK
+
+pushing measurement onto stack: name: kari, value: 79.2
+current stack: [kari: 79.2] 
+stack size: 1
+
+pushing measurement onto stack: name: beggi, value: 91.3
+current stack: [beggi: 91.3] [kari: 79.2] 
+stack size: 2
+
+pushing measurement onto stack: name: kalli, value: 87.6
+current stack: [kalli: 87.6] [beggi: 91.3] [kari: 79.2] 
+stack size: 3
+
+pushing measurement onto stack: name: valdi, value: 117.4
+current stack: [valdi: 117.4] [kalli: 87.6] [beggi: 91.3] [kari: 79.2] 
+stack size: 4
+
+pushing measurement onto stack: name: anna, value: 54.2
+current stack: [anna: 54.2] [valdi: 117.4] [kalli: 87.6] [beggi: 91.3] [kari: 79.2] 
+stack size: 5
+
+popping measurement off stack
+value returned: [anna: 54.2]
+current stack: [valdi: 117.4] [kalli: 87.6] [beggi: 91.3] [kari: 79.2] 
+stack size: 4
+
+popping measurement off stack
+value returned: [valdi: 117.4]
+current stack: [kalli: 87.6] [beggi: 91.3] [kari: 79.2] 
+stack size: 3
+
+popping measurement off stack
+value returned: [kalli: 87.6]
+current stack: [beggi: 91.3] [kari: 79.2] 
+stack size: 2
+
+popping measurement off stack
+value returned: [beggi: 91.3]
+current stack: [kari: 79.2] 
+stack size: 1
+
+popping measurement off stack
+value returned: [kari: 79.2]
+current stack: 
+stack size: 0
+
+popping measurement off stack
+caught EmptyException
+current stack: 
+stack size: 0
+
+
+QUEUE
+
+adding measurement to queue: name: kari, value: 79.2
+current queue: [kari: 79.2] 
+queue size: 1
+
+adding measurement to queue: name: beggi, value: 91.3
+current queue: [kari: 79.2] [beggi: 91.3] 
+queue size: 2
+
+adding measurement to queue: name: kalli, value: 87.6
+current queue: [kari: 79.2] [beggi: 91.3] [kalli: 87.6] 
+queue size: 3
+
+adding measurement to queue: name: valdi, value: 117.4
+current queue: [kari: 79.2] [beggi: 91.3] [kalli: 87.6] [valdi: 117.4] 
+queue size: 4
+
+adding measurement to queue: name: anna, value: 54.2
+current queue: [kari: 79.2] [beggi: 91.3] [kalli: 87.6] [valdi: 117.4] [anna: 54.2] 
+queue size: 5
+
+removing measurement from queue
+value returned: [kari: 79.2]
+current queue: [beggi: 91.3] [kalli: 87.6] [valdi: 117.4] [anna: 54.2] 
+queue size: 4
+
+removing measurement from queue
+value returned: [beggi: 91.3]
+current queue: [kalli: 87.6] [valdi: 117.4] [anna: 54.2] 
+queue size: 3
+
+removing measurement from queue
+value returned: [kalli: 87.6]
+current queue: [valdi: 117.4] [anna: 54.2] 
+queue size: 2
+
+removing measurement from queue
+value returned: [valdi: 117.4]
+current queue: [anna: 54.2] 
+queue size: 1
+
+removing measurement from queue
+value returned: [anna: 54.2]
+current queue: 
+queue size: 0
+
+removing measurement from queue
+caught EmptyException
+current queue: 
+queue size: 0
+
+
+EMPTY CHECK
+
+pushing measurement onto stack: name: aaa, value: 11.1
+current stack: [aaa: 11.1] 
+stack size: 1
+
+pushing measurement onto stack: name: bbb, value: 22.2
+current stack: [bbb: 22.2] [aaa: 11.1] 
+stack size: 2
+
+pushing measurement onto stack: name: ccc, value: 33.3
+current stack: [ccc: 33.3] [bbb: 22.2] [aaa: 11.1] 
+stack size: 3
+
+pushing measurement onto stack: name: ddd, value: 44.4
+current stack: [ddd: 44.4] [ccc: 33.3] [bbb: 22.2] [aaa: 11.1] 
+stack size: 4
+
+pushing measurement onto stack: name: eee, value: 55.5
+current stack: [eee: 55.5] [ddd: 44.4] [ccc: 33.3] [bbb: 22.2] [aaa: 11.1] 
+stack size: 5
+
+popping every element off of stack
+current stack: 
+stack size: 0
+
+pushing measurement onto stack: name: eee, value: 55.5
+current stack: [eee: 55.5] 
+stack size: 1
+
+pushing measurement onto stack: name: ddd, value: 44.4
+current stack: [ddd: 44.4] [eee: 55.5] 
+stack size: 2
+
+pushing measurement onto stack: name: eee, value: 55.5
+current stack: [eee: 55.5] [ddd: 44.4] [eee: 55.5] 
+stack size: 3
+
+adding measurement to queue: name: aaa, value: 11.1
+current queue: [aaa: 11.1] 
+queue size: 1
+
+adding measurement to queue: name: bbb, value: 22.2
+current queue: [aaa: 11.1] [bbb: 22.2] 
+queue size: 2
+
+adding measurement to queue: name: ccc, value: 33.3
+current queue: [aaa: 11.1] [bbb: 22.2] [ccc: 33.3] 
+queue size: 3
+
+adding measurement to queue: name: ddd, value: 44.4
+current queue: [aaa: 11.1] [bbb: 22.2] [ccc: 33.3] [ddd: 44.4] 
+queue size: 4
+
+adding measurement to queue: name: eee, value: 55.5
+current queue: [aaa: 11.1] [bbb: 22.2] [ccc: 33.3] [ddd: 44.4] [eee: 55.5] 
+queue size: 5
+
+removing every element from queue
+current queue: 
+queue size: 0
+
+adding measurement to queue: name: ddd, value: 44.4
+current queue: [ddd: 44.4] 
+queue size: 1
+
+adding measurement to queue: name: eee, value: 55.5
+current queue: [ddd: 44.4] [eee: 55.5] 
+queue size: 2
+
+
+
+Unit test Mooshak: Queue
+
+-----------------
+
+
+QUEUE
+
+removing measurement from queue
+caught EmptyException
+current queue: 
+queue size: 0
+
+
+adding measurement to queue: name: George Hazzard, value: 201.27
+current queue: [George Hazzard: 201.27] 
+queue size: 1
+
+[George Hazzard: 201.27] 
+removing measurement from queue
+value returned: [George Hazzard: 201.27]
+current queue: 
+queue size: 0
+
+
+Empty: true
+size: 0
+Queue: 
+adding measurement to queue: name: John Stunkard, value: 142.15
+current queue: [John Stunkard: 142.15] 
+queue size: 1
+
+[John Stunkard: 142.15] 
+size: 1
+Empty: false
+Empty: false
+adding measurement to queue: name: John Pierro, value: 199
+current queue: [John Stunkard: 142.15] [John Pierro: 199] 
+queue size: 2
+
+[John Stunkard: 142.15] [John Pierro: 199] 
+Empty: false
+adding measurement to queue: name: Johnnthan Geisler, value: 160.11
+current queue: [John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] 
+queue size: 3
+
+[John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] 
+adding measurement to queue: name: Jay Blaze, value: 184.95
+current queue: [John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] 
+queue size: 4
+
+[John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] 
+Empty: false
+Empty: false
+adding measurement to queue: name: Maria MacCorrmic, value: 137.1
+current queue: [John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] 
+queue size: 5
+
+[John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] 
+adding measurement to queue: name: Marrianne Jones, value: 156.44
+current queue: [John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] 
+queue size: 6
+
+[John Stunkard: 142.15] [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] 
+size: 6
+removing measurement from queue
+value returned: [John Stunkard: 142.15]
+current queue: [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] 
+queue size: 5
+
+[John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] 
+adding measurement to queue: name: Gerorgia Wilkensen, value: 206.65
+current queue: [John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] 
+queue size: 6
+
+[John Pierro: 199] [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] 
+removing measurement from queue
+value returned: [John Pierro: 199]
+current queue: [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] 
+queue size: 5
+
+[Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] 
+Empty: false
+Empty: false
+adding measurement to queue: name: Mary Stuart, value: 139.25
+current queue: [Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] 
+queue size: 6
+
+[Johnnthan Geisler: 160.11] [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] 
+Empty: false
+size: 6
+removing measurement from queue
+value returned: [Johnnthan Geisler: 160.11]
+current queue: [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] 
+queue size: 5
+
+[Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] 
+adding measurement to queue: name: Fredrik Heythens, value: 159.09
+current queue: [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] 
+queue size: 6
+
+[Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] 
+adding measurement to queue: name: James Bonnilla, value: 127.65
+current queue: [Jay Blaze: 184.95] [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] 
+queue size: 7
+
+Empty: false
+Empty: false
+size: 7
+removing measurement from queue
+value returned: [Jay Blaze: 184.95]
+current queue: [Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] 
+queue size: 6
+
+[Maria MacCorrmic: 137.1] [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] 
+removing measurement from queue
+value returned: [Maria MacCorrmic: 137.1]
+current queue: [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] 
+queue size: 5
+
+[Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] 
+adding measurement to queue: name: Kaloline Templton, value: 148.62
+current queue: [Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] [Kaloline Templton: 148.62] 
+queue size: 6
+
+[Marrianne Jones: 156.44] [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] [Kaloline Templton: 148.62] 
+size: 6
+removing measurement from queue
+value returned: [Marrianne Jones: 156.44]
+current queue: [Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] [Kaloline Templton: 148.62] 
+queue size: 5
+
+[Gerorgia Wilkensen: 206.65] [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] [Kaloline Templton: 148.62] 
+removing measurement from queue
+value returned: [Gerorgia Wilkensen: 206.65]
+current queue: [Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] [Kaloline Templton: 148.62] 
+queue size: 4
+
+[Mary Stuart: 139.25] [Fredrik Heythens: 159.09] [James Bonnilla: 127.65] [Kaloline Templton: 148.62] 
+size: 4

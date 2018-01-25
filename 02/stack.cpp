@@ -5,15 +5,14 @@
 Stack::Stack(): head(nullptr), tail(nullptr), counter(0) {}
 
 Stack::~Stack(){
-/*
-    for(Node *tmpNode = head; tmpNode != nullptr; head = head->next){
-        delete tmpNode;
-        tmpNode = head;
-    }*/
+
+    // for(Node *tmpNode = head; tmpNode != nullptr; head = head->next){
+    //     delete tmpNode;
+    //     tmpNode = head;
+    // }
 
     Node *node = head;
     while(node != nullptr){
-
         head = head->next;
         delete node;
         node = head;
@@ -23,7 +22,7 @@ Stack::~Stack(){
 void Stack::push(Measurement data){
 
     Node *tmpNode = new Node(data, head);
-    if(head == nullptr){
+    if(isEmpty()){
         tail = tmpNode;
     }
     head = tmpNode;

@@ -19,8 +19,6 @@ class Queue{
 
         friend std::ostream& operator << (std::ostream& out, const Queue& q);
 
-        void unitAddress() const;
-
     private:
         Node *head;
         Node *tail;
