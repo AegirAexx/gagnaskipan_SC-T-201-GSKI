@@ -41,3 +41,25 @@ Node& Queue::tailPointer() const{
     return tail;
 }
 
+// QUEUE
+    // Node *node = head;
+    // while(node != nullptr){
+    //     head = head->next;
+    //     delete node;
+    //     node = head;
+    // }
+
+//     Node *node = q.head;
+//     while(node != nullptr){
+//         out << node->data << " ";
+//         node = node->next;
+//     }
+
+// STACK
+
+    // Node *node = head;
+    // while(node != nullptr){
+    //     head = head->next;
+    //     delete node;
+    //     node = head;
+    // }

@@ -6,11 +6,10 @@ Stack::Stack(): head(nullptr), tail(nullptr), counter(0) {}
 
 Stack::~Stack(){
 
-    Node *node = head;
-    while(node != nullptr){
+    for(Node *tmpNode = head; tmpNode != nullptr; ){
         head = head->next;
-        delete node;
-        node = head;
+        delete tmpNode;
+        tmpNode = head;
     }
 }
 

@@ -6,11 +6,10 @@ Queue::Queue(): head(nullptr), tail(nullptr), counter(0) {}
 
 Queue::~Queue(){
 
-    Node *node = head;
-    while(node != nullptr){
+    for(Node *tmpNode = head; tmpNode != nullptr; ){
         head = head->next;
-        delete node;
-        node = head;
+        delete tmpNode;
+        tmpNode = head;
     }
 }
 
@@ -57,12 +56,9 @@ bool Queue::isEmpty() const{
 
 std::ostream& operator << (std::ostream& out, const Queue& q){
 
-    Node *node = q.head;
-    while(node != nullptr){
+    for(Node *node = q.head; node != nullptr; node = node->next){
         out << node->data << " ";
-        node = node->next;
     }
-
     return out;
 }
 
