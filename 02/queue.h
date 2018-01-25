@@ -4,6 +4,7 @@
 #define QUEUE_H
 
 #include "node.h"
+#include <iostream>
 
 class Queue{
     public:
@@ -17,6 +18,8 @@ class Queue{
         bool isEmpty() const;
 
         friend std::ostream& operator << (std::ostream& out, const Queue& q);
+
+        void unitAddress() const;
 
     private:
         Node *head;

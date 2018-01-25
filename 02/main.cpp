@@ -86,8 +86,10 @@ void unitTestEmpty(const Queue &q){
     }
 }
 
-int main(){
 
+
+int main(){
+/*
     cout << endl << "STACK" << endl << endl;
 
     Stack s1;
@@ -155,7 +157,6 @@ int main(){
     removeFromQueue(q);
     cout << q << endl;
     addToQueue(q, "George Hazzard", 201.27);
-    addToQueue(q, "John Stunkard", 142.15);
     cout << q << endl;
     removeFromQueue(q);
     cout << q << endl;
@@ -215,6 +216,25 @@ int main(){
     removeFromQueue(q);
     cout << q << endl;
     cout << "size: " << q.size() << endl;
+    */
+
+    Queue q;
+
+    addToQueue(q, "George Hazzard", 201.27);
+    q.unitAddress();
+
+    addToQueue(q, "George Hazzard", 201.27);
+    q.unitAddress();
+
+    addToQueue(q, "George Hazzard", 201.27);
+    q.unitAddress();
+
+    addToQueue(q, "George Hazzard", 201.27);
+    q.unitAddress();
+
+    addToQueue(q, "George Hazzard", 201.27);
+    q.unitAddress();
+
 
     return 0;
 }
