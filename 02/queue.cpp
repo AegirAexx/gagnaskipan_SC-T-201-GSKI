@@ -19,12 +19,11 @@ void Queue::add(Measurement data){
         Node *tmpNode = new Node(data);
         head = tmpNode;
         tail = tmpNode;
-        counter++;
     }else{
         tail->next = new Node(data);
         tail = tail->next;
-        counter++;
     }
+    counter++;
 }
 
 Measurement Queue::remove(){
