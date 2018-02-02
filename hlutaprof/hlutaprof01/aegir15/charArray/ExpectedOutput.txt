@@ -1,0 +1,181 @@
+printing array
+CharacterArray: ""
+string length: 0
+
+append: 's'
+CharacterArray: "s"
+string length: 1
+
+append: 'o'
+CharacterArray: "so"
+string length: 2
+
+append: 'm'
+CharacterArray: "som"
+string length: 3
+
+append: 'e'
+CharacterArray: "some"
+string length: 4
+
+append: ' '
+CharacterArray: "some "
+string length: 5
+
+append: 's'
+CharacterArray: "some s"
+string length: 6
+
+append: 't'
+CharacterArray: "some st"
+string length: 7
+
+append: 'u'
+CharacterArray: "some stu"
+string length: 8
+
+append: 'f'
+CharacterArray: "some stuf"
+string length: 9
+
+append: 'f'
+CharacterArray: "some stuff"
+string length: 10
+
+remove character at index: 8
+Returned value: 'f'
+CharacterArray: "some stuf"
+string length: 9
+
+remove character at index: 8
+Returned value: 'f'
+CharacterArray: "some stu"
+string length: 8
+
+remove character at index: 1
+Returned value: 'o'
+CharacterArray: "sme stu"
+string length: 7
+
+remove character at index: 1
+Returned value: 'm'
+CharacterArray: "se stu"
+string length: 6
+
+remove character at index: 2
+Returned value: ' '
+CharacterArray: "sestu"
+string length: 5
+
+remove character at index: 2
+Returned value: 's'
+CharacterArray: "setu"
+string length: 4
+
+remove character at index: 3
+Returned value: 'u'
+CharacterArray: "set"
+string length: 3
+
+remove character at index: 0
+Returned value: 's'
+CharacterArray: "et"
+string length: 2
+
+remove character at index: 0
+Returned value: 'e'
+CharacterArray: "t"
+string length: 1
+
+remove character at index: 0
+Returned value: 't'
+CharacterArray: ""
+string length: 0
+
+append: 'm'
+CharacterArray: "m"
+string length: 1
+
+append: 'o'
+CharacterArray: "mo"
+string length: 2
+
+append: 'r'
+CharacterArray: "mor"
+string length: 3
+
+append: 'e'
+CharacterArray: "more"
+string length: 4
+
+remove character at index: 2
+Returned value: 'r'
+CharacterArray: "moe"
+string length: 3
+
+append: 'l'
+CharacterArray: "moel"
+string length: 4
+
+append: 'e'
+CharacterArray: "moele"
+string length: 5
+
+append: 's'
+CharacterArray: "moeles"
+string length: 6
+
+append: 's'
+CharacterArray: "moeless"
+string length: 7
+
+remove character at index: 2
+Returned value: 'e'
+CharacterArray: "moless"
+string length: 6
+
+remove character at index: 1
+Returned value: 'o'
+CharacterArray: "mless"
+string length: 5
+
+remove character at index: 0
+Returned value: 'm'
+CharacterArray: "less"
+string length: 4
+
+remove character at index: 3
+Returned value: 's'
+CharacterArray: "les"
+string length: 3
+
+remove character at index: 2
+Returned value: 's'
+CharacterArray: "le"
+string length: 2
+
+remove character at index: 0
+Returned value: 'l'
+CharacterArray: "e"
+string length: 1
+
+remove character at index: 0
+Returned value: 'e'
+CharacterArray: ""
+string length: 0
+
+append: 'd'
+CharacterArray: "d"
+string length: 1
+
+append: 'o'
+CharacterArray: "do"
+string length: 2
+
+append: 'n'
+CharacterArray: "don"
+string length: 3
+
+append: 'e'
+CharacterArray: "done"
+string length: 4

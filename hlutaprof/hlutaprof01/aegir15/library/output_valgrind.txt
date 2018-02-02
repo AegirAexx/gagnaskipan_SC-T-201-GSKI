@@ -1,0 +1,112 @@
+
+TEST 1
+
+Title: The Fellowship of the Ring
+ISBN: 1338
+Page count: 600
+Book is available
+
+Title: The Way of Kings
+ISBN: 1337
+Page count: 800
+Book is available
+
+Title: The Windup Bird Chronicle
+ISBN: 9000
+Page count: 700
+Book is available
+
+Title: The Alloy of Law
+ISBN: 87665
+Page count: 300
+Book is available
+
+The Fellowship of the Ring added to library!
+The Way of Kings added to library!
+The Windup Bird Chronicle added to library!
+Library is full!
+
+Title: The Fellowship of the Ring
+ISBN: 1338
+Page count: 600
+Book is available
+Title: The Way of Kings
+ISBN: 1337
+Page count: 800
+Book is available
+Title: The Windup Bird Chronicle
+ISBN: 9000
+Page count: 700
+Book is available
+
+Book not found!
+Book not found!
+Book not found!
+Book not found!
+Book with ISBN 1338 is already in library!
+Book not found!
+Book not found!
+Book not found!
+
+
+
+TEST 2
+
+1 added to library!
+2 added to library!
+3 added to library!
+4 added to library!
+5 added to library!
+6 added to library!
+7 added to library!
+8 added to library!
+9 added to library!
+Book with title 1  already in library!
+Title: 1
+ISBN: 1
+Page count: 1
+Book is available
+Title: 2
+ISBN: 2
+Page count: 2
+Book is available
+Title: 3
+ISBN: 3
+Page count: 3
+Book is available
+Title: 4
+ISBN: 4
+Page count: 4
+Book is available
+Title: 5
+ISBN: 5
+Page count: 5
+Book is available
+Title: 6
+ISBN: 6
+Page count: 6
+Book is available
+Title: 7
+ISBN: 7
+Page count: 7
+Book is available
+Title: 8
+ISBN: 8
+Page count: 8
+Book is available
+Title: 9
+ISBN: 9
+Page count: 9
+Book is available
+
+Book not found!
+Book not found!
+Book not found!
+Book with ISBN 1 was already checked out!
+Book not found!
+Book with ISBN 1 is already in library!
+Book not found!
+Book not found!
+Book with Title 1 was already checked out!
+Book not found!
+Book with Title 1 is already in library!
