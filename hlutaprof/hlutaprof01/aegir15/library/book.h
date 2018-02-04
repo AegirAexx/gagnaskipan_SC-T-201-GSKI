@@ -34,14 +34,19 @@ public:
 
     //Set the value of the ISBN number.
     void setISBN(int ISBN);
+
     //Set the page count value.
     void setPageCount(int pageCount);
+
     //Set the title.
     void setTitle(string title);
+
     //Set if the book is checked out or not.
     void setChecked(bool checked);
+
     //Overwrite all the values of this book with the values of another book.
     void setBook(Book book);
+    
 
     //Output the contents of the book.
     friend ostream& operator <<(ostream& outs, const Book& book);

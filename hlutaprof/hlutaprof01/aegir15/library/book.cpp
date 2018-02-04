@@ -4,9 +4,7 @@
 //Constructors
 Book::Book(): title(""), ISBN(0), pageCount(0), checked(false){}
 
-Book::Book(string title, int ISBN, int pageCount): title(title), ISBN(ISBN), pageCount(pageCount) {
-    this->checked = false;
-}
+Book::Book(string title, int ISBN, int pageCount): title(title), ISBN(ISBN), pageCount(pageCount) { setChecked(false); }
 
 Book::~Book(){}
 
@@ -14,38 +12,47 @@ Book::~Book(){}
 int Book::getISBN() const{
 
     return ISBN;
+
 }
 int Book::getPageCount() const{
 
     return pageCount;
+
 }
 string Book::getTitle() const{
 
     return title;
+
 }
 bool Book::getChecked() const{
 
     return checked;
+
 }
 
 //Setters
 void Book::setISBN(int ISBN){
 
     this->ISBN = ISBN;
+
 }
 void Book::setPageCount(int pageCount){
 
     this->pageCount = pageCount;
+
 }
 void Book::setTitle(string title){
 
     this->title = title;
+
 }
 void Book::setChecked(bool checked){
 
     this->checked = checked;
+
 }
 
+// Copy one book over the other - Overwite book.
 void Book::setBook(Book book){
 
     this->ISBN = book.getISBN();

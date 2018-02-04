@@ -52,8 +52,14 @@ private:
     Book *books;
     int storageSpace;
     int bookCount;
-    ///TODO: Add private variables, helper functions if needed and implement in library.cpp
-    bool isInLib(Book book);
+
+    // Helper functions
+    bool isInLibrary_addBook(Book book);
+    bool wasISBNFound_setIndex(int ISBN, char& index);
+    bool wasTitleFound_setIndex(string title, char& index);
+    void checkOutExceptionHandler(bool bookFound, char index);
+    void returnExceptionHandler(bool bookFound, char index);
+
 };
 
 #endif /* Library_hpp */
