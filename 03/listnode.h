@@ -1,17 +1,26 @@
 #ifndef STRINGNODE_H
 #define STRINGNODE_H
 
-template <class T>
+template <typename T>
 
-struct ListNode
-{
-    T data;
-    ListNode *prev;
-    ListNode *next;
+class ListNode{
+    private:
+        T data;
+        ListNode<T> *prev;
+        ListNode<T> *next;
+        friend class DoublyLinkedList;
 
-    ListNode() : prev(NULL), next(NULL) { }
-    ListNode(T value, ListNode *prev = NULL, ListNode *next = NULL)
-    : data(value), prev(prev), next(next) { }
+    public:
+        ListNode(): prev(nullptr), next(nullptr) { }
+
+        ListNode(T value): data(value), prev(nullptr), next(nullptr) { }
+
+        ListNode(ListNode<T> *prev, ListNode<T> *next): prev(prev), next(next) { }
+
+        ListNode(T value, ListNode<T> *prev, ListNode<T> *next): data(value), prev(prev), next(next) { }
+
+        virtual ~ListNode() {}
+    
 
 };
 

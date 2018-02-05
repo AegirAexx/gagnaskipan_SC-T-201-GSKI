@@ -1,4 +1,5 @@
 01/.vscode/settings.json
 02/.vscode/settings.json
 *.o
-*.o
+03/dl
+03/.vscode/settings.json
