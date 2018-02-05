@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int main() {
+int main(){
 
-    cout << endl << "STRING_LIST" << endl << endl;
+    // cout << endl << "STRING_LIST" << endl << endl;
 
     // DoublyLinkedList<string> stringList;
 
@@ -71,7 +71,7 @@ int main() {
     
     // cout << stringList << endl;
 
-    cout << endl << "INT_LIST" << endl << endl;
+    // cout << endl << "INT_LIST" << endl << endl;
 
     // DoublyLinkedList<int> intList;
 
