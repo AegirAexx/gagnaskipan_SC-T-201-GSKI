@@ -16,13 +16,7 @@ class DoublyLinkedList{
     
     public:
 
-        DoublyLinkedList<T>(){
-            head = new ListNode<T>(nullptr, tail);
-            tail = new ListNode<T>(head, nullptr);
-            currNode = nullptr;
-            size = 0;
-            currentPosition = 0;
-        }
+        DoublyLinkedList<T>(): head(new ListNode<T>(nullptr, tail)), tail(new ListNode<T>(head, nullptr)), currNode(nullptr), size(0), currentPosition(0) {}
 
         ~DoublyLinkedList<T>(){            
             while(!isEmpty()){
@@ -36,6 +30,7 @@ class DoublyLinkedList{
             while(!isEmpty()){
                 removeThisNode(head->next);
             }
+            currNode = nullptr;
         }
 
         void insert(const T& item){
@@ -108,17 +103,22 @@ class DoublyLinkedList{
         }
 
         void removeThisNode(ListNode<T> *toRemove){
-            if(toRemove->prev == head && toRemove->next == tail){
-                throw emptyListException();
-            }
+            // if(toRemove->prev == head && toRemove->next == tail){
+            //     throw emptyListException();
+            // }
             ListNode<T> *tempPrev = toRemove->prev;
             ListNode<T> *tempNext = toRemove->next;
             tempPrev->next = tempNext;
             tempNext->prev = tempPrev;
             delete toRemove;
+            size--;
         }
 
-        void addAtThisNode(ListNode<T> *indexNode, T& item){
+        void addAtThisNode(ListNode<T> *indexNode, const T& item){
+            if(indexNode == nullptr){
+                indexNode = tail;
+                currentPosition = 1;
+            }
             ListNode<T> *node = new ListNode<T>(item, indexNode->prev, indexNode);
             indexNode->prev->next = node;
             indexNode->prev = node;
@@ -135,10 +135,10 @@ class DoublyLinkedList{
 
 
         friend ostream& operator <<(ostream& out, const DoublyLinkedList& lis){
-            for(ListNode<T> *node = lis.head->next; node->next != lis.tail; node = node->next){
+            for(ListNode<T> *node = lis.head->next; node->next != lis.tail->next; node = node->next){
                 out << node->data << " ";
-            return out;
             }
+            return out;
         }
 
     private:

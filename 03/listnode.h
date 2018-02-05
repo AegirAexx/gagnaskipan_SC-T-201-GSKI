@@ -5,10 +5,10 @@ template <typename T>
 class ListNode{
     
     private:
-        T data;
-        ListNode<T> *prev;
-        ListNode<T> *next;
-        friend class DoublyLinkedList;
+        // T data;
+        // ListNode<T> *prev;
+        // ListNode<T> *next;
+        // friend class DoublyLinkedList;
 
     public:
         ListNode(): prev(nullptr), next(nullptr) {}
@@ -16,6 +16,11 @@ class ListNode{
         ListNode(ListNode<T> *prev, ListNode<T> *next): prev(prev), next(next) {}
         ListNode(T value, ListNode<T> *prev, ListNode<T> *next): data(value), prev(prev), next(next) {}
         virtual ~ListNode() {}
+
+        T data;
+        ListNode<T> *prev;
+        ListNode<T> *next;
+
 };
 
 #endif // INTNODE_H
