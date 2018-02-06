@@ -1,14 +1,14 @@
-#ifndef STRINGNODE_H
-#define STRINGNODE_H
+#ifndef LISTNODE_H
+#define LISTNODE_H
 
 template <typename T>
 class ListNode{
     
     private:
-        // T data;
-        // ListNode<T> *prev;
-        // ListNode<T> *next;
-        // friend class DoublyLinkedList;
+        T data;
+        ListNode<T> *prev;
+        ListNode<T> *next;
+        friend class DoublyLinkedList;
 
     public:
         ListNode(): prev(nullptr), next(nullptr) {}
@@ -17,10 +17,10 @@ class ListNode{
         ListNode(T value, ListNode<T> *prev, ListNode<T> *next): data(value), prev(prev), next(next) {}
         virtual ~ListNode() {}
 
-        T data;
-        ListNode<T> *prev;
-        ListNode<T> *next;
+        // T data;
+        // ListNode<T> *prev;
+        // ListNode<T> *next;
 
 };
 
-#endif // INTNODE_H
+#endif // LISTNODE_H

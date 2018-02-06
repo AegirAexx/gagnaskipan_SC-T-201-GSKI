@@ -1,35 +1,35 @@
-#include <iostream>
+// #include <iostream>
 #include "doublylinkedlist.h"
 
-using namespace std;
+// using namespace std;
 
 int main(){
 
-    cout << endl << "STRING_LIST" << endl << endl;
+    // cout << endl << "STRING_LIST" << endl << endl;
 
-    DoublyLinkedList<string> stringList;
+    // DoublyLinkedList<string> stringList;
 
-    stringList.append("fic");
-    stringList.append("sdf");
-    stringList.append("wet");
-    stringList.append("fgh");
+    // stringList.append("fic");
+    // stringList.append("sdf");
+    // stringList.append("wet");
+    // stringList.append("fgh");
     
     
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
+    // cout << "current position" << endl;
+    // cout << stringList.curr_pos() << endl;
 
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
+    // cout << "current size is:" << endl;
+    // cout << stringList.length() << endl;
 
-    cout << "moving to position 2" << endl;
-    stringList.move_to_pos(2);
+    // cout << "moving to position 2" << endl;
+    // stringList.move_to_pos(2);
 
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
+    // cout << "current position" << endl;
+    // cout << stringList.curr_pos() << endl;
 
     
     
-    cout << stringList << endl;
+    // cout << stringList << endl;
     
     // stringList.clear();
     // stringList.insert("pod");

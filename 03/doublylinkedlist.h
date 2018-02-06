@@ -2,13 +2,11 @@
 #define DOUBLY_LINKED_LIST_H
 
 #include <iostream>
-
 #include "listnode.h"
 
 using namespace std;
 
 class InvalidPositionException {};
-class emptyListException {};
 
 template <typename T>
 
@@ -58,17 +56,13 @@ class DoublyLinkedList{
         }
 
         void prev(){
-            if(currNode->prev == head){
-                throw InvalidPositionException();
-            }
+            iteratorExceptionHandler(currNode->prev, head);
             currNode = currNode->prev;
             currentPosition--;
         }
 
         void next(){
-            if(currNode->next == tail){
-                throw InvalidPositionException();
-            }
+            iteratorExceptionHandler(currNode->next, tail);
             currNode = currNode->next;
             currentPosition++;
         }
@@ -81,8 +75,16 @@ class DoublyLinkedList{
             return currentPosition;
         }
 
+        bool isEmpty() const{
+            return (head->next == tail);
+        }
+
+        const T& get_value() const{
+            return currNode->data;
+        }
+
         void move_to_pos(int pos){
-            if(pos < 1 || pos > size || pos == currentPosition){
+            if(pos < 0 || pos > size){
                 throw InvalidPositionException();
             }
             int stepsToMove = currentPosition - pos;
@@ -90,7 +92,7 @@ class DoublyLinkedList{
                 for(size_t i = 0; 0 < stepsToMove; ++i){
                     prev();                
                 }
-            }else{
+            }else if(stepsToMove < 0){
                 stepsToMove *= -1;
                 for(size_t i = 0; 0 < stepsToMove; ++i){
                     next();
@@ -98,14 +100,7 @@ class DoublyLinkedList{
             }
         }
 
-        bool isEmpty() const{
-            return (head->next == tail);
-        }
-
         void removeThisNode(ListNode<T> *toRemove){
-            // if(toRemove->prev == head && toRemove->next == tail){
-            //     throw emptyListException();
-            // }
             ListNode<T> *tempPrev = toRemove->prev;
             ListNode<T> *tempNext = toRemove->next;
             tempPrev->next = tempNext;
@@ -115,24 +110,28 @@ class DoublyLinkedList{
         }
 
         void addAtThisNode(ListNode<T> *indexNode, const T& item){
-            if(indexNode == nullptr){
-                indexNode = tail;
-                currentPosition = 1;
-            }
+            size++;
             ListNode<T> *node = new ListNode<T>(item, indexNode->prev, indexNode);
-            indexNode->prev->next = node;
-            indexNode->prev = node;
-            if(currNode == nullptr){
+            if(isEmpty()){
                 currNode = node;
                 currentPosition = 1;
             }
-            size++;
+            if(indexNode == nullptr){
+                indexNode = tail;
+                currentPosition = size;
+            }
+            if(indexNode == head){
+                indexNode = head->next;
+            }
+            indexNode->prev->next = node;
+            indexNode->prev = node;
         }
 
-        const T& get_value() const{
-            return currNode->data;
+        void iteratorExceptionHandler(ListNode<T> *currentLocation, ListNode<T> *relativeEnd){
+            if(currentLocation == relativeEnd){
+                throw InvalidPositionException();
+            }
         }
-
 
         friend ostream& operator <<(ostream& out, const DoublyLinkedList& lis){
             for(ListNode<T> *node = lis.head->next; node->next != lis.tail->next; node = node->next){

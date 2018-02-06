@@ -1,12 +1,8 @@
-#!/bin/bash
-FILE=bin/Debug/CharacterArray
+#!/bin/zsh
 
-if [ -f $FILE ]; then
-    valgrind --leak-check=full $FILE
-else
-    echo "Could not find binary file. Have you built the project?"
-fi
-read
+valgrind --leak-check=full --track-origins=yes ./out 2> output_valgrind.txt
+valgrind --leak-check=full --track-origins=yes ./out 1> output_valgrind.txt
+
 ###
 # valgrind --leak-check=full --track-origins=yes ./char 
-# valgrind --leak-check=full --track-origins=yes ./sq 2> output_valgrind.txt  
+# valgrind --leak-check=full --track-origins=yes ./sq 2> output_txt.valgrind

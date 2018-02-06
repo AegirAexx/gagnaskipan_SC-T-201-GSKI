@@ -4,3 +4,6 @@
 03/dl
 03/.vscode/settings.json
 03/.vscode/c_cpp_properties.json
+01/out
+03/out
+01/valgrind.sh
