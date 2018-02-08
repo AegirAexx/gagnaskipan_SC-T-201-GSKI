@@ -12,7 +12,7 @@ template <typename T>
 class DoublyLinkedList {
 public:
 
-    DoublyLinkedList<T>(): head(new ListNode<T>(nullptr, tail)), tail(new ListNode<T>(head, nullptr)), currNode(nullptr), size(0), currentPosition(0) { }
+    DoublyLinkedList<T>(): head(new ListNode<T>(nullptr, tail)), tail(new ListNode<T>(head, nullptr)), currNode(tail), size(0), currentPosition(0) { }
 
     ~DoublyLinkedList<T>() {
         clear();
@@ -24,14 +24,14 @@ public:
         while (!isEmpty()) {
             removeThisNode(head->next);
         }
-        currNode = head->next;
+        currNode = tail;
         currentPosition = 0;
     }
 
     void insert(const T& item) {
         if (isEmpty()) {
             addAtThisNode(currNode, item);
-            currentPosition = 0;
+            currentPosition = size;
         }
         else {
             addAtThisNode(currNode, item);
@@ -41,29 +41,19 @@ public:
 
     void append(const T& item) {
         addAtThisNode(tail, item);
-        currentPosition = size - 1;
-        currNode = tail->prev;
+        currentPosition = size;
     }
 
     T remove() {
-        if (isEmpty()) {
+        if (currNode == tail) {
             throw InvalidPositionException();
         }
         T retValue = currNode->data;
         ListNode<T> *tmp = currNode->next;
         removeThisNode(currNode);
-        if (tmp == tail) {
-            currNode = tail->prev;
-            if (size > 0) {
-                currentPosition = size - 1;
-            }
-            else {
-                currentPosition = 0;
-            }
-        }
-        else {
-            currNode = tmp;
-        }
+
+        currNode = tmp;
+
         return retValue;
     }
 
@@ -85,7 +75,7 @@ public:
     }
 
     void next() {
-        if (currNode->next != tail) {
+        if(currNode != tail){
             currNode = currNode->next;
             currentPosition++;
         }
@@ -100,7 +90,7 @@ public:
     }
 
     const T& get_value() const {
-        if (isEmpty()) {
+        if (currNode == tail) {
             throw InvalidPositionException();
         }
         return currNode->data;
@@ -138,9 +128,7 @@ private:
 
     void addAtThisNode(ListNode<T> *indexNode, const T& item) {
         ListNode<T> *node = new ListNode<T>(item, indexNode->prev, indexNode);
-        if (isEmpty()) {
-            currNode = node;
-        }
+
         indexNode->prev->next = node;
         indexNode->prev = node;
         size++;

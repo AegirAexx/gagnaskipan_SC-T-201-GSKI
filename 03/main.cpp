@@ -167,6 +167,18 @@ int main(){
         cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
 
+     for (int i = 0; i < stringList.length() + 1; ++i) {
+        // Move current position one back
+        try {
+            cout << "Position before (prev): " << stringList.curr_pos() << endl;
+            stringList.prev();
+            cout << "Current position: " << stringList.curr_pos() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - PREV" << endl << endl;
+        }
+    }
+
     for (int i = 0; i < 10; ++i) {
         // Remove a item form the list
         try {
@@ -190,7 +202,7 @@ int main(){
         }
 
     }
-
+/*
     // Append to list
     cout << "Appending and Inserting to the list" << endl;
     stringList.append("111");
@@ -218,7 +230,7 @@ int main(){
     }
 
     // Moving to a different place
-    try {    
+    try {
         cout << "Moving to position 0" << endl;
         stringList.move_to_pos(0);
         cout << "Current position: " << stringList.curr_pos() << endl;
@@ -235,7 +247,7 @@ int main(){
     }
 
     // Moving to a different place
-    try {    
+    try {
         cout << "Moving to position 7" << endl;
         stringList.move_to_pos(7);
         cout << "Current position: " << stringList.curr_pos() << endl;
@@ -252,7 +264,7 @@ int main(){
     }
 
     // Moving to a different place
-    try {    
+    try {
         cout << "Moving to position 10" << endl;
         stringList.move_to_pos(10);
         cout << "Current position: " << stringList.curr_pos() << endl;
@@ -269,7 +281,7 @@ int main(){
     }
 
     // Moving to a different place
-    try {    
+    try {
         cout << "Moving to position 8" << endl;
         stringList.move_to_pos(8);
         cout << "Current position: " << stringList.curr_pos() << endl;
@@ -286,7 +298,7 @@ int main(){
     }
 
     // Moving to a different place
-    try {    
+    try {
         cout << "Moving to position -1" << endl;
         stringList.move_to_pos(-1);
         cout << "Current position: " << stringList.curr_pos() << endl;
@@ -326,7 +338,7 @@ int main(){
         cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
     cout << "Current list size is: " << stringList.length() << endl << endl;
-
+*/
     return 0;
 }
 
