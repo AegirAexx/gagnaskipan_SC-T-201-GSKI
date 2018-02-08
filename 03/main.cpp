@@ -202,7 +202,7 @@ int main(){
         }
 
     }
-/*
+
     // Append to list
     cout << "Appending and Inserting to the list" << endl;
     stringList.append("111");
@@ -338,7 +338,7 @@ int main(){
         cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
     cout << "Current list size is: " << stringList.length() << endl << endl;
-*/
+
     return 0;
 }
 
