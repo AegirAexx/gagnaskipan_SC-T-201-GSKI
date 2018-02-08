@@ -1,21 +1,6 @@
-// #include <iostream>
 #include "doublylinkedlist.h"
-
 #include <string>
-// using namespace std;
 
-/* Unit test
-template <typename T>
-
-void insertToList(DoublyLinkedList<T> &lis, T &data){
-    try{
-        cout << "Insert at current position: " << lis.curr_pos() << endl;
-        lis.insert(data);
-    }catch(InvalidPositionException) {
-        cout << "Caught InvalidPositionException" << endl;
-    }
-}
-*/
 
 int main(){
 
@@ -23,6 +8,8 @@ int main(){
 
     DoublyLinkedList<string> stringList;
 
+    // Append to list
+    cout << "Appending to the list" << endl;
     stringList.append("111");
     stringList.append("222");
     stringList.append("333");
@@ -31,219 +18,317 @@ int main(){
     stringList.append("666");
     stringList.append("777");
     stringList.append("888");
+    cout << "Appended to the list: " << stringList << endl << endl;
 
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
 
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
 
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
 
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
+    for (int i = 0; i < stringList.length() + 1; ++i) {
+        // Move current position one back
+        try {
+            cout << "Position before (prev): " << stringList.curr_pos() << endl;
+            stringList.prev();
+            cout << "Current position: " << stringList.curr_pos() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - PREV" << endl << endl;
+        }
+    }
 
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
 
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
 
-    cout << "current value is: " << stringList.get_value() << endl;
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
 
-    cout << "clearing array" << endl;
+    for (int i = 0; i < stringList.length() + 1; ++i) {
+        // Move current position one forward
+        try {
+            cout << "Position before (next): " << stringList.curr_pos() << endl;
+            stringList.next();
+            cout << "Current position: " << stringList.curr_pos() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - NEXT" << endl << endl;
+        }
+    }
+
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
+
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
+
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
+
+    // Clear the list
+    cout << "Clearing list" << endl << endl;
     stringList.clear();
 
-    cout << "appending some bullshit to array: " << endl;
-    stringList.append("111b");
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
 
-    cout << "current value is: " << stringList.get_value() << endl;
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
 
-
-    try{
-       stringList.prev();
-       cout << stringList.curr_pos() << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
 
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
+    // Insert to the list
+    cout << "Inserting to the list" << endl;
+    stringList.insert("aaa");
+    stringList.insert("bbb");
+    stringList.insert("ccc");
+    stringList.insert("ddd");
+    stringList.insert("eee");
+    stringList.insert("fff");
+    stringList.insert("ggg");
+    stringList.insert("hhh");
+    cout << "Inserted to the list: " << stringList << endl << endl;
 
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
-
-
-    try{
-       stringList.prev();
-       cout << stringList.curr_pos() << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    for (int i = 0; i < stringList.length() + 1; ++i) {
+        // Move current position one back
+        try {
+            cout << "Position before (prev): " << stringList.curr_pos() << endl;
+            stringList.prev();
+            cout << "Current position: " << stringList.curr_pos() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - PREV" << endl << endl;
+        }
     }
 
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
 
-    try{
-        cout << "moving to position 2" << endl;
-        stringList.move_to_pos(2);
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
+
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
 
-
-
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
-
-
-
-    cout << stringList << endl;
-
-    cout << "clearing array: " << endl;
-    stringList.clear();
-
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
-
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
-
-
-    stringList.insert("pod");
-
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
-
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
-    cout << stringList << endl;
-
-    try{
-       stringList.prev();
-       cout << stringList.curr_pos() << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
-    }
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
-
-    stringList.append("bxph");
-
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
-
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
-
-    stringList.clear();
-
-    cout << "current position" << endl;
-    cout << stringList.curr_pos() << endl;
-
-    cout << "current size is:" << endl;
-    cout << stringList.length() << endl;
-
-    cout << stringList << endl;
-
-    try{
-       stringList.prev();
-       cout << stringList.curr_pos() << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    for (int i = 0; i < stringList.length() + 1; ++i) {
+        // Move current position one forward
+        try {
+            cout << "Position before (next): " << stringList.curr_pos() << endl;
+            stringList.next();
+            cout << "Current position: " << stringList.curr_pos() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - NEXT" << endl << endl;
+        }
     }
 
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
 
-    try{
-       stringList.remove();
-       cout << stringList << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
+
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
 
-    stringList.insert("111");
+    for (int i = 0; i < 10; ++i) {
+        // Remove a item form the list
+        try {
+            cout << "Item removed from list: " << stringList.remove() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - REMOVE" << endl << endl;
+        }
+        // Print out the current position
+        cout << "Current position: " << stringList.curr_pos() << endl;
+
+        // Print out the current size of the list
+        cout << "Current list size is: " << stringList.length() << endl;
+
+        try {
+            // Print out the current value
+            cout << "Current value is: " << stringList.get_value() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+        }
+
+    }
+
+    // Append to list
+    cout << "Appending and Inserting to the list" << endl;
+    stringList.append("111");
     stringList.insert("222");
-    stringList.insert("333");
+    stringList.append("333");
     stringList.insert("444");
-    stringList.insert("555");
+    stringList.append("555");
     stringList.insert("666");
-    stringList.insert("777");
+    stringList.append("777");
     stringList.insert("888");
+    cout << "Appended and Inserted to the list: " << stringList << endl << endl;
 
-    cout << "current position: " << stringList.curr_pos() << endl;
-    cout << "moving to position ble: " << endl;
-    stringList.move_to_pos(3);
-    cout << "current position: " << stringList.curr_pos() << endl;
+    // Print out the current position
+    cout << "Current position: " << stringList.curr_pos() << endl;
 
-    try{
-       cout << stringList.remove() << endl;
-       cout << stringList << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    // Print out the current size of the list
+    cout << "Current list size is: " << stringList.length() << endl;
+
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
 
 
-
-    cout << stringList << endl;
-
-    try{
-       stringList.remove();
-       cout << stringList << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    // Moving to a different place
+    try {    
+        cout << "Moving to position 0" << endl;
+        stringList.move_to_pos(0);
+        cout << "Current position: " << stringList.curr_pos() << endl;
+        try {
+            // Print out the current value
+            cout << "Current value is: " << stringList.get_value() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+        }
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException" << endl << endl;
     }
 
-    try{
-       stringList.remove();
-       cout << stringList << endl;
-    }catch(InvalidPositionException) {
-       cout << "Caught InvalidPositionException" << endl;
+    // Moving to a different place
+    try {    
+        cout << "Moving to position 7" << endl;
+        stringList.move_to_pos(7);
+        cout << "Current position: " << stringList.curr_pos() << endl;
+        try {
+            // Print out the current value
+            cout << "Current value is: " << stringList.get_value() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+        }
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException" << endl << endl;
     }
 
-    cout << stringList << endl;
+    // Moving to a different place
+    try {    
+        cout << "Moving to position 10" << endl;
+        stringList.move_to_pos(10);
+        cout << "Current position: " << stringList.curr_pos() << endl;
+        try {
+            // Print out the current value
+            cout << "Current value is: " << stringList.get_value() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+        }
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException" << endl << endl;
+    }
 
-    stringList.prev();
+    // Moving to a different place
+    try {    
+        cout << "Moving to position 8" << endl;
+        stringList.move_to_pos(8);
+        cout << "Current position: " << stringList.curr_pos() << endl;
+        try {
+            // Print out the current value
+            cout << "Current value is: " << stringList.get_value() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+        }
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException" << endl << endl;
+    }
 
-    cout << stringList << endl;
+    // Moving to a different place
+    try {    
+        cout << "Moving to position -1" << endl;
+        stringList.move_to_pos(-1);
+        cout << "Current position: " << stringList.curr_pos() << endl;
+        try {
+            // Print out the current value
+            cout << "Current value is: " << stringList.get_value() << endl << endl;
+        }
+        catch(InvalidPositionException) {
+            cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+        }
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException" << endl << endl;
+    }
 
-    stringList.insert("ah");
+    // Moving to either end og the list
+    cout << "Moving to the end" << endl;
+    stringList.move_to_end();
+    cout << "Current position: " << stringList.curr_pos() << endl;
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
+    cout << "Current list size is: " << stringList.length() << endl << endl;
 
-    cout << stringList << endl;
+    cout << "Moving to the start" << endl;
+    stringList.move_to_start();
+    cout << "Current position: " << stringList.curr_pos() << endl;
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
+    cout << "Current list size is: " << stringList.length() << endl << endl;
 
-    stringList.next();
-
-    cout << stringList << endl;
-
-    stringList.next();
-
-    cout << stringList << endl;
-
-    stringList.prev();
-
-    cout << stringList << endl;
-
-    stringList.append("z");
-
-    cout << stringList << endl;
-
-    cout << endl << "INT_LIST" << endl << endl;
-
-    cout << "initializing..." << endl;
-    DoublyLinkedList<int> intList;
-    cout << "initializing done...." << endl << endl;
-    cout << "adding to the end 4" << endl;
-    intList.append(4);
-    cout << "item added" << endl;
-    cout << "adding to the end 5" << endl;
-    intList.append(5);
-    cout << "item added" << endl;
-    cout << "adding to the end 6" << endl;
-    intList.append(6);
-    cout << "item added" << endl;
-    cout << "adding to the end 7" << endl;
-    intList.append(7);
-    cout << "item added" << endl;
-    cout << "adding to the end 8" << endl;
-    intList.append(8);
-    cout << "item added" << endl;
-
-
-    cout << "atempting to write to screen" << endl;
-    intList.move_to_start();
-    intList.insert(7);
-
-    cout << intList << endl;
 
     return 0;
 }

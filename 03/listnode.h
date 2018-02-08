@@ -2,24 +2,21 @@
 #define LISTNODE_H
 
 template <typename T>
-class ListNode{
+class ListNode {
+public:
+    ListNode<T>(): prev(nullptr), next(nullptr) {}
 
-    private:
-       /* T data;
-        ListNode<T> *prev;
-        ListNode<T> *next;
-        friend class DoublyLinkedList; */
+    ListNode<T>(T value): data(value), prev(nullptr), next(nullptr) {}
+    
+    ListNode<T>(ListNode<T> *prev, ListNode<T> *next): prev(prev), next(next) {}
+    
+    ListNode<T>(T value, ListNode<T> *prev, ListNode<T> *next): data(value), prev(prev), next(next) {}
+    
+    virtual ~ListNode() {}
 
-    public:
-        ListNode<T>(): prev(nullptr), next(nullptr) {}
-        ListNode<T>(T value): data(value), prev(nullptr), next(nullptr) {}
-        ListNode<T>(ListNode<T> *prev, ListNode<T> *next): prev(prev), next(next) {}
-        ListNode<T>(T value, ListNode<T> *prev, ListNode<T> *next): data(value), prev(prev), next(next) {}
-        virtual ~ListNode() {}
-
-        T data;
-        ListNode<T> *prev;
-        ListNode<T> *next;
+    T data;
+    ListNode<T> *prev;
+    ListNode<T> *next;
 
 };
 
