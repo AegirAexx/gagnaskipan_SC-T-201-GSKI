@@ -7,3 +7,6 @@
 01/out
 03/out
 01/valgrind.sh
+03/obtained_output.txt
+03/output_executable
+03/valgrind_report.txt
