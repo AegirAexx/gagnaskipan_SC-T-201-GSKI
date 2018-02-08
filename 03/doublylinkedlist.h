@@ -12,7 +12,10 @@ template <typename T>
 class DoublyLinkedList {
 public:
 
-    DoublyLinkedList<T>(): head(new ListNode<T>(nullptr, tail)), tail(new ListNode<T>(head, nullptr)), currNode(tail), size(0), currentPosition(0) { }
+    DoublyLinkedList<T>():
+        head(new ListNode<T>(nullptr, tail)),
+        tail(new ListNode<T>(head, nullptr)),
+        currNode(tail), size(0), currentPosition(0) { }
 
     ~DoublyLinkedList<T>() {
         clear();
@@ -41,7 +44,11 @@ public:
 
     void append(const T& item) {
         addAtThisNode(tail, item);
-        currentPosition = size;
+
+        if(currNode == tail){
+            currentPosition = size;
+        }
+
     }
 
     T remove() {

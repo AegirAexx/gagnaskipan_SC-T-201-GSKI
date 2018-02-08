@@ -339,6 +339,48 @@ int main(){
     }
     cout << "Current list size is: " << stringList.length() << endl << endl;
 
+
+    cout << "Appending and Inserting to the list" << endl;
+    stringList.append("111");
+    stringList.insert("222");
+    stringList.append("333");
+    stringList.insert("444");
+    stringList.append("555");
+    stringList.insert("666");
+    stringList.append("777");
+    stringList.insert("888");
+    cout << "Appended and Inserted to the list: " << stringList << endl << endl;
+
+
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
+    cout << "Current list size is: " << stringList.length() << endl << endl;
+
+    stringList.move_to_start();
+
+    stringList.next();
+
+    stringList.append("Bull");
+
+    try {
+        // Print out the current value
+        cout << "Current value is: " << stringList.get_value() << endl << endl;
+    }
+    catch(InvalidPositionException) {
+        cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
+    }
+    cout << "Current list size is: " << stringList.length() << endl << endl;
+
+    cout << "Appended and Inserted to the list: " << stringList << endl << endl;
+
+
+    cout << stringList.curr_pos();
+
     return 0;
 }
 
