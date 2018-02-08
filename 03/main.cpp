@@ -3,9 +3,26 @@
 
 int main(){
 
+ DoublyLinkedList<string> stringList;
+
+    stringList.move_to_start();
+    stringList.next();
+    stringList.prev();
+    cout << stringList.length();
+    stringList.insert("83538");
+
+
+    cout << "Inserted to the list: " << stringList << endl << endl;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     cout << endl << "STRING_LIST" << endl << endl;
 
-    DoublyLinkedList<string> stringList;
 
     // Append to list
     cout << "Appending to the list" << endl;

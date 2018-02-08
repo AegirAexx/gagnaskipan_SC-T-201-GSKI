@@ -65,8 +65,10 @@ public:
     }
 
     void move_to_start() {
-        currNode = head->next;
-        currentPosition = 0;
+        if (!isEmpty()) {
+            currNode = head->next;
+            currentPosition = 0;
+        }
     }
 
     void move_to_end() {
