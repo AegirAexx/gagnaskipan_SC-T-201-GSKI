@@ -70,19 +70,19 @@ public:
     }
 
     void move_to_end() {
-        currNode = tail->prev;
-        currentPosition = size - 1;
+        currNode = tail;
+        currentPosition = size;
     }
 
     void prev() {
-        if (currNode->prev != head) {
+        if (currentPosition > 0) {
             currNode = currNode->prev;
             currentPosition--;
         }
     }
 
     void next() {
-        if(currNode != tail){
+        if(currentPosition < size){
             currNode = currNode->next;
             currentPosition++;
         }
@@ -107,12 +107,12 @@ public:
         if (pos < 0) {
             throw InvalidPositionException();
         }
-        int steps = (size - 1) - pos;
+        int steps = size - pos;
         if (steps < 0) {
             throw InvalidPositionException();
         }
-        currNode = tail->prev;
-        currentPosition = size - 1;
+        currNode = tail;
+        currentPosition = size;
         for (int i = 0; i < steps; ++i) {
             prev();
         }
