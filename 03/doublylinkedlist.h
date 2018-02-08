@@ -11,24 +11,24 @@ class InvalidPositionException {};
 template <typename T>
 
 class DoublyLinkedList{
-    
+
     public:
 
         DoublyLinkedList<T>(): head(new ListNode<T>(nullptr, tail)), tail(new ListNode<T>(head, nullptr)), currNode(nullptr), size(0), currentPosition(0) {}
 
-        ~DoublyLinkedList<T>(){            
-            while(!isEmpty()){
-                removeThisNode(head->next);
-            }
+        ~DoublyLinkedList<T>(){
+            clear();
+
             delete head;
-            delete tail;           
+            delete tail;
         }
 
         void clear(){
             while(!isEmpty()){
                 removeThisNode(head->next);
             }
-            currNode = nullptr;
+            currNode = head->next;
+            currentPosition = 0;
         }
 
         void insert(const T& item){
@@ -37,11 +37,18 @@ class DoublyLinkedList{
 
         void append(const T& item){
             addAtThisNode(tail, item);
+            currentPosition = size;
+            currNode = tail->prev;
         }
 
         T remove(){
+            if(isEmpty()){
+                throw InvalidPositionException();
+            }
             T retValue = currNode->data;
+            ListNode<T> *tmp = currNode->next;
             removeThisNode(currNode);
+            currNode = tmp;
             return retValue;
         }
 
@@ -56,13 +63,17 @@ class DoublyLinkedList{
         }
 
         void prev(){
-            iteratorExceptionHandler(currNode->prev, head);
+            if(currNode->prev == head){
+                throw InvalidPositionException();
+            }
             currNode = currNode->prev;
             currentPosition--;
         }
 
         void next(){
-            iteratorExceptionHandler(currNode->next, tail);
+            if(currNode->next == tail){
+                throw InvalidPositionException();
+            }
             currNode = currNode->next;
             currentPosition++;
         }
@@ -84,19 +95,17 @@ class DoublyLinkedList{
         }
 
         void move_to_pos(int pos){
-            if(pos < 0 || pos > size){
+            int steps = (size - 1) - pos;
+
+            if(steps < 0){
                 throw InvalidPositionException();
             }
-            int stepsToMove = currentPosition - pos;
-            if(stepsToMove > 0){
-                for(size_t i = 0; 0 < stepsToMove; ++i){
-                    prev();                
-                }
-            }else if(stepsToMove < 0){
-                stepsToMove *= -1;
-                for(size_t i = 0; 0 < stepsToMove; ++i){
-                    next();
-                }                
+
+            currNode = tail->prev;
+            currentPosition = size - 1;
+
+            for(int i = 0; i < steps; ++i){
+                  prev();
             }
         }
 
@@ -114,11 +123,9 @@ class DoublyLinkedList{
             ListNode<T> *node = new ListNode<T>(item, indexNode->prev, indexNode);
             if(isEmpty()){
                 currNode = node;
-                currentPosition = 1;
             }
             if(indexNode == nullptr){
                 indexNode = tail;
-                currentPosition = size;
             }
             if(indexNode == head){
                 indexNode = head->next;
