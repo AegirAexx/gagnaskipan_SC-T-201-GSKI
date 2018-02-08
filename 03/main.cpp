@@ -1,7 +1,6 @@
 #include "doublylinkedlist.h"
 #include <string>
 
-
 int main(){
 
     cout << endl << "STRING_LIST" << endl << endl;
@@ -218,7 +217,6 @@ int main(){
         cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
 
-
     // Moving to a different place
     try {    
         cout << "Moving to position 0" << endl;
@@ -328,7 +326,6 @@ int main(){
         cout << "Caught InvalidPositionException - GET VALUE" << endl << endl;
     }
     cout << "Current list size is: " << stringList.length() << endl << endl;
-
 
     return 0;
 }
