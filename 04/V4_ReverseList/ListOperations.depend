@@ -29,3 +29,18 @@
 	"listnode.h"
 	"listoperations.h"
 
+1518651353 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\04\v4_reverselist\listoperations.cpp
+	"listoperations.h"
+
+1518111421 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\04\v4_reverselist\listoperations.h
+	<ostream>
+	"listnode.h"
+
+1518111421 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\04\v4_reverselist\listnode.h
+	<string>
+
+1518111421 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\04\v4_reverselist\main.cpp
+	<iostream>
+	"listnode.h"
+	"listoperations.h"
+

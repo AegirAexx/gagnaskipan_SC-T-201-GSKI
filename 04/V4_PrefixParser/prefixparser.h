@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include <stdlib.h>
+
 class DivideByZeroException { };
 
 using namespace std;
