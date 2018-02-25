@@ -19,6 +19,11 @@ class Queue
         ///a runtime error instead, which is mush harder to deal with.
         virtual void print(ostream& outs) const = 0;
 
+        virtual void add(T t) = 0;
+
+        virtual T remove() = 0;
+
+
         friend ostream& operator <<(ostream& outs, const Queue<T> &que) {
             ///We call que.print, even though it isn't implemented, because
             ///we trust that it will be implemented in the derived class

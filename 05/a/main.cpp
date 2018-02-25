@@ -2,9 +2,10 @@
 #include "stack.h"
 #include "queue.h"
 #include "linkedlist.h"
-#include "bufferlist.h"
+
 
 using namespace std;
+
 
 template <class T>
 void pushTest(Stack<T> *stac, T value) {
@@ -229,6 +230,7 @@ void stringQueueTest(Queue<string> *que) {
 
 void testLinkedListStack() {
 
+
     cout << "\n -- new Stack --" << endl;
     Stack<int> *stac1 = new LinkedList<int>();
     intStackTest(stac1);
@@ -243,6 +245,8 @@ void testLinkedListStack() {
     Stack<string> *stac3 = new LinkedList<string>();
     stringStackTest(stac3);
     delete stac3;
+
+
 }
 
 void testLinkedListQueue() {
@@ -263,50 +267,17 @@ void testLinkedListQueue() {
     delete que3;
 }
 
-void testBufferListStack() {
 
-    cout << "\n -- new Stack --" << endl;
-    Stack<int> *stac1 = new BufferList<int>();
-    intStackTest(stac1);
-    delete stac1;
 
-    cout << "\n -- new Stack --" << endl;
-    Stack<double> *stac2 = new BufferList<double>();
-    doubleStackTest(stac2);
-    delete stac2;
-
-    cout << "\n -- new Stack --" << endl;
-    Stack<string> *stac3 = new BufferList<string>();
-    stringStackTest(stac3);
-    delete stac3;
-}
-
-void testBufferListQueue() {
-
-    cout << "\n -- new Queue --" << endl;
-    Queue<int> *que1 = new BufferList<int>();
-    intQueueTest(que1);
-    delete que1;
-
-    cout << "\n -- new Queue --" << endl;
-    Queue<double> *que2 = new BufferList<double>();
-    doubleQueueTest(que2);
-    delete que2;
-
-    cout << "\n -- new Queue --" << endl;
-    Queue<string> *que3 = new BufferList<string>();
-    stringQueueTest(que3);
-    delete que3;
-}
 
 int main() {
 
     ///Comment these out one by one for more focused tests
 
     testLinkedListStack();
-    testLinkedListQueue();
-    testBufferListStack();
-    testBufferListQueue();
+    //testLinkedListQueue();
+    //testBufferListStack();
+    //testBufferListQueue();
 
     return 0;
 }

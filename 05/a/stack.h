@@ -19,6 +19,10 @@ class Stack
         ///a runtime error instead, which is mush harder to deal with.
         virtual void print(ostream& outs) const = 0;
 
+        virtual void push(T t) = 0;
+
+        virtual T pop() = 0;
+
         friend ostream& operator <<(ostream& outs, const Stack<T> &stac) {
             ///We call stac.print, even though it isn't implemented, because
             ///we trust that it will be implemented in the derived class
