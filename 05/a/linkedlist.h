@@ -10,7 +10,8 @@ template <class T>
 class LinkedList : public Queue<T>, public Stack<T>
 {
     public:
-        LinkedList() {}
+        LinkedList(): head(NULL), tail(NULL){}
+
         virtual ~LinkedList() {
             for(ListNode<T> *tmpNode = head; tmpNode != NULL; tmpNode = head) {
                 head = head->next;

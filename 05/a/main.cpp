@@ -275,7 +275,7 @@ int main() {
     ///Comment these out one by one for more focused tests
 
     testLinkedListStack();
-    //testLinkedListQueue();
+    testLinkedListQueue();
     //testBufferListStack();
     //testBufferListQueue();
 
