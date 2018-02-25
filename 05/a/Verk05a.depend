@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1519598018 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\05\a\main.cpp
+1519598971 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\05\a\main.cpp
 	<iostream>
 	"stack.h"
 	"queue.h"
@@ -11,7 +11,7 @@
 1519595131 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\05\a\queue.h
 	<iostream>
 
-1519598110 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\05\a\linkedlist.h
+1519599417 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\05\a\linkedlist.h
 	"stack.h"
 	"queue.h"
 	"listnode.h"

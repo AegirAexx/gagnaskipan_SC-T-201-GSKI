@@ -11,7 +11,13 @@ class LinkedList : public Queue<T>, public Stack<T>
 {
     public:
         LinkedList() {}
-        virtual ~LinkedList() {}
+        virtual ~LinkedList() {
+            for(ListNode<T> *tmpNode = head; tmpNode != NULL; tmpNode = head) {
+                head = head->next;
+                delete tmpNode;
+            }
+
+        }
 
         void add(T t) {
 
