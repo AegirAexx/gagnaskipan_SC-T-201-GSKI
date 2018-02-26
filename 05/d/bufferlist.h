@@ -13,9 +13,9 @@ class BufferList : public Queue<T>, public Stack<T>
 {
 public:
     BufferList() {
-    capacity = INITIAL_CAPACITY;
-    itemCount = 0;
-    data = new T [capacity];
+        capacity = INITIAL_CAPACITY;
+        itemCount = 0;
+        data = new T [capacity];
     }
 
     virtual ~BufferList() {
