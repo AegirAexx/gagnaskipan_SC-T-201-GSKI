@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1520366588 source:c:\users\dagur\documents\tolvunarfraedihr\voronn2018\gagnaskipan\binarytreemap\binarytree.cpp
+	"binarytree.h"
+	<iostream>
+
+1520366308 c:\users\dagur\documents\tolvunarfraedihr\voronn2018\gagnaskipan\binarytreemap\binarytree.h
+	"dataclass.h"
+	<stdio.h>
+	"binarytreenode.h"
+
+1520365756 c:\users\dagur\documents\tolvunarfraedihr\voronn2018\gagnaskipan\binarytreemap\dataclass.h
+	<iostream>
+	<string>
+
+1520366102 c:\users\dagur\documents\tolvunarfraedihr\voronn2018\gagnaskipan\binarytreemap\binarytreenode.h
+	"dataclass.h"
+	<stdio.h>
+
+1520364794 source:c:\users\dagur\documents\tolvunarfraedihr\voronn2018\gagnaskipan\binarytreemap\dataclass.cpp
+	"dataclass.h"
+
+1520366632 source:c:\users\dagur\documents\tolvunarfraedihr\voronn2018\gagnaskipan\binarytreemap\main.cpp
+	<iostream>
+	"binarytree.h"
+	"dataclass.h"
+
