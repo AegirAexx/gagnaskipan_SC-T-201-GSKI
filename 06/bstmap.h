@@ -102,26 +102,23 @@ class BSTMap : public Map<K, T>
         void removeNode(BinaryTreeNode<K, T>* &node) {
 
             if(node->left == NULL && node->right == NULL) {
-                cout << "REMOVE LEAF" << endl;
                 delete node;
                 node = NULL;
             }
             else if(node->right == NULL) {
-                cout << "REMOVE Node with leeft child" << endl;
                 BinaryTreeNode<K, T>* tmp = node;
                 node = node->left;
                 delete tmp;
             }
             else if(node->left == NULL) {
-                cout << "REMOVE Node with right child" << endl;
                 BinaryTreeNode<K, T>* tmp = node;
                 node = node->right;
                 delete tmp;
             }
             else {
-                cout << "REMOVE Node with 2 children" << endl;
                 BinaryTreeNode<K, T>* &nodeForDeletion = findRightMostNode(node->left);
                 node->data = nodeForDeletion->data;
+                node->key = nodeForDeletion->key;
                 removeNode(nodeForDeletion);
             }
         }
