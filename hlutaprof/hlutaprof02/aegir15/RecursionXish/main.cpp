@@ -1,52 +1,92 @@
 #include <iostream>
+// #include <string.h>
 #include <string.h>
 
 using namespace std;
 
 ///////IMPLEMENT THIS FUNCTION///////////////////
 //You can add helper functions as you see fit.
-/*
-bool Xish(const char* strX, const char* strWord) {
 
+// bool Xish(const char* strX, const char* strWord) {
+
+//     ///This is the length of strX, if you need it!
+//     int lengthOfX = strlen(strX);
+
+//     //REMOVE/REPLACE THIS LINE
+//     return false;
+// }
+
+// bool Xish(const char* strX, const char* strWord) {
+
+//     ///This is the length of strX, if you need it!
+//     //int lengthOfX = strlen(strX);
+//     int lengthOfWord = strlen(strWord);
+
+//     bool returnBoolean = false;
+//     bool e = false;
+//     bool l = false;
+//     bool f = false;
+//     for(auto i = 0; i < lengthOfWord; ++i){
+//         if(strWord[i] == 'e' || strWord[i] == 'E'){
+//             e = true;
+//         }
+//         else if(strWord[i] == 'l' || strWord[i] == 'L'){
+//             l = true;
+//         }
+//         else if(strWord[i] == 'f' || strWord[i] == 'F'){
+//             f = true;
+//         }
+//     }
+//     if(e && l && f){
+//         returnBoolean = true;
+//     }
+
+//     //REMOVE/REPLACE THIS LINE
+//     return returnBoolean;
+// }
+
+int findX (int indexX, int indexW, const char *strX, const char *strWord, int found) {
+    if(strX[indexX] == '\0') { //Ef að búið er að tékka á öllum í strX þá bara return-a found tölunni
+        return found;
+    }
+    else if (strWord[indexW] == '\0') { //Ef að komið er út í enda á strWord þá kalla aftur á recursion með næsta staki í strX
+        return findX(indexX + 1, 0, strX, strWord, found);
+    }
+    else if (strX[indexX] != strWord[indexW]) { //Ef strX stakið er ekki eins og strWord stakið þá kallar maður aftur á recursion með næsta staki af strWord
+        return findX(indexX, indexW + 1, strX, strWord, found);
+    }
+    else if (strX[indexX] == strWord[indexW]) { //Ef maður finnur match þá bætir maður einum við found töluna og kallar svo aftur á recursion með næsta staki af strX
+        found++;
+        return findX(indexX + 1, 0, strX, strWord, found);
+    }
+    return found;
+}
+bool Xish(const char* strX, const char* strWord) {
     ///This is the length of strX, if you need it!
     int lengthOfX = strlen(strX);
-
-    //REMOVE/REPLACE THIS LINE
-    return false;
-}
-*/
-bool Xish(const char* strX, const char* strWord) {
-
-    ///This is the length of strX, if you need it!
-    //int lengthOfX = strlen(strX);
-    int lengthOfWord = strlen(strWord);
-
-    bool returnBoolean = false;
-    bool e = false;
-    bool l = false;
-    bool f = false;
-    for(auto i = 0; i < lengthOfWord; ++i){
-        if(strWord[i] == 'e' || strWord[i] == 'E'){
-            e = true;
-        }
-        else if(strWord[i] == 'l' || strWord[i] == 'L'){
-            l = true;
-        }
-        else if(strWord[i] == 'f' || strWord[i] == 'F'){
-            f = true;
-        }
+    int matchFound = 0;  //breyta sem heldur utan um fjölda af matches sem finnast
+    int found = 0; //Breyta sem er send inn í recursion-ið til að skilast í gegnum allt recursionið og endar svo í að setja gildið inn í matchfound
+    matchFound = findX(0, 0, strX, strWord, found);  //kallað á recursion fallið í fyrsta sinn með indeX = 0, indexW = 0, found = 0
+    if(matchFound >= lengthOfX) {
+        return true;
     }
-    if(e && l && f){
-        returnBoolean = true;
+    else {
+        return false;
     }
-
-    //REMOVE/REPLACE THIS LINE
-    return returnBoolean;
 }
-
 
 ////////////////////////////////DO NOT CHANGE ANYTHING BELOW THIS LINE////////////////////////////////////////////
 
+
+// void checkXish(string X, string word) {
+
+//     if(Xish(X, word)) {
+//         cout << word << " is " << X << "-ish" << endl;
+//     }
+//     else {
+//         cout << word << " is NOT " << X << "-ish" << endl;
+//     }
+// }
 
 void checkXish(string X, string word) {
 
@@ -57,6 +97,7 @@ void checkXish(string X, string word) {
         cout << word << " is NOT " << X << "-ish" << endl;
     }
 }
+
 
 void checkElfish(string word) {
 

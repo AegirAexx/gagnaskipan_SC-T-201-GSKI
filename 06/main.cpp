@@ -106,7 +106,7 @@ void printMap(Map<K, T> *map) {
 
 
 int main() {
-/*
+
     Map<char, string> *bstMap = new BSTMap<char, string>();
 
     testInsert(bstMap, 'd', (string)"item-d");
@@ -184,183 +184,187 @@ int main() {
     testSize(bstMap);
 
     delete bstMap;
-    bstMap = NULL;
-*/
-
-    ///RB hackers test below
-/*
-    Map<int, int> *bstMap = new BSTMap<int, int>();
-
-    testInsert(bstMap, 3, (int)3);
-    testInsert(bstMap, 1, (int)1);
-    testInsert(bstMap, 2, (int)2);
-    testInsert(bstMap, 4, (int)4);
-    testInsert(bstMap, 5, (int)5);
-    testInsert(bstMap, 9, (int)9);
-    testInsert(bstMap, 2, (int)2);
-    testInsert(bstMap, 4, (int)4);
-    testInsert(bstMap, 5, (int)5);
-    testInsert(bstMap, 9, (int)9);
-
-    printMap(bstMap);
-    testSize(bstMap);
-
-    testContains(bstMap, 9);
-    testContains(bstMap, 7);
-
-    testGet(bstMap, 9);
-    testContains(bstMap, 9);
-    testRemove(bstMap, 9); //
-    testContains(bstMap, 10);
-    testEmpty(bstMap);
-
-    printMap(bstMap);
-    testSize(bstMap);
-
-    testGet(bstMap, 4);
-    testGet(bstMap, 2);
-    testGet(bstMap, 9);
-
-    testUpdate(bstMap, 2, (int)666);
-
-    testGet(bstMap, 2);
-    testGet(bstMap, 9);
-    testGet(bstMap, 23);
-
-    printMap(bstMap);
-    testSize(bstMap);
-
-    testRemove(bstMap, 9);
-    testRemove(bstMap, 2);
-    testRemove(bstMap, 103);
-
-    testUpdate(bstMap, 4, (int)376);
-
-    testGet(bstMap, 399);
-    testGet(bstMap, 512);
-    testGet(bstMap, 12);
-
-    testRemove(bstMap, 9);
-    testRemove(bstMap, 2);
-    testRemove(bstMap, 103);
-
-    testClear(bstMap);
-
-    testRemove(bstMap, 9);
-    testRemove(bstMap, 2);
-    testRemove(bstMap, 103);
-
-    testInsert(bstMap, 9, (int)9);
-
-    testRemove(bstMap, 2);
-    testRemove(bstMap, 1);
-
-    testEmpty(bstMap);
-
-    printMap(bstMap);
-    testSize(bstMap);
-
-    testRemove(bstMap, 2);
-    testEmpty(bstMap);
-
-    printMap(bstMap);
-    testSize(bstMap);
-
-    testInsert(bstMap, 3, (int)1);
-    testInsert(bstMap, 1, (int)3);
-    testInsert(bstMap, 2, (int)2);
-    testInsert(bstMap, 4, (int)4);
-    testInsert(bstMap, 5, (int)5);
-    testInsert(bstMap, 9, (int)9);
-    testInsert(bstMap, 2, (int)2);
-    testInsert(bstMap, 4, (int)4);
-    testInsert(bstMap, 5, (int)5);
-    testInsert(bstMap, 9, (int)9);
+    bstMap = nullptr;
 
 
-    testEmpty(bstMap);
-    printMap(bstMap);
-    testSize(bstMap);
+    ///dagur17 og aegir15 test
 
-    testClear(bstMap);
-    testEmpty(bstMap);
-    printMap(bstMap);
-    testSize(bstMap);
+    Map<int, int> *bstMap2 = new BSTMap<int, int>();
 
-    delete bstMap;
-    bstMap = NULL;
-*/
+    testInsert(bstMap2, 3, (int)3);
+    testInsert(bstMap2, 1, (int)1);
+    testInsert(bstMap2, 2, (int)2);
+    testInsert(bstMap2, 4, (int)4);
+    testInsert(bstMap2, 5, (int)5);
+    testInsert(bstMap2, 9, (int)9);
+    testInsert(bstMap2, 2, (int)2);
+    testInsert(bstMap2, 4, (int)4);
+    testInsert(bstMap2, 5, (int)5);
+    testInsert(bstMap2, 9, (int)9);
 
-    Map<int, string> *bstMap = new BSTMap<int, string>();
+    printMap(bstMap2);
+    testSize(bstMap2);
 
-    testInsert(bstMap, 3, (string)"Three");
-    testInsert(bstMap, 1, (string)"One");
-    testInsert(bstMap, 2, (string)"Two");
-    testInsert(bstMap, 4, (string)"Four");
-    testInsert(bstMap, 5, (string)"Five");
-    testInsert(bstMap, 9, (string)"Nine");
-    testInsert(bstMap, 2, (string)"Two");
-    testInsert(bstMap, 4, (string)"Four");
-    testInsert(bstMap, 5, (string)"Five");
-    testInsert(bstMap, 9, (string)"Nine");
-    testInsert(bstMap, 6, (string)"Six");
-    testInsert(bstMap, 7, (string)"Seven");
-    testInsert(bstMap, 8, (string)"Eight");
-    testInsert(bstMap, 10, (string)"Ten");
-    testInsert(bstMap, 0, (string)"NULL");
-    testInsert(bstMap, -1, (string)"Minus");
+    testContains(bstMap2, 9);
+    testContains(bstMap2, 7);
 
-    printMap(bstMap);
+    testGet(bstMap2, 9);
+    testContains(bstMap2, 9);
+    testRemove(bstMap2, 9); //
+    testContains(bstMap2, 10);
+    testEmpty(bstMap2);
 
-    testUpdate(bstMap, 4, (string)"four-updated");
-    testUpdate(bstMap, 12, (string)"four updated");
+    printMap(bstMap2);
+    testSize(bstMap2);
 
-    printMap(bstMap);
+    testGet(bstMap2, 4);
+    testGet(bstMap2, 2);
+    testGet(bstMap2, 9);
 
-    testGet(bstMap, 6);
-    testGet(bstMap, -100);
+    testUpdate(bstMap2, 2, (int)666);
 
-    testGet(bstMap, 6);
+    testGet(bstMap2, 2);
+    testGet(bstMap2, 9);
+    testGet(bstMap2, 23);
 
-    testRemove(bstMap, 0);
-    printMap(bstMap);
-    testRemove(bstMap, 0);
-    printMap(bstMap);
-    testRemove(bstMap, 3);
-    printMap(bstMap);
-    testRemove(bstMap, 4);
-    printMap(bstMap);
-    testRemove(bstMap, 5);
-    printMap(bstMap);
-    testRemove(bstMap, 6);
-    printMap(bstMap);
-    testRemove(bstMap, 7);
-    printMap(bstMap);
-    testRemove(bstMap, 8);
-    printMap(bstMap);
-    testRemove(bstMap, 9);
-    printMap(bstMap);
-    testRemove(bstMap, 10);
-    printMap(bstMap);
-    testRemove(bstMap, 11);
-    printMap(bstMap);
-    testRemove(bstMap, 9);
+    printMap(bstMap2);
+    testSize(bstMap2);
 
-    printMap(bstMap);
+    testRemove(bstMap2, 9);
+    testRemove(bstMap2, 2);
+    testRemove(bstMap2, 103);
 
-    testClear(bstMap);
-    testRemove(bstMap, 9);
+    testUpdate(bstMap2, 4, (int)376);
 
-    testEmpty(bstMap);
+    testGet(bstMap2, 399);
+    testGet(bstMap2, 512);
+    testGet(bstMap2, 12);
 
-    testInsert(bstMap, 4, (string)"Four");
-    testRemove(bstMap, 9);
-    testRemove(bstMap, 4);
+    testRemove(bstMap2, 9);
+    testRemove(bstMap2, 2);
+    testRemove(bstMap2, 103);
 
-    testContains(bstMap, 9);
-    testContains(bstMap, 7);
+    testClear(bstMap2);
 
-    testClear(bstMap);
-    testEmpty(bstMap);
+    testRemove(bstMap2, 9);
+    testRemove(bstMap2, 2);
+    testRemove(bstMap2, 103);
 
+    testInsert(bstMap2, 9, (int)9);
+
+    testRemove(bstMap2, 2);
+    testRemove(bstMap2, 1);
+
+    testEmpty(bstMap2);
+
+    printMap(bstMap2);
+    testSize(bstMap2);
+
+    testRemove(bstMap2, 2);
+    testEmpty(bstMap2);
+
+    printMap(bstMap2);
+    testSize(bstMap2);
+
+    testInsert(bstMap2, 3, (int)1);
+    testInsert(bstMap2, 1, (int)3);
+    testInsert(bstMap2, 2, (int)2);
+    testInsert(bstMap2, 4, (int)4);
+    testInsert(bstMap2, 5, (int)5);
+    testInsert(bstMap2, 9, (int)9);
+    testInsert(bstMap2, 2, (int)2);
+    testInsert(bstMap2, 4, (int)4);
+    testInsert(bstMap2, 5, (int)5);
+    testInsert(bstMap2, 9, (int)9);
+
+
+    testEmpty(bstMap2);
+    printMap(bstMap2);
+    testSize(bstMap2);
+
+    testClear(bstMap2);
+    testEmpty(bstMap2);
+    printMap(bstMap2);
+    testSize(bstMap2);
+
+    delete bstMap2;
+    bstMap2 = nullptr;
+
+
+    Map<int, string> *bstMap3 = new BSTMap<int, string>();
+
+    testInsert(bstMap3, 3, (string)"Three");
+    testInsert(bstMap3, 1, (string)"One");
+    testInsert(bstMap3, 2, (string)"Two");
+    testInsert(bstMap3, 4, (string)"Four");
+    testInsert(bstMap3, 5, (string)"Five");
+    testInsert(bstMap3, 9, (string)"Nine");
+    testInsert(bstMap3, 2, (string)"Two");
+    testInsert(bstMap3, 4, (string)"Four");
+    testInsert(bstMap3, 5, (string)"Five");
+    testInsert(bstMap3, 9, (string)"Nine");
+    testInsert(bstMap3, 6, (string)"Six");
+    testInsert(bstMap3, 7, (string)"Seven");
+    testInsert(bstMap3, 8, (string)"Eight");
+    testInsert(bstMap3, 10, (string)"Ten");
+    testInsert(bstMap3, 0, (string)"NULL");
+    testInsert(bstMap3, -1, (string)"Minus");
+
+    printMap(bstMap3);
+
+    testUpdate(bstMap3, 4, (string)"four-updated");
+    testUpdate(bstMap3, 12, (string)"four updated");
+
+    printMap(bstMap3);
+
+    testGet(bstMap3, 6);
+    testGet(bstMap3, -100);
+
+    testGet(bstMap3, 6);
+
+    testRemove(bstMap3, 0);
+    printMap(bstMap3);
+    testRemove(bstMap3, 0);
+    printMap(bstMap3);
+    testRemove(bstMap3, 3);
+    printMap(bstMap3);
+    testRemove(bstMap3, 4);
+    printMap(bstMap3);
+    testRemove(bstMap3, 5);
+    printMap(bstMap3);
+    testRemove(bstMap3, 6);
+    printMap(bstMap3);
+    testRemove(bstMap3, 7);
+    printMap(bstMap3);
+    testRemove(bstMap3, 8);
+    printMap(bstMap3);
+    testRemove(bstMap3, 9);
+    printMap(bstMap3);
+    testRemove(bstMap3, 10);
+    printMap(bstMap3);
+    testRemove(bstMap3, 11);
+    printMap(bstMap3);
+    testRemove(bstMap3, 9);
+
+    printMap(bstMap3);
+
+    testClear(bstMap3);
+    testRemove(bstMap3, 9);
+
+    testEmpty(bstMap3);
+
+    testInsert(bstMap3, 4, (string)"Four");
+    testRemove(bstMap3, 9);
+    testRemove(bstMap3, 4);
+
+    testContains(bstMap3, 9);
+    testContains(bstMap3, 7);
+
+    testClear(bstMap3);
+    testEmpty(bstMap3);
+
+    delete bstMap3;
+    bstMap3 = nullptr;
+
+    return 0;
 }

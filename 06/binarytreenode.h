@@ -1,23 +1,23 @@
 #ifndef BINARYTREENODE_H
 #define BINARYTREENODE_H
 
-#include <stdio.h>
-#include <iostream>
+template <typename K, typename T>
+class BinaryTreeNode {
 
-using namespace std;
+public:
+    BinaryTreeNode(K key, T data, BinaryTreeNode *left = nullptr, BinaryTreeNode *right = nullptr): 
+        key(key), 
+        data(data), 
+        left(left), 
+        right(right)
+    {}
+    
+    virtual ~BinaryTreeNode() {}
 
-template <class K, class T>
-class BinaryTreeNode
-{
-    public:
-        BinaryTreeNode(K key, T data, BinaryTreeNode *left = NULL, BinaryTreeNode *right = NULL)
-                        : key(key), data(data), left(left), right(right) {};
-        virtual ~BinaryTreeNode() {};
-
-        K key;
-        T data;
-        BinaryTreeNode *left;
-        BinaryTreeNode *right;
+    K key;
+    T data;
+    BinaryTreeNode *left;
+    BinaryTreeNode *right;
 };
 
 #endif // BINARYTREENODE_H
