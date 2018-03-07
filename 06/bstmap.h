@@ -8,8 +8,8 @@ template <typename K, typename T>
 class BSTMap : public Map<K, T> {
 
 public:
-    BSTMap<K, T>(): 
-        root(nullptr), 
+    BSTMap<K, T>():
+        root(nullptr),
         treeCount(0)
     {}
 
@@ -122,7 +122,7 @@ private:
         }
     }
 
-    BinaryTreeNode<K, T>* &find(char key, BinaryTreeNode<K, T>* &node) {
+    BinaryTreeNode<K, T>* &find(K key, BinaryTreeNode<K, T>* &node) {
         if(node == nullptr) {
             return node;
         }

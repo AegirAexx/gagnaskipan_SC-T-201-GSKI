@@ -366,5 +366,70 @@ int main() {
     delete bstMap3;
     bstMap3 = nullptr;
 
+
+    /// Error feedback test
+
+    Map<int, char> *bstMap4 = new BSTMap<int, char>();
+
+    //Error line 572  //Villa fannst í parameter sem var ad koma inn í find fallid
+    testClear(bstMap4);
+
+    testSize(bstMap4);
+    testInsert(bstMap4, -92, 'p');
+    testUpdate(bstMap4, -77, 'a');
+    testSize(bstMap4);
+    testInsert(bstMap4, -94, 'm');
+    testSize(bstMap4);
+    testGet(bstMap4, 182);
+    testEmpty(bstMap4);
+    testUpdate(bstMap4, 156, 'k');
+    testInsert(bstMap4, -73, 'i');
+    testInsert(bstMap4, 33, 'c');
+    testInsert(bstMap4, -65, 'h');
+    testGet(bstMap4, 164);
+
+    //Error line 874 //Sama villan og ad ofan, i find fallinu
+    testClear(bstMap4);
+
+    testSize(bstMap4);
+    testSize(bstMap4);
+    testRemove(bstMap4, 49);
+    testInsert(bstMap4, 114, 'f');
+    testInsert(bstMap4, 150, 'f');
+    testInsert(bstMap4, 37, 'f');
+    testRemove(bstMap4, 150);
+
+    //Error line 1531 //Sama villan og ad ofan, i find fallinu
+    testClear(bstMap4);
+
+    testInsert(bstMap4, 163, 'a');
+    testRemove(bstMap4, -72);
+    testRemove(bstMap4, 187);
+    testRemove(bstMap4, -54);
+    testInsert(bstMap4, 163, 'f');
+
+    //Error line 1606 //Sama villan og ad ofan, i find fallinu
+    testClear(bstMap4);
+
+    testSize(bstMap4);
+    testSize(bstMap4);
+    testEmpty(bstMap4);
+    testInsert(bstMap4, 198, 'a');
+    testRemove(bstMap4, -3);
+    testUpdate(bstMap4, -67, 'e');
+    testRemove(bstMap4, 160);
+    testRemove(bstMap4, 198);
+    testEmpty(bstMap4);
+
+    //Error line 1717 - 1722 //Sama villan og ad ofan, i find fallinu
+    testClear(bstMap4);
+
+    testInsert(bstMap4, 150, 'f');
+    testUpdate(bstMap4, 150, 'l');
+    testGet(bstMap4, -20);
+    testUpdate(bstMap4, 150, 'o');
+    testUpdate(bstMap4, -8, 'z');
+    testGet(bstMap4, 150);
+
     return 0;
 }
