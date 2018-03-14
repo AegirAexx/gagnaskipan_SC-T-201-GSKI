@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1521059190 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\menuclass.cpp
+	"menuclass.h"
+
+1521058648 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\menuclass.h
+	<iostream>
+	"gameplay.h"
+
+1521060015 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\gameplay.h
+	<iostream>
+	<string>
+	<vector>
+
+1521059667 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\gameplay.cpp
+	"gameplay.h"
+
+1521058819 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\main.cpp
+	<iostream>
+	"menuclass.h"
+
+1521059516 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.cpp
+	"database.h"
+
+1521059516 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.h
+
