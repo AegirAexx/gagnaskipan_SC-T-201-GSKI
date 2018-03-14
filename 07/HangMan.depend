@@ -19,14 +19,14 @@
 	<iostream>
 	"menuclass.h"
 
-1521066203 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.cpp
+1521066623 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.cpp
 	"database.h"
 
-1521065676 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.h
+1521066623 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.h
 	<string>
 	<vector>
 	<fstream>
 	<iostream>
 	<sstream>
-	<random>
+	<cstdlib>
 

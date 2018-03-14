@@ -67,10 +67,8 @@ void DataBase::fetchWords() {
 }
 
 string DataBase::getRandomWord() {
-    default_random_engine generator;
-    uniform_int_distribution<int> distribution(0, wordDatabase.size() - 1);
 
-    int randomNumber = distribution(generator);
+    int randNumber = rand() % wordDatabase.size();
 
-    return wordDatabase[randomNumber];
+    return wordDatabase[randNumber];
 }
