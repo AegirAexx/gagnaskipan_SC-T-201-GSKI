@@ -1,0 +1,18 @@
+MenuClass
+- Fall sem skrifar út reglurnar
+- validate-a input alls staðar
+
+Gameplay
+- Validate-a input alls staðar
+- Go for it fall, þarf að útfæra það og hafa ? sem escape karakter sem kallar þá á þetta fall
+- útfæra vector sem heldur utan um það sem búið er að giska
+- Útfæra feedback til notanda í gegnum allt gameplay (þannig að það sé í samræmi við verkefnalýsingu)
+- Útfæra play again? Þá þarf að kalla aftur á mainmenu og reset-a allt sem þarf að reset-a (eins og t.d. vector sem heldur utan um gisk)
+
+Database
+- Keep track of wins and losses
+- High score listi (stórt verkefni)
+- Búa til score system sem við geymum í file
+
+
+

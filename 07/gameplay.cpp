@@ -42,7 +42,10 @@ void GamePlay::play(string word) {
             cout << "Enter a letter: " << endl;
             cin >> guess;
 
-            for(unsigned int i = 0; i < word.length(); i++) {
+            //Skilaboð sem segja press ? to guess the whole word
+            //Þá er kallað á goForIt
+
+            for(unsigned int i = 0; i < word.length(); i++) {  //validate hvort búið sé að geta rétt, búa til vector sem heldur utan um hvað búið er að giska á
                 if(guess == word[i]) {
                     hidden[i] = guess;
                     correctCount++;
@@ -58,12 +61,14 @@ void GamePlay::play(string word) {
             guessCount++;
         }
 
-    if(missesLeft <= 0) {  ///fall sem prentar út úrslitin
+    if(missesLeft <= 0) {  ///fall sem prentar út úrslitin, Hérna mætti búa til föll
         cout << "You lose!" << endl;
     }
     else if (correctCount == word.length()) {
         cout << "You win!" << endl;
     }
+
+
 }
 
 void GamePlay::hideWord (){

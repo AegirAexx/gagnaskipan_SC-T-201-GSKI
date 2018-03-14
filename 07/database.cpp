@@ -30,8 +30,6 @@ void DataBase::writeToDatabase(std::string newWord) {
 
 void DataBase::fetchWords() {
 
-    cout << "reading from file: " << endl;
-
     fstream readData;
     readData.open("data.txt",ios::in);
 
@@ -50,8 +48,6 @@ void DataBase::fetchWords() {
                 while (buffer >> strWord) {
 
                     wordDatabase.push_back(strWord);
-                    cout << "word: ";
-                    cout << strWord << endl;  // <--- Output!
                 }
             }
 

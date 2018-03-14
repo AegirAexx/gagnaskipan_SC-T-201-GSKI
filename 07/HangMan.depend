@@ -2,7 +2,7 @@
 1521064563 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\menuclass.cpp
 	"menuclass.h"
 
-1521064547 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\menuclass.h
+1521068441 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\menuclass.h
 	<iostream>
 	"gameplay.h"
 
@@ -12,14 +12,14 @@
 	<vector>
 	"database.h"
 
-1521066240 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\gameplay.cpp
+1521068441 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\gameplay.cpp
 	"gameplay.h"
 
 1521062739 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\main.cpp
 	<iostream>
 	"menuclass.h"
 
-1521066623 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.cpp
+1521068672 source:c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.cpp
 	"database.h"
 
 1521066623 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\07\database.h

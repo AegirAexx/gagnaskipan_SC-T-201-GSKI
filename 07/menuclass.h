@@ -13,6 +13,7 @@ class MenuClass
         void welcome();  //Fall sem skrifar welcome to hangman
         void mainMenu(); //Fall sem gefur manni möguleikan á að bæta í gagnagrunninn eða spila leikinn
         void dataMenu();
+        void rules(); //fall sem skrifar út reglurnar
 
     private:
         GamePlay game;
