@@ -19,6 +19,8 @@ void MenuClass::welcome() {  //Maetti utfaera betur og flottar
     cout << "           Welcome to           " << endl;
     cout << "         this->HangMan!         " << endl;
     cout << "********************************" << endl;
+
+    mainMenu();
 }
 
 void MenuClass::mainMenu() {  //vantar ad koma i veg fyrir rangt input
@@ -30,14 +32,30 @@ void MenuClass::mainMenu() {  //vantar ad koma i veg fyrir rangt input
     cin >> choice;
 
     if(choice == '1') {
-        Gameplay game;
         game.initialize();
     }
     else if (choice == '2') {
-
+        dataMenu();
     }
     else if (choice == 'Q' || choice == 'q') {
         cout << "Thank you, come again!" << endl;
         return;
     }
+}
+
+void MenuClass::dataMenu() {
+    string newWord;
+    char cont = 'y';
+
+    while(cont == 'y' || cont == 'Y') {
+        cout << "Please enter a word to add to database: ";
+        cin >> newWord;
+
+        data.writeToDatabase(newWord);
+
+        cout << "Press y to add another word? ";
+        cin >> cont;
+    }
+
+    mainMenu();
 }

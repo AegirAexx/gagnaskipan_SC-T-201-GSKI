@@ -4,18 +4,21 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "database.h"
 
-class Gameplay
+class GamePlay
 {
     public:
-        Gameplay();
-        virtual ~Gameplay();
+        GamePlay();
+        virtual ~GamePlay();
 
         void initialize(); //þetta fall setur þetta í gang, þarna nær maður í orð sem á að spila með, og spyr notandann hversu mörg misses hann vill leyfa
 
-        void play();
+        void play(std::string word);
 
         void printDisplayWord();
+
+        void hideWord();
 
 
     private:
@@ -23,8 +26,11 @@ class Gameplay
         int guessCount;
         int correctCount;
         std::string word;
-        std::string display;
-        std::vector<std::string> wordDatabase;
+        std::string hidden;
+        char guess;
+        bool guessValidation;
+        DataBase data;
+
 };
 
 #endif // GAMEPLAY_H

@@ -9,7 +9,5 @@ int main()
 
     menu.welcome();
 
-    menu.mainMenu();
-
     return 0;
 }
