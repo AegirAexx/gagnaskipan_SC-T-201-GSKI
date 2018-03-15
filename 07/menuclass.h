@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include "gameplay.h"
+#include "headtemplate.h"
 
-class MenuClass {
+class MenuClass: public HeadTemplate {
 public:
     MenuClass();
     virtual ~MenuClass();
@@ -23,10 +24,7 @@ public:
 
     char getGuess();
 
-    void headBanner();
     void instructions();
-    void clearScreen();
-    void anyKey();
 
 private:
     GamePlay game;

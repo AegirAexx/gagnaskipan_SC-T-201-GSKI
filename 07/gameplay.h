@@ -5,9 +5,9 @@
 #include <string>
 #include <vector>
 #include "database.h"
+#include "headtemplate.h"
 
-class GamePlay
-{
+class GamePlay: public HeadTemplate {
     public:
         GamePlay();
         virtual ~GamePlay();
@@ -26,11 +26,6 @@ class GamePlay
 
         std::string getHidden();
 
-        void headBanner();
-
-        void clearScreen();
-
-        void anyKey();
 
 
     private:
