@@ -2,7 +2,7 @@
 
 using namespace std;
 
-GamePlay::GamePlay(): missesRemain(0), guessCount(0), correctCount(0), guess('\0'), guessValidation(false) {}
+GamePlay::GamePlay(): missesRemain(0), guessCount(0), correctCount(0), guess('\0'), guessValidation(false), wrongValidation(false) {}
 
 GamePlay::~GamePlay() {}
 
@@ -25,37 +25,43 @@ void GamePlay::play() {
 
     while(missesRemain >= 0 && correctCount < word.length()) {
         guessValidation = false;
+         wrongValidation = false;
+        
         clearScreen();
         headBanner();
+        cout << "[guessCount: " << guessCount << "][missesRemain: " << missesRemain << "][correctCount: " << correctCount << "]" << endl;
         printHidden();
         printWrongGuesses();
         getGuess();
 
-        for(unsigned int i = 0; i < word.length(); i++) {
-            if(guess == word[i]) {
+        for(size_t i = 0; i < word.length(); i++) {
+            if(guess == word[i] && guess != hidden[i]) {
                 hidden[i] = guess;
                 correctCount++;
+                guessCount++;
+                guessValidation = true;
+            }
+            else if(guess == word[i] && guess == hidden[i]){
                 guessValidation = true;
             }
         }
-
-        if(guessValidation == false) {
-            missesRemain--;
-            wrongGuesses.push_back(guess);
+        
+        for(size_t i = 0; i < wrongGuesses.size(); i++){
+            if(wrongGuesses[i] == guess){
+                wrongValidation = true;
+            }
         }
-        guessCount++;
+        if(guessValidation == false && !wrongValidation) {
+            missesRemain--;
+            guessCount++;
+            wrongGuesses.push_back(guess);
+        }        
     }
-
-    if(missesRemain <= 0) {
-        cout << "\tYou lose!" << endl;
-    }
-    else if (correctCount == word.length()) {
-        cout << "\tYou win!" << endl;
-    }
+    checkOutcome();
 }
 
 void GamePlay::printWrongGuesses(){
-    cout << "\tWrong letters [ ";
+    cout << "\tWrong guesses [ ";
     for(size_t i = 0; i < wrongGuesses.size(); ++i){
         cout << wrongGuesses.at(i) << " ";
     }
@@ -63,7 +69,7 @@ void GamePlay::printWrongGuesses(){
 }
 
 void GamePlay::printHidden() {
-    cout << "\t[ ";
+    cout << "\tHidden word [ ";
     for(size_t i = 0; i < hidden.length(); ++i){
         cout << hidden[i] << " ";
     }
@@ -83,5 +89,14 @@ void GamePlay::hideWord (){
         hidden[i] = '-';
     }
 
+}
+
+void GamePlay::checkOutcome(){
+    if(missesRemain <= 0) {
+        cout << "\tYou lose!" << endl;
+    }
+    else if (correctCount == word.length() && word == hidden) {
+        cout << "\tYou win!" << endl;
+    }
 }
 
