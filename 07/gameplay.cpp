@@ -24,17 +24,14 @@ string GamePlay::getWord(){
 void GamePlay::play() {
 
     while(missesRemain >= 0 && correctCount < word.length()) {
+        guessValidation = false;
         clearScreen();
         headBanner();
-        cout << "\tEnter a letter: ";
-        cin >> guess;
+        printHidden();
+        printWrongGuesses();
+        getGuess();
 
-        // guess = menu.getGuess();
-
-        //Skilabo� sem segja press ? to guess the whole word
-        //�� er kalla� � goForIt
-
-        for(unsigned int i = 0; i < word.length(); i++) {  //validate hvort b�i� s� a� geta r�tt, b�a til vector sem heldur utan um hva� b�i� er a� giska �
+        for(unsigned int i = 0; i < word.length(); i++) {
             if(guess == word[i]) {
                 hidden[i] = guess;
                 correctCount++;
@@ -46,27 +43,38 @@ void GamePlay::play() {
             missesRemain--;
             wrongGuesses.push_back(guess);
         }
-
-        cout << "\t" <<  hidden << endl;
-        
-        cout << "\tWrong letters [ ";
-        for(size_t i = 0; i < wrongGuesses.size(); ++i){
-            cout << wrongGuesses.at(i) << " ";
-        }
-        cout << " ]" << endl;
-
         guessCount++;
     }
 
-    if(missesRemain <= 0) {  ///fall sem prentar �t �rslitin, H�rna m�tti b�a til f�ll
+    if(missesRemain <= 0) {
         cout << "\tYou lose!" << endl;
     }
     else if (correctCount == word.length()) {
         cout << "\tYou win!" << endl;
     }
-
-
 }
+
+void GamePlay::printWrongGuesses(){
+    cout << "\tWrong letters [ ";
+    for(size_t i = 0; i < wrongGuesses.size(); ++i){
+        cout << wrongGuesses.at(i) << " ";
+    }
+    cout << " ]" << endl;
+}
+
+void GamePlay::printHidden() {
+    cout << "\t[ ";
+    for(size_t i = 0; i < hidden.length(); ++i){
+        cout << hidden[i] << " ";
+    }
+    cout << "]" << endl;
+}
+
+void GamePlay::getGuess() {
+    cout << "\tEnter a letter: ";
+    cin >> guess;
+}
+
 
 void GamePlay::hideWord (){
     hidden = word;

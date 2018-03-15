@@ -26,6 +26,12 @@ class GamePlay: public HeadTemplate {
 
         std::string getHidden();
 
+        void printWrongGuesses();
+
+        void printHidden();
+
+        void getGuess();
+
 
 
     private:
