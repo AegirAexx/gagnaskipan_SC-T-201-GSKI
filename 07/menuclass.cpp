@@ -74,6 +74,7 @@ void MenuClass::mainMenuSelector(char c) {
                 data.sortVector();
                 data.printVector();
                 anyKey();
+                mainMenu();
                 cout << "\tHi-Score List" << endl;
                 break;
         case 'q':
