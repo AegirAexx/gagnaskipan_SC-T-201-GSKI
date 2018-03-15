@@ -58,3 +58,29 @@ string DataBase::getRandomWord() {
     uniform_int_distribution<int> dist(0, wordDatabase.size() - 1);
     return wordDatabase[dist(rd)];
 }
+
+void DataBase::writeScoresToFile() {
+
+    Score score;
+    fstream file("scores.dat", ios::binary | ios::in | ios::out | ios::trunc);
+
+    if(!file.is_open()) {
+        cout << "error!";
+    }
+    else {
+
+        for(unsigned int i = 0; i < scoresDatabase.size(); i++) {
+            file.write((char *) &scoresDatabase[i], sizeof(Score));
+        }
+    }
+}
+
+void DataBase::addToScoresDatabase (Score score) {
+
+    scoresDatabase.push_back(score);
+}
+
+void fetchScores() {
+
+
+}
