@@ -7,9 +7,17 @@ GamePlay::GamePlay(): missesRemain(0), guessCount(0), correctCount(0), guess('\0
 GamePlay::~GamePlay() {}
 
 void GamePlay::initialize() {
+    correctCount = 0;
     data.fetchWords();
     word = data.getRandomWord();
     hideWord();
+    clearScreen();
+    headBanner();
+    cout << endl << endl << endl << "\tInitializing the game, but first you must decide on" << endl;
+    cout << "\thow many misses are allowed before the game is over." << endl << endl;
+    cout << "\t<How many misses?> ";
+    cin >> missesRemain;
+    play();
 }
 
 void GamePlay::setMissesRemain(int m) {
@@ -100,5 +108,21 @@ void GamePlay::checkOutcome(){
         cout << "\tYou win!" << endl;
         currentRunWins++;
     }
+    playAgain();
 }
 
+void GamePlay::playAgain() {
+
+    char choice;
+
+    cout << "\tDo you want to play again? (y/n) " << endl;
+    cin >> choice;
+
+    if(choice == 'y' || choice == 'Y') {
+        initialize();
+    }
+    else {
+        return;
+    }
+
+}

@@ -7,19 +7,19 @@ MenuClass::MenuClass() {}
 
 MenuClass::~MenuClass() {}
 
-void MenuClass::prePlayGame() {
-    setMisses = 0;
-    game.initialize();
-    clearScreen();
-    headBanner();
-    cout << endl << endl << endl << "\tInitializing the game, but first you must decide on" << endl;
-    cout << "\thow many misses are allowed before the game is over." << endl << endl;
-    cout << "\t<How many misses?> ";
-    cin >> setMisses;
+// void MenuClass::prePlayGame() {
+//     setMisses = 0;
+//     game.initialize();
+//     clearScreen();
+//     headBanner();
+//     cout << endl << endl << endl << "\tInitializing the game, but first you must decide on" << endl;
+//     cout << "\thow many misses are allowed before the game is over." << endl << endl;
+//     cout << "\t<How many misses?> ";
+//     cin >> setMisses;
 
-    game.setMissesRemain(setMisses);
-    game.play();
-}
+//     game.setMissesRemain(setMisses);
+//     game.play();
+// }
 
 void MenuClass::mainMenu() {
 
@@ -65,8 +65,7 @@ void MenuClass::mainMenuSelector(char c) {
 
     switch(c) {
         case '1':
-                prePlayGame();
-                playAgain();
+                game.initialize();
                 break;
         case '2':
                 dataMenu();
@@ -157,19 +156,19 @@ void MenuClass::dataMenuViewWords() {
     dataMenu();
 }
 
-void MenuClass::playAgain() {
+// void MenuClass::playAgain() {
 
-    char choice;
+//     char choice;
 
-    cout << "Do you want to play again? (y/n) " << endl;
-    cin >> choice;
+//     cout << "Do you want to play again? (y/n) " << endl;
+//     cin >> choice;
 
-    if(choice == 'y' || choice == 'Y') {
-        prePlayGame();
-    }
-    else {
-        return;
-    }
+//     if(choice == 'y' || choice == 'Y') {
+//         prePlayGame();
+//     }
+//     else {
+//         return;
+//     }
 
-}
+// }
 

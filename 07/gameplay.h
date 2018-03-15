@@ -34,6 +34,8 @@ class GamePlay: public HeadTemplate {
 
         void checkOutcome();
 
+        void playAgain();
+
 
 
     private:

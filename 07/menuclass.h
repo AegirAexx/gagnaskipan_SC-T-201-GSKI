@@ -23,14 +23,14 @@ public:
     void postPlayGame();
 
     char getGuess();
-    void playAgain();
+    // void playAgain();
 
     void instructions();
 
 private:
     GamePlay game;
     DataBase data;
-    int setMisses;
+    // int setMisses;
 };
 
 #endif // MENUCLASS_H
