@@ -9,13 +9,14 @@ GamePlay::GamePlay():
     guess('\0'), 
     guessValidation(false), 
     wrongValidation(false), 
-    currentRunLosses(0),
-    currentRunWins(0) {}
+    currentRunWins(0), 
+    currentRunLosses(0) {}
 
 GamePlay::~GamePlay() {}
 
 void GamePlay::initialize() {
     correctCount = 0;
+    wrongGuesses.clear();
     data.fetchWords();
     word = data.getRandomWord();
     hideWord();
@@ -94,11 +95,19 @@ void GamePlay::printHidden() {
     cout << "]" << endl;
 }
 
+void GamePlay::printReal() {
+    cout << "\tHidden word [ ";
+    for(size_t i = 0; i < word.length(); ++i){
+        cout << word[i] << " ";
+    }
+    cout << "]" << endl;
+}
+
 char GamePlay::getGuess() {
     char x;
     cout << "\tEnter a letter: ";
     cin >> x;
-    tolower(x);
+    x = tolower(x);
     return x;
 }
 
@@ -115,7 +124,7 @@ void GamePlay::hideWord (){
 void GamePlay::checkOutcome(){
     if(missesRemain <= 0) {
         cout << "\tYou lose!" << endl << endl;
-        printHidden();
+        printReal();
         currentRunLosses++;
     }
     else if (correctCount == word.length() && word == hidden) {
@@ -123,6 +132,7 @@ void GamePlay::checkOutcome(){
         printHidden();
         currentRunWins++;
     }
+    score.totalScore += (correctCount * (currentRunWins - currentRunLosses));
     playAgain();
 }
 
@@ -143,5 +153,10 @@ void GamePlay::playAgain() {
 }
 
 void GamePlay::printScore(){
-    cout << "[Wins: " << currentRunWins << "]  [Guesses left: " << missesRemain << "]  [Losses: " << currentRunLosses << "]" << endl << endl;
+    cout << "[Wins: " << currentRunWins << "]  [Guesses left: " << missesRemain << "]  [Losses: " << currentRunLosses << "]  [Score: " << score.totalScore << "]" << endl << endl;
 }
+
+// int GamePlay::calculateScore(){
+//     int retval = 0;
+//     retval + (correctCount * (currentRunWins - currentRunLosses));
+// }

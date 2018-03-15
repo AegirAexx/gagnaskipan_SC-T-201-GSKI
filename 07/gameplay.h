@@ -38,6 +38,7 @@ class GamePlay: public HeadTemplate {
 
         void printScore();
 
+        void printReal();
 
 
     private:

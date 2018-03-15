@@ -128,6 +128,10 @@ void MenuClass::dataMenuAddWord() {
         cout << endl << endl << endl << endl << "\tPlease enter a word to add to database: ";
         cin >> newWord;
 
+        for(size_t i = 0; i < newWord.length(); ++i){
+            newWord[i] = tolower(newWord[i]);
+        }
+
         data.writeToDatabase(newWord);
 
         cout << endl << "\tAdd another word? [y / n] ";
@@ -149,29 +153,8 @@ void MenuClass::dataMenuViewWords() {
     for(auto x: data.getWordDatabase()){
         cout << x << ", ";
     }
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout << endl;
-
+    cout << endl << endl << endl << endl;
     anyKey();
 
     dataMenu();
 }
-
-// void MenuClass::playAgain() {
-
-//     char choice;
-
-//     cout << "Do you want to play again? (y/n) " << endl;
-//     cin >> choice;
-
-//     if(choice == 'y' || choice == 'Y') {
-//         prePlayGame();
-//     }
-//     else {
-//         return;
-//     }
-
-// }
-
