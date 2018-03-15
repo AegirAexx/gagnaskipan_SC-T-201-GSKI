@@ -32,6 +32,8 @@ class GamePlay: public HeadTemplate {
 
         void getGuess();
 
+        void checkOutcome();
+
 
 
     private:
@@ -42,6 +44,7 @@ class GamePlay: public HeadTemplate {
         std::string hidden;
         char guess;
         bool guessValidation;
+        bool wrongValidation;
         std::vector<char> wrongGuesses;
         DataBase data;
 
