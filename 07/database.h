@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <cstdlib>
+#include <random>
 
 class DataBase
 {
@@ -18,6 +18,7 @@ class DataBase
 
         void fetchWords();
         std::string getRandomWord();
+        std::vector<std::string> getWordDatabase();
 
     private:
         std::vector<std::string> wordDatabase;

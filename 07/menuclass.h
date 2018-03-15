@@ -4,20 +4,27 @@
 #include <iostream>
 #include "gameplay.h"
 
-class MenuClass
-{
-    public:
-        MenuClass();
-        virtual ~MenuClass();
+class MenuClass {
+public:
+    MenuClass();
+    virtual ~MenuClass();
 
-        void welcome();  //Fall sem skrifar welcome to hangman
-        void mainMenu(); //Fall sem gefur manni möguleikan á að bæta í gagnagrunninn eða spila leikinn
-        void dataMenu();
-        void rules(); //fall sem skrifar út reglurnar
+    void mainMenu();
+    void mainMenuSelector(char c);
 
-    private:
-        GamePlay game;
-        DataBase data;
+    void dataMenu();
+    void dataMenuSelector(char c);
+    void dataMenuAddWord();
+    void dataMenuViewWords();
+
+    void headBanner();
+    void instructions();
+    void clearScreen();
+    void anyKey();
+
+private:
+    GamePlay game;
+    DataBase data;
 };
 
 #endif // MENUCLASS_H

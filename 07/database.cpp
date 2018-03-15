@@ -2,15 +2,14 @@
 
 using namespace std;
 
-DataBase::DataBase()
-{
-    //ctor
+DataBase::DataBase() {}
+
+DataBase::~DataBase() {}
+
+vector<string> DataBase::getWordDatabase() {
+    return wordDatabase;
 }
 
-DataBase::~DataBase()
-{
-    //dtor
-}
 
 void DataBase::writeToDatabase(std::string newWord) {
     fstream writeData;
@@ -49,22 +48,13 @@ void DataBase::fetchWords() {
 
                     wordDatabase.push_back(strWord);
                 }
-            }
-
-        readData.close ();
-
-        for(auto x: wordDatabase) {
-            cout << x << " ";
         }
-
-        cout << wordDatabase[0].length() << endl;
-        cout << wordDatabase.size() << endl;
+        readData.close ();
     }
 }
 
 string DataBase::getRandomWord() {
-
-    int randNumber = rand() % wordDatabase.size();
-
-    return wordDatabase[randNumber];
+    random_device rd;
+    uniform_int_distribution<int> dist(0, wordDatabase.size() - 1);
+    return wordDatabase[dist(rd)];
 }
