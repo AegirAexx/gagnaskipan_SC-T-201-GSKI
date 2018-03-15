@@ -8,6 +8,7 @@
 #include <sstream>
 #include <random>
 #include "score.h"
+#include <algorithm>
 
 class DataBase
 {
@@ -25,8 +26,10 @@ class DataBase
         void fetchWords();
         std::string getRandomWord();
         std::vector<std::string> getWordDatabase();
+        void sortVector();
+        void printVector();
 
-  //  private:
+    private:
         std::vector<std::string> wordDatabase;
         std::vector<Score> scoresDatabase;
 };

@@ -70,12 +70,19 @@ void MenuClass::mainMenuSelector(char c) {
                 mainMenu();
                 break;
         case '3':
+                data.fetchScores();
+                data.sortVector();
+                data.printVector();
+                anyKey();
                 cout << "\tHi-Score List" << endl;
                 break;
         case 'q':
         case 'Q':
                 clearScreen();
                 headBanner();
+                cout << "Adding your score to the database " << endl;
+                data.addToScoresDatabase(game.getScore());
+                data.writeScoresToFile();
                 cout << endl << endl << endl << endl << "\tThank you for playing!" << endl << endl << endl << endl;
                 anyKey();
                 break;

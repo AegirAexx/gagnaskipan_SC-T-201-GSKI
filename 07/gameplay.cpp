@@ -152,6 +152,8 @@ void GamePlay::playAgain() {
         initialize();
     }
     else {
+        cout << "Please enter your initials! Max 3 characters: ";
+        cin >> score.name;
         return;
     }
 
@@ -186,4 +188,10 @@ void GamePlay::guessWholeWord() {
         missesRemain = 0;
     }
 
+}
+
+
+Score GamePlay::getScore() {
+
+    return score;
 }
