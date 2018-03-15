@@ -47,6 +47,9 @@ class GamePlay: public HeadTemplate {
         bool wrongValidation;
         std::vector<char> wrongGuesses;
         DataBase data;
+        Score score;
+        int currentRunWins;
+        int currentRunLosses;
 
 };
 

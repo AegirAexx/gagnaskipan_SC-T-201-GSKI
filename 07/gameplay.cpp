@@ -10,7 +10,7 @@ void GamePlay::initialize() {
     data.fetchWords();
     word = data.getRandomWord();
     hideWord();
-} 
+}
 
 void GamePlay::setMissesRemain(int m) {
     missesRemain = m;
@@ -26,7 +26,7 @@ void GamePlay::play() {
     while(missesRemain >= 0 && correctCount < word.length()) {
         guessValidation = false;
          wrongValidation = false;
-        
+
         clearScreen();
         headBanner();
         cout << "[guessCount: " << guessCount << "][missesRemain: " << missesRemain << "][correctCount: " << correctCount << "]" << endl;
@@ -45,7 +45,7 @@ void GamePlay::play() {
                 guessValidation = true;
             }
         }
-        
+
         for(size_t i = 0; i < wrongGuesses.size(); i++){
             if(wrongGuesses[i] == guess){
                 wrongValidation = true;
@@ -55,7 +55,7 @@ void GamePlay::play() {
             missesRemain--;
             guessCount++;
             wrongGuesses.push_back(guess);
-        }        
+        }
     }
     checkOutcome();
 }
@@ -94,9 +94,11 @@ void GamePlay::hideWord (){
 void GamePlay::checkOutcome(){
     if(missesRemain <= 0) {
         cout << "\tYou lose!" << endl;
+        currentRunLosses++;
     }
     else if (correctCount == word.length() && word == hidden) {
         cout << "\tYou win!" << endl;
+        currentRunWins++;
     }
 }
 

@@ -8,7 +8,7 @@ MenuClass::MenuClass() {}
 MenuClass::~MenuClass() {}
 
 void MenuClass::prePlayGame() {
-    int setMisses {0};
+    setMisses = 0;
     game.initialize();
     clearScreen();
     headBanner();
@@ -27,7 +27,7 @@ void MenuClass::mainMenu() {
 
     clearScreen();
     headBanner();
-    
+
     cout << "\tWelcome to this->HangMan!\n" << endl;
     cout << "\t[ 1 ] - Play this->HangMan" << endl;
     cout << "\t[ 2 ] - Word database" << endl;
@@ -42,12 +42,12 @@ void MenuClass::mainMenu() {
 }
 
 void MenuClass::dataMenu() {
-    
+
     char choice;
 
     clearScreen();
     headBanner();
-    
+
     cout << "\tthis->HangMan! - Database\n" << endl;
     cout << "\t[ 1 ] - Add a word" << endl;
     cout << "\t[ 2 ] - View words" << endl;
@@ -62,22 +62,23 @@ void MenuClass::dataMenu() {
 }
 
 void MenuClass::mainMenuSelector(char c) {
-    
+
     switch(c) {
-        case '1': 
+        case '1':
                 prePlayGame();
+                playAgain();
                 break;
-        case '2': 
+        case '2':
                 dataMenu();
                 break;
-        case '3': 
+        case '3':
                 cout << "\tInstructions" << endl;
                 break;
-        case '4': 
+        case '4':
                 cout << "\tHi-Score List" << endl;
                 break;
         case 'q':
-        case 'Q':    
+        case 'Q':
                 cout << "\tThank you, come again!" << endl;
                 break;
         default:
@@ -88,22 +89,22 @@ void MenuClass::mainMenuSelector(char c) {
 }
 
 void MenuClass::dataMenuSelector(char c) {
-    
+
     switch(c) {
-        case '1': 
+        case '1':
                 dataMenuAddWord();
                 break;
-        case '2': 
+        case '2':
                 dataMenuViewWords();
                 break;
-        case '3': 
+        case '3':
                 cout << "\tRemove a word!" << endl;
                 break;
-        case '4': 
+        case '4':
                 cout << "\tClear words from database!" << endl;
                 break;
         case 'r':
-        case 'R':    
+        case 'R':
                 mainMenu();
                 break;
         default:
@@ -140,7 +141,7 @@ void MenuClass::dataMenuViewWords() {
     headBanner();
 
     data.fetchWords();
-    
+
     cout << endl << endl << "\tWords in the database: " << endl << endl;
     cout << "\t";
     for(auto x: data.getWordDatabase()){
@@ -154,5 +155,21 @@ void MenuClass::dataMenuViewWords() {
     anyKey();
 
     dataMenu();
+}
+
+void MenuClass::playAgain() {
+
+    char choice;
+
+    cout << "Do you want to play again? (y/n) " << endl;
+    cin >> choice;
+
+    if(choice == 'y' || choice == 'Y') {
+        prePlayGame();
+    }
+    else {
+        return;
+    }
+
 }
 
