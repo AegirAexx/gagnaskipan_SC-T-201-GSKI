@@ -40,9 +40,9 @@ string GamePlay::getWord(){
 
 void GamePlay::play() {
 
-    while(missesRemain >= 0 && correctCount < word.length()) {
+    while(missesRemain > 0 && correctCount < word.length()) {
         guessValidation = false;
-         wrongValidation = false;
+        wrongValidation = false;
 
         clearScreen();
         headBanner();
@@ -158,21 +158,16 @@ void GamePlay::playAgain() {
 }
 
 void GamePlay::printScore(){
-    cout << "[Wins: " << currentRunWins << "]  [Guesses left: " << missesRemain << "]  [Losses: " << currentRunLosses << "]  [Score: " << score.totalScore << "]" << endl << endl;
+    cout << "\t[Wins: " << currentRunWins << "]  [Guesses left: " << missesRemain << "]  [Losses: " << currentRunLosses << "]  [Score: " << score.totalScore << "]" << endl << endl;
+    cout << "\tDo you feel lucky? Enter \"?\" and then try to guess the whole word!" << endl << endl;
 }
-
-// int GamePlay::calculateScore(){
-//     int retval = 0;
-//     retval + (correctCount * (currentRunWins - currentRunLosses));
-// }
-
 
 void GamePlay::guessWholeWord() {
 
-    std::string wordGuess;
+    string wordGuess;
 
-    std::cout << "Enter your guess, remember if you are not right you lose, if you ain't first you're last!" << endl;
-    std::cin >> wordGuess;
+    cout << "\tGuess the whole word, remember if you are not right you lose: ";
+    cin >> wordGuess;
 
     for(unsigned int i = 0; i < wordGuess.length(); i++) {
         wordGuess[i] = tolower(wordGuess[i]);
