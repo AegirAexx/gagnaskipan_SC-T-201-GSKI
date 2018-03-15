@@ -2,7 +2,15 @@
 
 using namespace std;
 
-GamePlay::GamePlay(): missesRemain(0), guessCount(0), correctCount(0), guess('\0'), guessValidation(false), wrongValidation(false) {}
+GamePlay::GamePlay(): 
+    missesRemain(0), 
+    guessCount(0), 
+    correctCount(0), 
+    guess('\0'), 
+    guessValidation(false), 
+    wrongValidation(false), 
+    currentRunLosses(0),
+    currentRunWins(0) {}
 
 GamePlay::~GamePlay() {}
 
@@ -37,10 +45,10 @@ void GamePlay::play() {
 
         clearScreen();
         headBanner();
-        cout << "[guessCount: " << guessCount << "][missesRemain: " << missesRemain << "][correctCount: " << correctCount << "]" << endl;
+        printScore();
         printHidden();
         printWrongGuesses();
-        getGuess();
+        guess = getGuess();
 
         for(size_t i = 0; i < word.length(); i++) {
             if(guess == word[i] && guess != hidden[i]) {
@@ -65,6 +73,8 @@ void GamePlay::play() {
             wrongGuesses.push_back(guess);
         }
     }
+    clearScreen();
+    headBanner();
     checkOutcome();
 }
 
@@ -84,9 +94,12 @@ void GamePlay::printHidden() {
     cout << "]" << endl;
 }
 
-void GamePlay::getGuess() {
+char GamePlay::getGuess() {
+    char x;
     cout << "\tEnter a letter: ";
-    cin >> guess;
+    cin >> x;
+    tolower(x);
+    return x;
 }
 
 
@@ -101,11 +114,13 @@ void GamePlay::hideWord (){
 
 void GamePlay::checkOutcome(){
     if(missesRemain <= 0) {
-        cout << "\tYou lose!" << endl;
+        cout << "\tYou lose!" << endl << endl;
+        printHidden();
         currentRunLosses++;
     }
     else if (correctCount == word.length() && word == hidden) {
-        cout << "\tYou win!" << endl;
+        cout << "\tYou win!" << endl << endl;
+        printHidden();
         currentRunWins++;
     }
     playAgain();
@@ -115,7 +130,7 @@ void GamePlay::playAgain() {
 
     char choice;
 
-    cout << "\tDo you want to play again? (y/n) " << endl;
+    cout << endl << "\tDo you want to play again? [y / n] ";
     cin >> choice;
 
     if(choice == 'y' || choice == 'Y') {
@@ -125,4 +140,8 @@ void GamePlay::playAgain() {
         return;
     }
 
+}
+
+void GamePlay::printScore(){
+    cout << "[Wins: " << currentRunWins << "]  [Guesses left: " << missesRemain << "]  [Losses: " << currentRunLosses << "]" << endl << endl;
 }

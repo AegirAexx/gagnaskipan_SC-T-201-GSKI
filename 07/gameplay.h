@@ -12,7 +12,7 @@ class GamePlay: public HeadTemplate {
         GamePlay();
         virtual ~GamePlay();
 
-        void initialize(); //�etta fall setur �etta � gang, �arna n�r ma�ur � or� sem � a� spila me�, og spyr notandann hversu m�rg misses hann vill leyfa
+        void initialize();
 
         void play();
 
@@ -30,11 +30,13 @@ class GamePlay: public HeadTemplate {
 
         void printHidden();
 
-        void getGuess();
+        char getGuess();
 
         void checkOutcome();
 
         void playAgain();
+
+        void printScore();
 
 
 

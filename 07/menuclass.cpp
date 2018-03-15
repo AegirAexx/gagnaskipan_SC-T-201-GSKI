@@ -31,8 +31,7 @@ void MenuClass::mainMenu() {
     cout << "\tWelcome to this->HangMan!\n" << endl;
     cout << "\t[ 1 ] - Play this->HangMan" << endl;
     cout << "\t[ 2 ] - Word database" << endl;
-    cout << "\t[ 3 ] - Instructions" << endl;
-    cout << "\t[ 4 ] - Hi-Score List" << endl;
+    cout << "\t[ 3 ] - Hi-Score List" << endl;
     cout << "\t[ Q ] - Return to reality\n" << endl;
     cout << "\t</> ";
 
@@ -51,8 +50,6 @@ void MenuClass::dataMenu() {
     cout << "\tthis->HangMan! - Database\n" << endl;
     cout << "\t[ 1 ] - Add a word" << endl;
     cout << "\t[ 2 ] - View words" << endl;
-    cout << "\t[ 3 ] - Remove a word" << endl;
-    cout << "\t[ 4 ] - Clear words from database" << endl;
     cout << "\t[ R ] - Return to Main menu\n" << endl;
     cout << "\t<Database/> ";
 
@@ -66,22 +63,28 @@ void MenuClass::mainMenuSelector(char c) {
     switch(c) {
         case '1':
                 game.initialize();
+                mainMenu();
                 break;
         case '2':
                 dataMenu();
+                mainMenu();
                 break;
         case '3':
-                cout << "\tInstructions" << endl;
-                break;
-        case '4':
                 cout << "\tHi-Score List" << endl;
                 break;
         case 'q':
         case 'Q':
-                cout << "\tThank you, come again!" << endl;
+                clearScreen();
+                headBanner();
+                cout << endl << endl << endl << endl << "\tThank you for playing!" << endl << endl << endl << endl;
+                anyKey();
                 break;
         default:
-                std::cout << "\n\n\tERROR!\n\n";
+                clearScreen();
+                headBanner();
+                cout << endl << endl << endl << endl << "\tERROR!" << endl << endl << endl << endl;
+                anyKey();
+                mainMenu();
                 break;
     }
 
@@ -92,22 +95,22 @@ void MenuClass::dataMenuSelector(char c) {
     switch(c) {
         case '1':
                 dataMenuAddWord();
+                dataMenu();
                 break;
         case '2':
                 dataMenuViewWords();
-                break;
-        case '3':
-                cout << "\tRemove a word!" << endl;
-                break;
-        case '4':
-                cout << "\tClear words from database!" << endl;
+                dataMenu();
                 break;
         case 'r':
         case 'R':
                 mainMenu();
                 break;
         default:
-                std::cout << "\n\n\tERROR!\n\n";
+                clearScreen();
+                headBanner();
+                cout << endl << endl << endl << endl << "\tERROR!" << endl << endl << endl << endl;
+                anyKey();
+                dataMenu();
                 break;
     }
 
