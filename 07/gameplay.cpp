@@ -2,14 +2,14 @@
 
 using namespace std;
 
-GamePlay::GamePlay(): 
-    missesRemain(0), 
-    guessCount(0), 
-    correctCount(0), 
-    guess('\0'), 
-    guessValidation(false), 
-    wrongValidation(false), 
-    currentRunWins(0), 
+GamePlay::GamePlay():
+    missesRemain(0),
+    guessCount(0),
+    correctCount(0),
+    guess('\0'),
+    guessValidation(false),
+    wrongValidation(false),
+    currentRunWins(0),
     currentRunLosses(0) {}
 
 GamePlay::~GamePlay() {}
@@ -51,27 +51,32 @@ void GamePlay::play() {
         printWrongGuesses();
         guess = getGuess();
 
-        for(size_t i = 0; i < word.length(); i++) {
-            if(guess == word[i] && guess != hidden[i]) {
-                hidden[i] = guess;
-                correctCount++;
-                guessCount++;
-                guessValidation = true;
-            }
-            else if(guess == word[i] && guess == hidden[i]){
-                guessValidation = true;
-            }
+        if(guess == '?') {
+            guessWholeWord();
         }
+        else {
+            for(size_t i = 0; i < word.length(); i++) {
+                if(guess == word[i] && guess != hidden[i]) {
+                    hidden[i] = guess;
+                    correctCount++;
+                    guessCount++;
+                    guessValidation = true;
+                }
+                else if(guess == word[i] && guess == hidden[i]){
+                    guessValidation = true;
+                }
+            }
 
-        for(size_t i = 0; i < wrongGuesses.size(); i++){
-            if(wrongGuesses[i] == guess){
-                wrongValidation = true;
+            for(size_t i = 0; i < wrongGuesses.size(); i++){
+                if(wrongGuesses[i] == guess){
+                    wrongValidation = true;
+                }
             }
-        }
-        if(guessValidation == false && !wrongValidation) {
-            missesRemain--;
-            guessCount++;
-            wrongGuesses.push_back(guess);
+            if(guessValidation == false && !wrongValidation) {
+                missesRemain--;
+                guessCount++;
+                wrongGuesses.push_back(guess);
+            }
         }
     }
     clearScreen();
@@ -160,3 +165,25 @@ void GamePlay::printScore(){
 //     int retval = 0;
 //     retval + (correctCount * (currentRunWins - currentRunLosses));
 // }
+
+
+void GamePlay::guessWholeWord() {
+
+    std::string wordGuess;
+
+    std::cout << "Enter your guess, remember if you are not right you lose, if you ain't first you're last!" << endl;
+    std::cin >> wordGuess;
+
+    for(unsigned int i = 0; i < wordGuess.length(); i++) {
+        wordGuess[i] = tolower(wordGuess[i]);
+    }
+
+    if(wordGuess == word) {
+        correctCount = word.length();
+        hidden = word;
+    }
+    else {
+        missesRemain = 0;
+    }
+
+}

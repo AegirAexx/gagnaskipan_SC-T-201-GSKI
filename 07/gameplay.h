@@ -40,6 +40,7 @@ class GamePlay: public HeadTemplate {
 
         void printReal();
 
+        void guessWholeWord();
 
     private:
         int missesRemain;
