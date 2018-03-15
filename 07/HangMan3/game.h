@@ -1,14 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
+
 #include <iostream>
 #include <string>
 #include <vector>
 
 #include "database.h"
 
-
-class Game {
+class Game {  //: public MainMenu
 public:
     Game();
     virtual ~Game();
@@ -23,6 +23,11 @@ public:
     void hideWord();
 
 
+    /// Inherit
+    void headBanner();
+    void clearScreen();
+    void anyKey();
+
 private:
     DataBase data;
     int missesRemain;
@@ -34,7 +39,6 @@ private:
     bool guessValidation;
     std::vector<char> wrongGuesses;
 
-
 };
 
-#endif // GAMEMENU_H
+#endif // GAME_H

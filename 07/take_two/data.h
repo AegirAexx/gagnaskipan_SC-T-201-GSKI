@@ -1,7 +1,6 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include "mainmenu.h"
 #include "database.h"
 
 class Data: public MainMenu {
@@ -14,8 +13,6 @@ public:
     void dataMenuAddWord();
     void dataMenuViewWords();
     void printWords();
-
-
 
 private:
     DataBase data;

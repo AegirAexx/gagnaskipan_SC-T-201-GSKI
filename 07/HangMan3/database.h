@@ -1,13 +1,17 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
+
 #include <string>
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <random>
 
-
-class DataBase {
-
-public:
+class DataBase
+{
+    public:
         DataBase();
         virtual ~DataBase();
 
@@ -19,10 +23,6 @@ public:
 
     private:
         std::vector<std::string> wordDatabase;
-
-
-
-
 
 };
 
