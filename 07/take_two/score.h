@@ -1,12 +1,12 @@
-#ifndef SCOREMENU_H
-#define SCOREMENU_H
+#ifndef SCORE_H
+#define SCORE_H
 
-#include "mainmenu.h"
+#include "database.h"
 
-class ScoreMenu: public MainMenu {
+class Score {
 public:
-    ScoreMenu();
-    virtual ~ScoreMenu();
+    Score();
+    virtual ~Score();
 
 
 private:

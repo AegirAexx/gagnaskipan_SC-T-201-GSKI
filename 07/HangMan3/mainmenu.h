@@ -2,8 +2,9 @@
 #define MAINMENU_H
 
 #include <iostream>
-#include "database.h"
-
+#include "game.h"
+//#include "data.h"
+//#include "score.h"
 
 class MainMenu {
 public:
@@ -19,11 +20,12 @@ public:
 private:
     void menu();
     void menuSelector(char c);
-/*
+
     Game game;
-    Score score;
-    Data data;
-*/
+//    Score score;
+//     Data data;
+
+
 };
 
 #endif // MAINMENU_H
