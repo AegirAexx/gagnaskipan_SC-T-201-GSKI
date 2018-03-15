@@ -62,7 +62,7 @@ string DataBase::getRandomWord() {
 void DataBase::writeScoresToFile() {
 
     Score score;
-    fstream file("scores.dat", ios::binary | ios::in | ios::out | ios::trunc);
+    fstream file("scores.dat", ios::binary | ios::out | ios::app );
 
     if(!file.is_open()) {
         cout << "error!";
@@ -73,6 +73,7 @@ void DataBase::writeScoresToFile() {
             file.write((char *) &scoresDatabase[i], sizeof(Score));
         }
     }
+    file.close();
 }
 
 void DataBase::addToScoresDatabase (Score score) {
@@ -80,7 +81,25 @@ void DataBase::addToScoresDatabase (Score score) {
     scoresDatabase.push_back(score);
 }
 
-void fetchScores() {
+void DataBase::fetchScores() {
 
+    Score score;
 
+    fstream file("scores.dat", ios::binary | ios::in );
+
+    file.seekg(0);
+
+    while (true) {
+
+            file.read((char *) &score, sizeof(Score));
+
+            if(!file.eof()) {
+                cout << "Fetching from database: " << endl;
+                scoresDatabase.push_back(score);
+            }
+            else {
+                break;
+            }
+    }
+    file.close();
 }

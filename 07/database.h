@@ -26,7 +26,7 @@ class DataBase
         std::string getRandomWord();
         std::vector<std::string> getWordDatabase();
 
-    private:
+  //  private:
         std::vector<std::string> wordDatabase;
         std::vector<Score> scoresDatabase;
 };
