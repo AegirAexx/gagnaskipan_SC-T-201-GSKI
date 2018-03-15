@@ -42,6 +42,8 @@ class GamePlay: public HeadTemplate {
 
         void guessWholeWord();
 
+        Score getScore();
+
     private:
         int missesRemain;
         int guessCount;

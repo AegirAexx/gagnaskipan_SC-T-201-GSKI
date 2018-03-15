@@ -93,13 +93,26 @@ void DataBase::fetchScores() {
 
             file.read((char *) &score, sizeof(Score));
 
-            if(!file.eof()) {
-                cout << "Fetching from database: " << endl;
-                scoresDatabase.push_back(score);
-            }
-            else {
+            if(file.eof()) {
                 break;
             }
+            scoresDatabase.push_back(score);
     }
     file.close();
 }
+
+
+void DataBase::sortVector() {
+
+    std::sort(scoresDatabase.begin(), scoresDatabase.end());
+
+    std::reverse(scoresDatabase.begin(), scoresDatabase.end());
+}
+
+void DataBase::printVector() {
+
+    for(auto x: scoresDatabase) {
+        cout << x << endl;;
+    }
+}
+
