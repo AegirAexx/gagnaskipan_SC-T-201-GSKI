@@ -131,11 +131,16 @@ void MenuClass::dataMenuViewWords() {
 
     data.fetchWords();
     
-    cout << endl << endl << endl << endl << endl << "\tWords in the database: " << endl;
-    
+    cout << endl << endl << "\tWords in the database: " << endl << endl;
+    cout << "\t";
     for(auto x: data.getWordDatabase()){
         cout << x << ", ";
     }
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
 
     anyKey();
 
@@ -184,7 +189,7 @@ void MenuClass::clearScreen() {
 }
 
 void MenuClass::anyKey(){
-    cout << "\n\tPress anykey to continue...";
+    cout << "\tPress anykey to continue...";
     cin.ignore();
     cin.get();
 }
