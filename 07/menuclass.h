@@ -17,6 +17,12 @@ public:
     void dataMenuAddWord();
     void dataMenuViewWords();
 
+    void prePlayGame();
+    void playGame();
+    void postPlayGame();
+
+    char getGuess();
+
     void headBanner();
     void instructions();
     void clearScreen();

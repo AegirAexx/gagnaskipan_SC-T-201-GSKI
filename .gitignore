@@ -11,3 +11,8 @@
 03/output_executable
 03/valgrind_report.txt
 *.cbp
+07/take_two/.vscode/settings.json
+07/take_two/output_executable
+07/.vscode/settings.json
+07/.vscode/c_cpp_properties.json
+07/output_executable

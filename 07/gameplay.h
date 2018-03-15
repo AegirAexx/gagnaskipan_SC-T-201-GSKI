@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "database.h"
+#include "menuclass.h"
 
 class GamePlay
 {
@@ -12,24 +13,34 @@ class GamePlay
         GamePlay();
         virtual ~GamePlay();
 
-        void initialize(); //þetta fall setur þetta í gang, þarna nær maður í orð sem á að spila með, og spyr notandann hversu mörg misses hann vill leyfa
+        void initialize(); //ï¿½etta fall setur ï¿½etta ï¿½ gang, ï¿½arna nï¿½r maï¿½ur ï¿½ orï¿½ sem ï¿½ aï¿½ spila meï¿½, og spyr notandann hversu mï¿½rg misses hann vill leyfa
 
-        void play(std::string word);
+        void play();
 
         void printDisplayWord();
 
         void hideWord();
 
+        void setMissesRemain(int m);
+
+        std::string getWord();
+
+        std::string getHidden();
+
+        // std::vector<char> getWrongGuesses();
+
 
     private:
-        int missesLeft;
+        int missesRemain;
         int guessCount;
         int correctCount;
         std::string word;
         std::string hidden;
         char guess;
         bool guessValidation;
+        std::vector<char> wrongGuesses;
         DataBase data;
+        MenuClass menu;
 
 };
 

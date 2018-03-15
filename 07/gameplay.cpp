@@ -2,70 +2,70 @@
 
 using namespace std;
 
-GamePlay::GamePlay()
-{
-    missesLeft = 0;
-    guessCount = 0;
-    correctCount = 0;
-    guess = '\0';
-    guessValidation = false;
-}
+GamePlay::GamePlay(): missesRemain(0), guessCount(0), correctCount(0), guess('\0'), guessValidation(false) {}
 
-GamePlay::~GamePlay()
-{
-    //dtor
-}
+GamePlay::~GamePlay() {}
 
 void GamePlay::initialize() {
-
     data.fetchWords();
-
     word = data.getRandomWord();
-
     hideWord();
+} 
 
+void GamePlay::setMissesRemain(int m) {
+    missesRemain = m;
+}
 
+string GamePlay::getWord(){
+    return word;
+}
 
-    cout << "The word has " << word.length() << " letters" << endl;
-    cout << hidden << endl;
+// std::vector<char> getWrongGuesses() {
+//     return wrongGuesses;
+// }
 
-    cout << "Please enter number of misses allowed: ";
-    cin >> missesLeft;
+void GamePlay::play() {
 
-    play(word);
+    while(missesRemain >= 0 && correctCount < word.length()) {
+        menu.clearScreen();
+        menu.headBanner();
+        cout << "\tEnter a letter: ";
+        cin >> guess;
 
-} //þetta fall setur þetta í gang, þarna nær maður í orð sem á að spila með, og spyr notandann hversu mörg misses hann vill leyfa
+        // guess = menu.getGuess();
 
-void GamePlay::play(string word) {
+        //Skilaboï¿½ sem segja press ? to guess the whole word
+        //ï¿½ï¿½ er kallaï¿½ ï¿½ goForIt
 
-        while(missesLeft >= 0 && correctCount < word.length()) {
-            cout << "Enter a letter: " << endl;
-            cin >> guess;
-
-            //Skilaboð sem segja press ? to guess the whole word
-            //Þá er kallað á goForIt
-
-            for(unsigned int i = 0; i < word.length(); i++) {  //validate hvort búið sé að geta rétt, búa til vector sem heldur utan um hvað búið er að giska á
-                if(guess == word[i]) {
-                    hidden[i] = guess;
-                    correctCount++;
-                    guessValidation = true;
-                }
+        for(unsigned int i = 0; i < word.length(); i++) {  //validate hvort bï¿½iï¿½ sï¿½ aï¿½ geta rï¿½tt, bï¿½a til vector sem heldur utan um hvaï¿½ bï¿½iï¿½ er aï¿½ giska ï¿½
+            if(guess == word[i]) {
+                hidden[i] = guess;
+                correctCount++;
+                guessValidation = true;
             }
-
-            if(guessValidation == false) {
-                missesLeft--;
-            }
-
-            cout << hidden << endl;
-            guessCount++;
         }
 
-    if(missesLeft <= 0) {  ///fall sem prentar út úrslitin, Hérna mætti búa til föll
-        cout << "You lose!" << endl;
+        if(guessValidation == false) {
+            missesRemain--;
+            wrongGuesses.push_back(guess);
+        }
+
+        cout << "\t" <<  hidden << endl;
+        
+        cout << "\tWrong letters [ ";
+        for(size_t i = 0; i < wrongGuesses.size(); ++i){
+            cout << wrongGuesses.at(i) << " ";
+        }
+        cout << " ]" << endl;
+
+        guessCount++;
+    }
+
+    if(missesRemain <= 0) {  ///fall sem prentar ï¿½t ï¿½rslitin, Hï¿½rna mï¿½tti bï¿½a til fï¿½ll
+        cout << "\tYou lose!" << endl;
     }
     else if (correctCount == word.length()) {
-        cout << "You win!" << endl;
+        cout << "\tYou win!" << endl;
     }
 
 
