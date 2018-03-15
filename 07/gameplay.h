@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include "database.h"
-#include "menuclass.h"
 
 class GamePlay
 {
@@ -27,6 +26,14 @@ class GamePlay
 
         std::string getHidden();
 
+        void headBanner();
+
+        void clearScreen();
+
+        void anyKey();
+
+
+
         // std::vector<char> getWrongGuesses();
 
 
@@ -40,7 +47,6 @@ class GamePlay
         bool guessValidation;
         std::vector<char> wrongGuesses;
         DataBase data;
-        MenuClass menu;
 
 };
 
