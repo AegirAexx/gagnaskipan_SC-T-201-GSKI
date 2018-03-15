@@ -21,21 +21,6 @@ void MenuClass::prePlayGame() {
     game.play();
 }
 
-// void MenuClass::playGame() {
-//     clearScreen();
-//     headBanner();
-
-
-//     game.play(game.getWord());
-// }
-
-// char MenuClass::getGuess() {
-//     char currentGuess;
-//     cout << "\tEnter a letter: " << endl;
-//     cin >> currentGuess;
-//     return currentGuess;
-// }
-
 void MenuClass::mainMenu() {
 
     char choice;

@@ -20,9 +20,6 @@ string GamePlay::getWord(){
     return word;
 }
 
-// std::vector<char> getWrongGuesses() {
-//     return wrongGuesses;
-// }
 
 void GamePlay::play() {
 

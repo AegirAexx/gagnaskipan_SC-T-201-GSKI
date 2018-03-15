@@ -33,10 +33,6 @@ class GamePlay
         void anyKey();
 
 
-
-        // std::vector<char> getWrongGuesses();
-
-
     private:
         int missesRemain;
         int guessCount;
