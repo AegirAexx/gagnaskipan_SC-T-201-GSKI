@@ -7,20 +7,6 @@ MenuClass::MenuClass() {}
 
 MenuClass::~MenuClass() {}
 
-// void MenuClass::prePlayGame() {
-//     setMisses = 0;
-//     game.initialize();
-//     clearScreen();
-//     headBanner();
-//     cout << endl << endl << endl << "\tInitializing the game, but first you must decide on" << endl;
-//     cout << "\thow many misses are allowed before the game is over." << endl << endl;
-//     cout << "\t<How many misses?> ";
-//     cin >> setMisses;
-
-//     game.setMissesRemain(setMisses);
-//     game.play();
-// }
-
 void MenuClass::mainMenu() {
 
     char choice;
@@ -75,13 +61,12 @@ void MenuClass::mainMenuSelector(char c) {
                 data.printVector();
                 anyKey();
                 mainMenu();
-                cout << "\tHi-Score List" << endl;
                 break;
         case 'q':
         case 'Q':
                 clearScreen();
                 headBanner();
-                cout << "Adding your score to the database " << endl;
+                cout << "\tAdding your score to the database " << endl;
                 data.addToScoresDatabase(game.getScore());
                 data.writeScoresToFile();
                 cout << endl << endl << endl << endl << "\tThank you for playing!" << endl << endl << endl << endl;

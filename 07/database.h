@@ -17,10 +17,9 @@ class DataBase
         virtual ~DataBase();
 
         void writeToDatabase(std::string newWord);
-        void addToScoresDatabase(Score score);  //bætir score í scoredatabase vectorinn
+        void addToScoresDatabase(Score score); 
 
-        void fetchScores();  //populate-ar vectorinn úr file-num
-
+        void fetchScores(); 
         void writeScoresToFile();
 
         void fetchWords();

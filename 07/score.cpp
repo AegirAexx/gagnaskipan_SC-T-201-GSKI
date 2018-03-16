@@ -1,28 +1,21 @@
 #include "score.h"
 
-Score::Score()
-{
-    totalScore = 0;
-}
+Score::Score(): totalScore(0) {}
 
+Score::~Score() {}
 
-Score::~Score()
-{
-    //dtor
-}
-
- bool operator < (const Score &leftScore, const Score & rightScore) {
+ bool operator < (const Score& leftScore, const Score& rightScore) {
     return leftScore.totalScore < rightScore.totalScore;
  }
 
 std::ostream& operator << (std::ostream& out, const Score &score) {
-    out << "Name: ";
+    out << "\tName: ";
 
     for(int i = 0; i < 3; i++) {
         out << score.name[i];
     }
 
-    out << "Score: " << score.totalScore << std::endl;
+    out << " Score: " << score.totalScore << std::endl;
 
     return out;
  }

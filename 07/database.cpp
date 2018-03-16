@@ -10,7 +10,6 @@ vector<string> DataBase::getWordDatabase() {
     return wordDatabase;
 }
 
-
 void DataBase::writeToDatabase(std::string newWord) {
     fstream writeData;
 

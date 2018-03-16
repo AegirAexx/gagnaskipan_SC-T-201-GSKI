@@ -7,7 +7,6 @@ class Score
 {
     public:
         Score();
-        //Score(char n, int score);
         virtual ~Score();
         char name[3];
         int totalScore;

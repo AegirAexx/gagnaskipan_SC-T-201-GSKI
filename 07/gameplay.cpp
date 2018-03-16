@@ -152,7 +152,7 @@ void GamePlay::playAgain() {
         initialize();
     }
     else {
-        cout << "Please enter your initials! Max 3 characters: ";
+        cout << "\tPlease enter your initials! Max 3 characters: ";
         cin >> score.name;
         return;
     }
