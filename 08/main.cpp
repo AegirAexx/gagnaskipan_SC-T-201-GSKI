@@ -105,12 +105,22 @@ void printMap(Map<K, T> *map) {
     cout << endl;
 }
 
+template <class K, class T>
+void testResize(Map<K, T> *map) {
+
+    cout << "Resizing: " << endl;
+    map->resize();
+    cout << endl;
+}
+
+
+
 
 
 int main() {
 
     ///Test á KeyDataList
-    /*
+/*
     KeyDataList<int, char> test;
 
     test.add(1, 'd');
@@ -143,7 +153,7 @@ int main() {
     cout << "test: " << endl;
     test.print();
 
-    test.clear();
+  //  test.clear();
 
     test.add(1, 'd');
 
@@ -152,17 +162,53 @@ int main() {
     cout << "test: " << endl;
     test.print();  //ATH! print á tómt gefur error
 
-    */
+    cout << "Testing pop: ";
+
+    int tmpKey = 0;
+    char tmpData = 0;
+
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+    test.pop(tmpKey, tmpData);
+
+    cout << "tmpKey: " << tmpKey << endl;
+    cout << "tmpData: " << tmpData << endl;
+
+    test.print();
+
+*/
+
 
     Map<char, string> *charHashMap = new HashMap<char, string>(char_hash);
 
-    testInsert(charHashMap, 'd', (string)"item-d");
+    testInsert(charHashMap, 'a', (string)"item-d");
     testInsert(charHashMap, 'b', (string)"item-b");
-    testInsert(charHashMap, 'f', (string)"item-f");
-    testInsert(charHashMap, 'g', (string)"item-g");
+    testInsert(charHashMap, 'c', (string)"item-f");
+    testInsert(charHashMap, 'd', (string)"item-g");
     testInsert(charHashMap, 'e', (string)"item-e");
-    testInsert(charHashMap, 'c', (string)"item-c");
+    testInsert(charHashMap, 'f', (string)"item-c");
     testInsert(charHashMap, 'g', (string)"item-g");
+    testInsert(charHashMap, 'h', (string)"item-d");
+    testInsert(charHashMap, 'i', (string)"item-b");
+    testInsert(charHashMap, 'j', (string)"item-f");
+    testInsert(charHashMap, 'k', (string)"item-g");
+    testInsert(charHashMap, 'l', (string)"item-e");
+    testInsert(charHashMap, 'm', (string)"item-c");
+    testInsert(charHashMap, 'n', (string)"item-g");
+    testInsert(charHashMap, 'd', (string)"item-d");
 
     printMap(charHashMap);
 
@@ -173,9 +219,55 @@ int main() {
     testContains(charHashMap, 'b');
 
     testRemove(charHashMap, 'b');
+    testSize(charHashMap);
+    testRemove(charHashMap, 'b');
+    testSize(charHashMap);
+    testRemove(charHashMap, 'b');
+    testSize(charHashMap);
+    testRemove(charHashMap, 'm');
+    testSize(charHashMap);
+    testRemove(charHashMap, 'k');
+    testSize(charHashMap);
+
     testContains(charHashMap, 'b');
 
     testEmpty(charHashMap);
+
+    testClear(charHashMap);
+
+    testEmpty(charHashMap);
+
+    testRemove(charHashMap, 'b');
+    testSize(charHashMap);
+    testRemove(charHashMap, 'b');
+    testSize(charHashMap);
+    testRemove(charHashMap, 'b');
+    testSize(charHashMap);
+
+    printMap(charHashMap);
+    testSize(charHashMap);
+
+    testGet(charHashMap, 'c');
+    testGet(charHashMap, 'f');
+    testGet(charHashMap, 'e');
+
+    testUpdate(charHashMap, 'f', (string)"item-f-updated");
+
+    testInsert(charHashMap, 'a', (string)"item-d");
+    testInsert(charHashMap, 'b', (string)"item-b");
+    testInsert(charHashMap, 'c', (string)"item-f");
+    testInsert(charHashMap, 'd', (string)"item-g");
+    testInsert(charHashMap, 'e', (string)"item-e");
+    testInsert(charHashMap, 'f', (string)"item-c");
+    testInsert(charHashMap, 'g', (string)"item-g");
+    testInsert(charHashMap, 'h', (string)"item-d");
+    testInsert(charHashMap, 'i', (string)"item-b");
+    testInsert(charHashMap, 'j', (string)"item-f");
+    testInsert(charHashMap, 'k', (string)"item-g");
+    testInsert(charHashMap, 'l', (string)"item-e");
+    testInsert(charHashMap, 'm', (string)"item-c");
+    testInsert(charHashMap, 'n', (string)"item-g");
+    testInsert(charHashMap, 'd', (string)"item-d");
 
     printMap(charHashMap);
     testSize(charHashMap);
@@ -244,9 +336,48 @@ int main() {
     testInsert(stringHashMap, (string)"key3", (string)"data3");
     testInsert(stringHashMap, (string)"key4", (string)"data4");
     testInsert(stringHashMap, (string)"key5", (string)"data5");
+    testInsert(stringHashMap, (string)"key6", (string)"data1");
+    testInsert(stringHashMap, (string)"key7", (string)"data2");
+    testInsert(stringHashMap, (string)"key8", (string)"data3");
+    testInsert(stringHashMap, (string)"key9", (string)"data4");
+    testInsert(stringHashMap, (string)"key10", (string)"data5");
+    testInsert(stringHashMap, (string)"key11", (string)"data1");
+    testInsert(stringHashMap, (string)"key12", (string)"data2");
+    testInsert(stringHashMap, (string)"key13", (string)"data3");
+    testInsert(stringHashMap, (string)"key14", (string)"data4");
+    testInsert(stringHashMap, (string)"key15", (string)"data5");
+    testInsert(stringHashMap, (string)"key16", (string)"data1");
+    testInsert(stringHashMap, (string)"key17", (string)"data2");
+    testInsert(stringHashMap, (string)"key18", (string)"data3");
+    testInsert(stringHashMap, (string)"key19", (string)"data4");
+    testInsert(stringHashMap, (string)"key20", (string)"data5");
 
     printMap(stringHashMap);
     testSize(stringHashMap);
+
+    testClear(stringHashMap);
+    testUpdate(stringHashMap, (string)"key2", (string)"data2_updated");
+
+    testInsert(stringHashMap, (string)"key1", (string)"data1");
+    testInsert(stringHashMap, (string)"key2", (string)"data2");
+    testInsert(stringHashMap, (string)"key3", (string)"data3");
+    testInsert(stringHashMap, (string)"key4", (string)"data4");
+    testInsert(stringHashMap, (string)"key5", (string)"data5");
+    testInsert(stringHashMap, (string)"key6", (string)"data1");
+    testInsert(stringHashMap, (string)"key7", (string)"data2");
+    testInsert(stringHashMap, (string)"key8", (string)"data3");
+    testInsert(stringHashMap, (string)"key9", (string)"data4");
+    testInsert(stringHashMap, (string)"key10", (string)"data5");
+    testInsert(stringHashMap, (string)"key11", (string)"data1");
+    testInsert(stringHashMap, (string)"key12", (string)"data2");
+    testInsert(stringHashMap, (string)"key13", (string)"data3");
+    testInsert(stringHashMap, (string)"key14", (string)"data4");
+    testInsert(stringHashMap, (string)"key15", (string)"data5");
+    testInsert(stringHashMap, (string)"key16", (string)"data1");
+    testInsert(stringHashMap, (string)"key17", (string)"data2");
+    testInsert(stringHashMap, (string)"key18", (string)"data3");
+    testInsert(stringHashMap, (string)"key19", (string)"data4");
+    testInsert(stringHashMap, (string)"key20", (string)"data5");
 
     testContains(stringHashMap, (string)"key5");
     testContains(stringHashMap, (string)"keyeye");

@@ -22,7 +22,6 @@ class KeyDataList
         };
 
         bool add(K key, T data) {
-
             if(head == NULL) {  //Ef ekkert er á þessum stað
                 head = new KeyDataListNode<K, T>(key, data, NULL);
                 return true;
@@ -31,13 +30,13 @@ class KeyDataList
             KeyDataListNode<K, T>* tmp = head;
             while(tmp->next != NULL) {
                 if(tmp->key == key) {
-                    return false;
+                    throw ItemExistsException();  //throw itemexists eða return false ???
                 }
                 tmp = tmp->next;
             }
 
             if(tmp->key == key) { //þarf ég þetta?
-                return false;
+                throw ItemExistsException();
             }
 
             tmp->next = new KeyDataListNode<K, T>(key, data, NULL);
@@ -47,7 +46,7 @@ class KeyDataList
         bool update(K key, T data) {
 
             if(head == NULL) {  //Ef ekkert er á þessum stað
-                return false;
+                throw NotFoundException();
             }
 
             KeyDataListNode<K, T>* tmp = head;
@@ -64,7 +63,7 @@ class KeyDataList
                 return true;
             }
 
-            return false;
+            throw NotFoundException();
         }
 
         T find(K key) {
@@ -91,7 +90,7 @@ class KeyDataList
         bool remove(K key) {
 
             if(head == NULL) {
-                return false;
+                throw NotFoundException();
             }
 
             if(head->key == key) {
@@ -111,7 +110,7 @@ class KeyDataList
                 }
                 tmp = tmp->next;
             }
-            return false;
+            throw NotFoundException();
         }
 
         bool contains(K key) {

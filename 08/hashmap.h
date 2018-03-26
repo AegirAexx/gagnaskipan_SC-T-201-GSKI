@@ -16,30 +16,24 @@ class HashMap : public Map<K, T>
         HashMap<K, T>(int (*func)(K key)) {
 
             hash_func = func;
-<<<<<<< HEAD
-            array_size = 10;
-=======
-            array_size = 2;
->>>>>>> e516c90644e0013662b1cfb0732b53f429ae5aa5
+            array_size = 3;
             count = 0;
 
             arr = new KeyDataList<K, T>[array_size];
-
         };
-        virtual ~HashMap<K, T>() {};
 
-        ///Erfï¿½ function
+        virtual ~HashMap<K, T>() {
+            clear();
+            delete arr;
+        };
+
+        ///Erfð function
         void insert(K key, T data) {
-<<<<<<< HEAD
-            // if(count > 2) {
-            //     resize();
-            // }
-=======
 
-            if(count + 1 > array_size) {
+            if(count * 120 >= array_size * 100) {
+                cout << "Resizing!" << endl;
                 resize();
             }
->>>>>>> e516c90644e0013662b1cfb0732b53f429ae5aa5
 
             int index = hash_func(key) % array_size;
             arr[index].add(key, data);
@@ -57,11 +51,11 @@ class HashMap : public Map<K, T>
         }
 
         void remove(K key) {
-            if(count > 0) {
+       //     if(count > 0) {
                 int index = hash_func(key) % array_size;
                 arr[index].remove(key);
                 count--;
-            }
+         //   }
         }
 
         bool contains(K key) {
@@ -81,6 +75,7 @@ class HashMap : public Map<K, T>
             for(unsigned int i = 0; i < array_size; i++) {
                 arr[i].clear();
             }
+            count = 0;
         }
 
         void print(ostream& out) const {
@@ -92,34 +87,7 @@ class HashMap : public Map<K, T>
             }
         }
 
-<<<<<<< HEAD
-        // void resize(){
-        //     KeyDataList<K, T> *oldArr = arr;  //afrita arr
-        //     arr = new KeyDataList<K, T>[array_size * 2]; //Bï¿½a til stï¿½rri ï¿½tgï¿½fu af
-
-        //     for(int i = 0; i < array_size; ++i){
-
-        //         if(oldArr[i].head != NULL) {
-
-        //             if(oldArr[i].head->next == NULL) {
-        //                 insert(oldArr[i].head->key, oldArr[i].head->data);
-        //             }
-
-        //             while(oldArr[i].head->next != NULL) {
-
-        //                 insert(oldArr[i].head->key, oldArr[i].head->data);
-        //                 KeyDataListNode<K, T> *tmp = oldArr[i].head;
-        //                 oldArr[i].head = tmp->next;
-        //                 delete tmp;
-        //             }
-        //             insert(oldArr[i].head->key, oldArr[i].head->data);
-        //         }
-        //     }
-
-        //     array_size *= 2;  //Gera arraysize stï¿½rra
-        // }
-=======
-        void resize(){
+        void resize(){  //Ætti væntanlega að vera private fall
             KeyDataList<K, T> *oldArr = arr;
             int old_size = array_size;
             array_size *= 2;
@@ -127,8 +95,8 @@ class HashMap : public Map<K, T>
             arr = new KeyDataList<K, T>[array_size]; //Búa til stærri útgáfu af arr
             count = 0;
 
-            for(int i = 0; i < array_size; ++i){
-                if(oldArr[i].isEmpty()) {
+            for(int i = 0; i < old_size; ++i){
+                if(oldArr[i].isEmpty() == false) {
                     while(oldArr[i].isEmpty() != true) {
                         K tmpKey;
                         T tmpData;
@@ -137,10 +105,8 @@ class HashMap : public Map<K, T>
                         insert(tmpKey, tmpData);
                     }
                 }
-            }
-              //Gera arraysize stærra
+            }//Gera arraysize stærra
         }
->>>>>>> e516c90644e0013662b1cfb0732b53f429ae5aa5
 
     protected:
 
