@@ -16,7 +16,7 @@ class HashMap : public Map<K, T>
         HashMap<K, T>(int (*func)(K key)) {
 
             hash_func = func;
-            array_size = 3;
+            array_size = 4;
             count = 0;
 
             arr = new KeyDataList<K, T>[array_size];
