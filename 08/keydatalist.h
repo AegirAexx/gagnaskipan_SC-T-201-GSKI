@@ -146,10 +146,19 @@ class KeyDataList
 
         bool pop(K &key, T &data) {  //Þetta hefur hugsanlega eitthvað með resize að gera
 
-            key = head->key;
-            data = head->data;
+            if(head == NULL) {
+                return false;
+            }
+            else {
+                key = head->key;
+                data = head->data;
+                KeyDataListNode<K, T>* tmp = head;
+                head = head->next;
+                delete tmp;
 
-            delete head;
+                return true;
+            }
+
         }
 
         void print() const {
@@ -164,9 +173,18 @@ class KeyDataList
             }
         }
 
- //   protected:
+        bool isEmpty() {
+            if(head == NULL) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
 
- //   private:
+    protected:
+
+    private:
         KeyDataListNode<K, T> *head;
 };
 

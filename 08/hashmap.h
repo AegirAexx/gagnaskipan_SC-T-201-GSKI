@@ -16,7 +16,11 @@ class HashMap : public Map<K, T>
         HashMap<K, T>(int (*func)(K key)) {
 
             hash_func = func;
+<<<<<<< HEAD
             array_size = 10;
+=======
+            array_size = 2;
+>>>>>>> e516c90644e0013662b1cfb0732b53f429ae5aa5
             count = 0;
 
             arr = new KeyDataList<K, T>[array_size];
@@ -26,9 +30,16 @@ class HashMap : public Map<K, T>
 
         ///Erfï¿½ function
         void insert(K key, T data) {
+<<<<<<< HEAD
             // if(count > 2) {
             //     resize();
             // }
+=======
+
+            if(count + 1 > array_size) {
+                resize();
+            }
+>>>>>>> e516c90644e0013662b1cfb0732b53f429ae5aa5
 
             int index = hash_func(key) % array_size;
             arr[index].add(key, data);
@@ -81,6 +92,7 @@ class HashMap : public Map<K, T>
             }
         }
 
+<<<<<<< HEAD
         // void resize(){
         //     KeyDataList<K, T> *oldArr = arr;  //afrita arr
         //     arr = new KeyDataList<K, T>[array_size * 2]; //Bï¿½a til stï¿½rri ï¿½tgï¿½fu af
@@ -106,6 +118,29 @@ class HashMap : public Map<K, T>
 
         //     array_size *= 2;  //Gera arraysize stï¿½rra
         // }
+=======
+        void resize(){
+            KeyDataList<K, T> *oldArr = arr;
+            int old_size = array_size;
+            array_size *= 2;
+
+            arr = new KeyDataList<K, T>[array_size]; //Búa til stærri útgáfu af arr
+            count = 0;
+
+            for(int i = 0; i < array_size; ++i){
+                if(oldArr[i].isEmpty()) {
+                    while(oldArr[i].isEmpty() != true) {
+                        K tmpKey;
+                        T tmpData;
+
+                        oldArr[i].pop(tmpKey, tmpData);
+                        insert(tmpKey, tmpData);
+                    }
+                }
+            }
+              //Gera arraysize stærra
+        }
+>>>>>>> e516c90644e0013662b1cfb0732b53f429ae5aa5
 
     protected:
 
