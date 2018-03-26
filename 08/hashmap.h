@@ -16,7 +16,7 @@ class HashMap : public Map<K, T>
         HashMap<K, T>(int (*func)(K key)) {
 
             hash_func = func;
-            array_size = 3;
+            array_size = 10;
             count = 0;
 
             arr = new KeyDataList<K, T>[array_size];
@@ -24,11 +24,11 @@ class HashMap : public Map<K, T>
         };
         virtual ~HashMap<K, T>() {};
 
-        ///Erfð function
+        ///Erfï¿½ function
         void insert(K key, T data) {
-            if(count > 2) {
-                resize();
-            }
+            // if(count > 2) {
+            //     resize();
+            // }
 
             int index = hash_func(key) % array_size;
             arr[index].add(key, data);
@@ -81,31 +81,31 @@ class HashMap : public Map<K, T>
             }
         }
 
-        void resize(){
-            KeyDataList<K, T> *oldArr = arr;  //afrita arr
-            arr = new KeyDataList<K, T>[array_size * 2]; //Búa til stærri útgáfu af
+        // void resize(){
+        //     KeyDataList<K, T> *oldArr = arr;  //afrita arr
+        //     arr = new KeyDataList<K, T>[array_size * 2]; //Bï¿½a til stï¿½rri ï¿½tgï¿½fu af
 
-            for(int i = 0; i < array_size; ++i){
+        //     for(int i = 0; i < array_size; ++i){
 
-                if(oldArr[i].head != NULL) {
+        //         if(oldArr[i].head != NULL) {
 
-                    if(oldArr[i].head->next == NULL) {
-                        insert(oldArr[i].head->key, oldArr[i].head->data);
-                    }
+        //             if(oldArr[i].head->next == NULL) {
+        //                 insert(oldArr[i].head->key, oldArr[i].head->data);
+        //             }
 
-                    while(oldArr[i].head->next != NULL) {
+        //             while(oldArr[i].head->next != NULL) {
 
-                        insert(oldArr[i].head->key, oldArr[i].head->data);
-                        KeyDataListNode<K, T> *tmp = oldArr[i].head;
-                        oldArr[i].head = tmp->next;
-                        delete tmp;
-                    }
-                    insert(oldArr[i].head->key, oldArr[i].head->data);
-                }
-            }
+        //                 insert(oldArr[i].head->key, oldArr[i].head->data);
+        //                 KeyDataListNode<K, T> *tmp = oldArr[i].head;
+        //                 oldArr[i].head = tmp->next;
+        //                 delete tmp;
+        //             }
+        //             insert(oldArr[i].head->key, oldArr[i].head->data);
+        //         }
+        //     }
 
-            array_size *= 2;  //Gera arraysize stærra
-        }
+        //     array_size *= 2;  //Gera arraysize stï¿½rra
+        // }
 
     protected:
 

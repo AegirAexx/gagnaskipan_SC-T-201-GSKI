@@ -15,6 +15,13 @@ int int_hash(int i) {
 
 int string_hash(string s) {
 
-    ///TODO: Implement better hash function here
-    return 0;
+    unsigned int hash = 1315423911;
+
+    for(size_t i = 0; i < s.length(); i++)
+    {
+        hash ^= ((hash << 5) + s[i] + (hash >> 2));
+    }
+
+    return (hash & 0x7FFFFFFF);
+
 }
