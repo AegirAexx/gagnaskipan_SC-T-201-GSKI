@@ -11,7 +11,7 @@
 	"hashmap.h"
 	"hashfunctions.h"
 
-1522019573 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\08\hashmap.h
+1522023810 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\08\hashmap.h
 	<ostream>
 	"map.h"
 	"keydatalist.h"
@@ -21,7 +21,7 @@
 1521844936 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\08\map.h
 	<ostream>
 
-1522018985 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\08\keydatalist.h
+1522022476 c:\users\dagur\documents\github\gagnaskipan_sc-t-201-gski\08\keydatalist.h
 	<ostream>
 	"keydatalistnode.h"
 	<string>

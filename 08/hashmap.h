@@ -16,7 +16,7 @@ class HashMap : public Map<K, T>
         HashMap<K, T>(int (*func)(K key)) {
 
             hash_func = func;
-            array_size = 3;
+            array_size = 2;
             count = 0;
 
             arr = new KeyDataList<K, T>[array_size];
@@ -26,7 +26,8 @@ class HashMap : public Map<K, T>
 
         ///Erfð function
         void insert(K key, T data) {
-            if(count > 2) {
+
+            if(count + 1 > array_size) {
                 resize();
             }
 
@@ -82,29 +83,25 @@ class HashMap : public Map<K, T>
         }
 
         void resize(){
-            KeyDataList<K, T> *oldArr = arr;  //afrita arr
-            arr = new KeyDataList<K, T>[array_size * 2]; //Búa til stærri útgáfu af
+            KeyDataList<K, T> *oldArr = arr;
+            int old_size = array_size;
+            array_size *= 2;
+
+            arr = new KeyDataList<K, T>[array_size]; //Búa til stærri útgáfu af arr
+            count = 0;
 
             for(int i = 0; i < array_size; ++i){
+                if(oldArr[i].isEmpty()) {
+                    while(oldArr[i].isEmpty() != true) {
+                        K tmpKey;
+                        T tmpData;
 
-                if(oldArr[i].head != NULL) {
-
-                    if(oldArr[i].head->next == NULL) {
-                        insert(oldArr[i].head->key, oldArr[i].head->data);
+                        oldArr[i].pop(tmpKey, tmpData);
+                        insert(tmpKey, tmpData);
                     }
-
-                    while(oldArr[i].head->next != NULL) {
-
-                        insert(oldArr[i].head->key, oldArr[i].head->data);
-                        KeyDataListNode<K, T> *tmp = oldArr[i].head;
-                        oldArr[i].head = tmp->next;
-                        delete tmp;
-                    }
-                    insert(oldArr[i].head->key, oldArr[i].head->data);
                 }
             }
-
-            array_size *= 2;  //Gera arraysize stærra
+              //Gera arraysize stærra
         }
 
     protected:
