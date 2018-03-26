@@ -24,7 +24,7 @@ class HashMap : public Map<K, T>
 
         virtual ~HashMap<K, T>() {
             clear();
-            delete arr;
+            delete []arr;
         };
 
         void insert(K key, T data) {
@@ -83,8 +83,6 @@ class HashMap : public Map<K, T>
             }
         }
 
-
-
     protected:
 
     private:
@@ -112,6 +110,7 @@ class HashMap : public Map<K, T>
                     }
                 }
             }
+            delete []oldArr;
         }
 };
 
