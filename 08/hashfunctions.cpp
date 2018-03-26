@@ -23,5 +23,4 @@ int string_hash(string s) {
     }
 
     return (hash & 0x7FFFFFFF);
-
 }
