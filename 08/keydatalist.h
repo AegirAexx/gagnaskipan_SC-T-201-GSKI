@@ -22,7 +22,7 @@ class KeyDataList
         };
 
         bool add(K key, T data) {
-            if(head == NULL) {  //Ef ekkert er á þessum stað
+            if(head == NULL) {
                 head = new KeyDataListNode<K, T>(key, data, NULL);
                 return true;
             }
@@ -30,12 +30,12 @@ class KeyDataList
             KeyDataListNode<K, T>* tmp = head;
             while(tmp->next != NULL) {
                 if(tmp->key == key) {
-                    throw ItemExistsException();  //throw itemexists eða return false ???
+                    throw ItemExistsException();
                 }
                 tmp = tmp->next;
             }
 
-            if(tmp->key == key) { //þarf ég þetta?
+            if(tmp->key == key) {
                 throw ItemExistsException();
             }
 
@@ -45,7 +45,7 @@ class KeyDataList
 
         bool update(K key, T data) {
 
-            if(head == NULL) {  //Ef ekkert er á þessum stað
+            if(head == NULL) {
                 throw NotFoundException();
             }
 
@@ -58,7 +58,7 @@ class KeyDataList
                 tmp = tmp->next;
             }
 
-            if(tmp->key == key) { //þarf ég þetta hérna líka?
+            if(tmp->key == key) {
                 tmp->data = data;
                 return true;
             }
@@ -68,7 +68,7 @@ class KeyDataList
 
         T find(K key) {
 
-            if(head == NULL) {  //Ef ekkert er á þessum stað, sennilega throw exc
+            if(head == NULL) {
                 throw NotFoundException();
             }
 
@@ -80,7 +80,7 @@ class KeyDataList
                 tmp = tmp->next;
             }
 
-            if(tmp->key == key) { //þarf ég þetta hérna líka?
+            if(tmp->key == key) {
                 return tmp->data;
             }
 
@@ -115,7 +115,7 @@ class KeyDataList
 
         bool contains(K key) {
 
-            if(head == NULL) {  //Ef ekkert er á þessum stað, sennilega throw exc
+            if(head == NULL) {
                 return false;
             }
 
@@ -127,7 +127,7 @@ class KeyDataList
                 tmp = tmp->next;
             }
 
-            if(tmp->key == key) { //þarf ég þetta hérna líka?
+            if(tmp->key == key) {
                 return true;
             }
 
@@ -143,7 +143,7 @@ class KeyDataList
             }
         }
 
-        bool pop(K &key, T &data) {  //Þetta hefur hugsanlega eitthvað með resize að gera
+        bool pop(K &key, T &data) {
 
             if(head == NULL) {
                 return false;
@@ -157,7 +157,6 @@ class KeyDataList
 
                 return true;
             }
-
         }
 
         void print() const {

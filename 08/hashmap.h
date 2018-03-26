@@ -27,11 +27,9 @@ class HashMap : public Map<K, T>
             delete arr;
         };
 
-        ///Erfð function
         void insert(K key, T data) {
 
             if(count * 120 >= array_size * 100) {
-                cout << "Resizing!" << endl;
                 resize();
             }
 
@@ -51,11 +49,9 @@ class HashMap : public Map<K, T>
         }
 
         void remove(K key) {
-       //     if(count > 0) {
-                int index = hash_func(key) % array_size;
-                arr[index].remove(key);
-                count--;
-         //   }
+            int index = hash_func(key) % array_size;
+            arr[index].remove(key);
+            count--;
         }
 
         bool contains(K key) {
@@ -87,12 +83,22 @@ class HashMap : public Map<K, T>
             }
         }
 
-        void resize(){  //Ætti væntanlega að vera private fall
+
+
+    protected:
+
+    private:
+        KeyDataList<K, T> *arr;
+        int (*hash_func)(K key);
+        unsigned int array_size;
+        unsigned int count;
+
+        void resize(){
             KeyDataList<K, T> *oldArr = arr;
             int old_size = array_size;
             array_size *= 2;
 
-            arr = new KeyDataList<K, T>[array_size]; //Búa til stærri útgáfu af arr
+            arr = new KeyDataList<K, T>[array_size];
             count = 0;
 
             for(int i = 0; i < old_size; ++i){
@@ -105,16 +111,8 @@ class HashMap : public Map<K, T>
                         insert(tmpKey, tmpData);
                     }
                 }
-            }//Gera arraysize stærra
+            }
         }
-
-    protected:
-
-    private:
-        KeyDataList<K, T> *arr;
-        int (*hash_func)(K key);
-        unsigned int array_size;
-        int count;
 };
 
 #endif // HASHMAP_H
